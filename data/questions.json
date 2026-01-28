@@ -1,0 +1,1243 @@
+{
+  "generatedAt": "2026-01-28T21:16:20.047Z",
+  "criteria": [
+    {
+      "id": "LWP-S1",
+      "title": "LWP-S1: Wellness Policy Coordination Team",
+      "criterionText": "Our school has a team* that does all the following:\n- Coordinates implementation of the district wellness policy at our school\n- Ensures members are representative* of our school community*\n- Meets at least four times per year",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "In your wellness policy implementation process, does your school have a wellness policy team?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms the required governance structure exists. UI/UX: Simple gate avoids unnecessary follow-ups. Data and evaluation: Establishes a clear eligibility anchor. Senior front-end engineer: Enables branching without complex validation. Senior back-end engineer: Stores as a boolean for rules-based scoring. Product manager: Reduces burden for non-qualifying schools.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "Does the wellness policy team coordinate implementation of the district wellness policy at your school?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Verifies the team is operational, not nominal. UI/UX: Direct wording keeps decision fast. Data and evaluation: Separates team existence from function. Senior front-end engineer: Standard boolean input. Senior back-end engineer: Supports deterministic scoring. Product manager: Clarifies accountability for implementation.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "Are wellness policy team members representative of your school community?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Ensures stakeholder representation is intentional. UI/UX: Keeps cognitive load low with a single choice. Data and evaluation: Captures equity-related governance. Senior front-end engineer: Supports conditional detail in later questions. Senior back-end engineer: Boolean flag for eligibility. Product manager: Aligns with program expectations for representation.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "How many times did the wellness policy team meet in the past 12 months?",
+          "type": "single",
+          "options": [
+            "4 or more",
+            "2-3",
+            "1",
+            "0"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms ongoing coordination. UI/UX: Single select reduces ambiguity. Data and evaluation: Normalizes frequency for comparison. Senior front-end engineer: Simple radio input. Senior back-end engineer: Enum supports reporting. Product manager: Matches the criterion threshold.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q5",
+          "text": "Which roles are represented on the wellness policy team?",
+          "type": "multi",
+          "options": [
+            "School administrators",
+            "Teachers",
+            "School health services staff",
+            "Food service staff",
+            "Students",
+            "Families or caregivers",
+            "Community partners",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Validates broad representation. UI/UX: Checklist keeps data structured. Data and evaluation: Enables role-mix analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Maps to controlled role values. Product manager: Makes representation criteria visible for reviewers.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q6",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Team roster",
+            "Meeting agendas or minutes",
+            "Wellness policy implementation plan that references the team"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement is efficient. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is easy to implement. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Q1 is \"No.\"",
+          "Q2 is \"No.\"",
+          "Q3 is \"No.\"",
+          "Q4 is not \"4 or more.\""
+        ],
+        "required": [
+          "Q5 includes at least 4 roles.",
+          "Q5 includes \"Families or caregivers.\"",
+          "Q6 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "lwp_s1_questions.md"
+      }
+    },
+    {
+      "id": "LWP-S2",
+      "title": "LWP-S2: Measure Progress on Wellness Policy Implementation",
+      "criterionText": "Our school uses an evidence-based* assessment tool(s) to measure progress made in implementing the district wellness policy at least once every three years.",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Does your school use an evidence-based assessment tool to measure progress on district wellness policy implementation?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms the required measurement practice exists. UI/UX: Simple gate reduces unnecessary follow-ups. Data and evaluation: Establishes eligibility for measurement. Senior front-end engineer: Enables conditional flows. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Keeps the process lightweight for non-qualifying schools.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "Which evidence-based assessment tool(s) has your school used in the past 3 years?",
+          "type": "multi",
+          "options": [
+            "Thriving Schools Integrated Assessment (Action Center)",
+            "District or state wellness policy assessment tool",
+            "Other evidence-based tool (specify)"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Captures approved pathways without forcing a narrative. UI/UX: Short checklist with optional text. Data and evaluation: Supports tool-level reporting. Senior front-end engineer: Standard multi-select. Senior back-end engineer: Controlled values with an other field. Product manager: Ensures the tool requirement is visible.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "When was the most recent assessment completed?",
+          "type": "single",
+          "options": [
+            "Within the past 12 months",
+            "1-3 years ago",
+            "More than 3 years ago",
+            "Not completed"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Checks recency against the three-year requirement. UI/UX: Single select avoids date entry. Data and evaluation: Supports longitudinal analysis. Senior front-end engineer: Simple radio input. Senior back-end engineer: Enum for reporting. Product manager: Matches the criterion threshold.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "How were assessment results used?",
+          "type": "multi",
+          "options": [
+            "Reported to the wellness policy team",
+            "Set or updated measurable goals",
+            "Informed a wellness action plan",
+            "Shared with district leadership",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Shows the assessment drives action. UI/UX: Multi-select keeps responses structured. Data and evaluation: Indicates use of results. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Encourages actionable use without heavy burden.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q5",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Upload assessment results or report",
+            "Upload Action Center download or screenshot",
+            "Provide a link to the assessment results"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Provides verification without excessive burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Q1 is \"No.\"",
+          "Q3 is \"More than 3 years ago\" or \"Not completed.\""
+        ],
+        "required": [
+          "Q2 includes at least 1 tool.",
+          "Q5 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "lwp_s2_questions.md"
+      }
+    },
+    {
+      "id": "LWP-S3",
+      "title": "LWP-S3: Continuous Improvement for Wellness Policy Implementation",
+      "criterionText": "Our school uses a continuous improvement process* that includes all the following:\n- Engaging a diverse set of key stakeholders in developing a shared vision of success\n- Assessing strengths and opportunities for incremental improvement using disaggregated data*\n- Setting measurable goals based on priorities\n- Creating a detailed action plan\n- Connecting stakeholders with necessary resources and information, including data to measure progress\n- Evaluating and reflecting on progress, successes, and challenges",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Does your school use a continuous improvement process to coordinate implementation of the district wellness policy?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms the overall process exists. UI/UX: Simple gate reduces unnecessary steps. Data and evaluation: Establishes eligibility for the remaining components. Senior front-end engineer: Enables branching without complex validation. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Keeps the flow short for non-qualifying schools.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "Does the process engage a diverse set of key stakeholders to develop a shared vision of success?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Ensures stakeholder engagement is explicit. UI/UX: Yes/no keeps the decision quick. Data and evaluation: Captures equity-related governance. Senior front-end engineer: Straightforward boolean input. Senior back-end engineer: Supports deterministic scoring. Product manager: Reinforces the stakeholder requirement.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "Does the process assess strengths and opportunities using disaggregated data?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Verifies data-informed improvement. UI/UX: Short question reduces cognitive load. Data and evaluation: Ensures data quality and equity analysis. Senior front-end engineer: Simple boolean input. Senior back-end engineer: Boolean flag for scoring. Product manager: Aligns with evidence-based expectations.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "Does the process set measurable goals based on priorities?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms goals are defined and measurable. UI/UX: Yes/no avoids narrative responses. Data and evaluation: Ensures goals can be tracked. Senior front-end engineer: Simple boolean input. Senior back-end engineer: Boolean for scoring. Product manager: Keeps the requirement explicit.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q5",
+          "text": "Does the process create a detailed action plan?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Validates planning for implementation. UI/UX: Single decision keeps flow fast. Data and evaluation: Enables verification of planned activities. Senior front-end engineer: Simple boolean input. Senior back-end engineer: Boolean for scoring. Product manager: Reinforces the planning requirement.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q6",
+          "text": "Does the process connect stakeholders with necessary resources and information, including data to measure progress?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms access to resources and data. UI/UX: Direct wording avoids complexity. Data and evaluation: Ensures measurement capacity exists. Senior front-end engineer: Simple boolean input. Senior back-end engineer: Boolean for scoring. Product manager: Makes support structures explicit.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q7",
+          "text": "Does the process evaluate and reflect on progress, successes, and challenges?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Ensures the improvement loop is closed. UI/UX: Yes/no keeps the question simple. Data and evaluation: Captures reflection and learning. Senior front-end engineer: Simple boolean input. Senior back-end engineer: Boolean for scoring. Product manager: Reinforces continuous improvement.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q8",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Upload a wellness action plan",
+            "Upload a continuous improvement report or summary",
+            "Provide a link to the plan or report"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q7",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Any of Q1 through Q7 is \"No.\""
+        ],
+        "required": [
+          "Q8 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "lwp_s3_questions.md"
+      }
+    },
+    {
+      "id": "LWP-S4",
+      "title": "LWP-S4: Standards for Foods and Beverages Sold",
+      "criterionText": "Our school ensures all the following:\n- All foods and beverages sold to students during the school day meet or exceed the USDA's federal regulations for school meal programs*\n- All foods and beverages sold to students during the school day meet or exceed the Smart Snacks in School nutrition standards*, including all school meals, a la carte vending, school stores, snack or food carts, and any food-based fundraising*\n- We follow fundraising exemptions and guidance set by our state agency, which must also adhere to the Smart Snacks in School nutrition standards*",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Does your school ensure all foods and beverages sold to students during the school day meet or exceed USDA school meal program regulations?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms baseline compliance for sales. UI/UX: Simple yes/no reduces burden. Data and evaluation: Establishes a clear eligibility anchor. Senior front-end engineer: Supports branching without complexity. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Keeps the flow efficient.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "Does your school ensure all foods and beverages sold to students during the school day meet or exceed Smart Snacks in School standards across all sales venues?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Verifies comprehensive Smart Snacks compliance. UI/UX: Direct yes/no for quick response. Data and evaluation: Enables consistent scoring across schools. Senior front-end engineer: Simple boolean input. Senior back-end engineer: Boolean flag for eligibility. Product manager: Makes the requirement explicit.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "Does your school follow state fundraising exemptions and guidance that adhere to Smart Snacks standards?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms alignment with state guidance. UI/UX: Single decision reduces complexity. Data and evaluation: Captures compliance with exemptions. Senior front-end engineer: Straightforward boolean input. Senior back-end engineer: Boolean for scoring. Product manager: Ensures the fundraising condition is met.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "Which sales venues are covered by your Smart Snacks compliance process?",
+          "type": "multi",
+          "options": [
+            "School meals",
+            "A la carte",
+            "Vending machines",
+            "School store",
+            "Snack or food carts",
+            "Food-based fundraising",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Confirms coverage across all required venues. UI/UX: Checklist keeps data structured. Data and evaluation: Enables venue-level analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes scope visible to reviewers.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q5",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Nutrition standards policy",
+            "Vendor or vending contract language",
+            "Compliance checklist or audit summary"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Q1 is \"No.\"",
+          "Q2 is \"No.\"",
+          "Q3 is \"No.\""
+        ],
+        "required": [
+          "Q4 includes at least 3 venues.",
+          "Q5 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "lwp_s4_questions.md"
+      }
+    },
+    {
+      "id": "LWP-S5",
+      "title": "LWP-S5: Standards for Foods and Beverages Provided (Not Sold)",
+      "criterionText": "Our school ensures all foods and beverages provided, but not sold, to students during the school day meet or exceed the Smart Snacks in School nutrition standards*.\nNote: This includes all foods and beverages that are not part of a federally reimbursed child nutrition program, such as foods or beverages provided to students for rewards, incentives, classroom parties (e.g., birthday parties, holiday parties), or school-wide celebrations.",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Does your school ensure foods and beverages provided (not sold) to students during the school day meet or exceed Smart Snacks standards?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms the core compliance requirement. UI/UX: Simple gate reduces unnecessary follow-ups. Data and evaluation: Establishes a clear eligibility anchor. Senior front-end engineer: Supports branching without complexity. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Keeps the flow efficient for non-qualifying schools.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "In which situations does your school apply the Smart Snacks standards to foods and beverages that are provided (not sold)?",
+          "type": "multi",
+          "options": [
+            "Classroom rewards or incentives",
+            "Classroom parties",
+            "School-wide celebrations",
+            "Classroom snacks",
+            "After-school or enrichment programs during the school day",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Confirms coverage across common non-sale contexts. UI/UX: Checklist keeps answers structured. Data and evaluation: Supports context-specific analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes the scope visible for reviewers.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "How does your school ensure compliance with Smart Snacks standards for provided foods and beverages?",
+          "type": "multi",
+          "options": [
+            "Written policy or guidance",
+            "Staff training or briefings",
+            "Approved foods list",
+            "Pre-approval or review process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Verifies an operational compliance mechanism. UI/UX: Multi-select keeps responses concise. Data and evaluation: Captures implementation methods. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Ensures the process is more than a statement.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Policy or guidance document",
+            "Communication to staff or families",
+            "Approved foods list"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Q1 is \"No.\""
+        ],
+        "required": [
+          "Q2 includes at least 3 situations.",
+          "Q3 includes at least 1 compliance method.",
+          "Q4 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "lwp_s5_questions.md"
+      }
+    },
+    {
+      "id": "LWP-S6",
+      "title": "LWP-S6: Limit Marketing and Advertising of Foods and Beverages",
+      "criterionText": "Our school limits all marketing and advertising of foods and beverages on the school campus* during the school day (e.g., on book covers, coupons for foods or beverages, advertising on vending machines, and digital media) to only food and beverages that meet or exceed the Smart Snacks in School nutrition standards*.",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Does your school limit all marketing and advertising of foods and beverages on campus during the school day to items that meet Smart Snacks standards?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Confirms the core restriction requirement. UI/UX: Simple gate reduces burden. Data and evaluation: Establishes a clear eligibility anchor. Senior front-end engineer: Supports branching without complexity. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Keeps the flow efficient for non-qualifying schools.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "Which marketing or advertising locations and media are covered by this restriction?",
+          "type": "multi",
+          "options": [
+            "Vending machines",
+            "School store",
+            "Posters or signage",
+            "Digital media or websites",
+            "Book covers",
+            "Coupons or flyers",
+            "Sponsorships or branded materials",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Confirms coverage across common marketing channels. UI/UX: Checklist keeps answers structured. Data and evaluation: Enables channel-level analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes scope visible to reviewers.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "How does your school enforce or monitor this restriction?",
+          "type": "multi",
+          "options": [
+            "Written policy or guidance",
+            "Vendor or sponsorship contract language",
+            "Pre-approval process for marketing materials",
+            "Periodic compliance review",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Verifies operational enforcement. UI/UX: Multi-select keeps responses concise. Data and evaluation: Captures enforcement methods. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Ensures the requirement is actionable.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Policy or guidance document",
+            "Contract language or vendor clause",
+            "Photos or screenshots of compliant marketing"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Q1 is \"No.\""
+        ],
+        "required": [
+          "Q2 includes at least 3 locations or media.",
+          "Q3 includes at least 1 enforcement method.",
+          "Q4 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "lwp_s6_questions.md"
+      }
+    },
+    {
+      "id": "SHS-S5",
+      "title": "SHS-S5: School Resource Mapping to Support School Health Services",
+      "criterionText": "Our school’s resource mapping process includes all the following:\n- Identifying existing programs, services, and resources in the school and in the community\n- Informing the school community about the available resources\n- Matching students and families with available resources to address needs and support student achievement\n- Identifying community partners to support unmet needs",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "In your resource mapping process, does your school identify existing programs, services, and resources in the school and in the community?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Validates the foundational inventory step. UI/UX: Simple yes/no avoids a long combined checklist. Data and evaluation: Enables clear, component-level fidelity tracking. Senior front-end engineer: Supports branching without complex validation. Senior back-end engineer: Stores as a boolean for rules-based scoring. Product manager: Reduces cognitive load while keeping rigor.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "In your resource mapping process, does your school inform the school community about available resources?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Confirms outreach is part of the process. UI/UX: Short, direct question with a single decision. Data and evaluation: Separates availability from communication. Senior front-end engineer: Straightforward input with low error risk. Senior back-end engineer: Boolean flag supports scoring logic. Product manager: Clarifies whether the map is actively shared.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "In your resource mapping process, does your school match students and families to resources to address needs and support student achievement?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Distinguishes active matching from passive lists. UI/UX: Yes/no keeps the question quick to answer. Data and evaluation: Isolates the core service delivery action. Senior front-end engineer: Enables conditional follow-ups. Senior back-end engineer: Boolean flag supports eligibility checks. Product manager: Reinforces that matching is required for credit.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "In your resource mapping process, does your school identify community partners to support unmet needs?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Verifies external support for gaps. UI/UX: Keeps the initial gate simple and fast. Data and evaluation: Enables discrete measurement of partnerships. Senior front-end engineer: Clean gating for later partner detail. Senior back-end engineer: Simple boolean for scoring. Product manager: Ensures the unmet-needs component is explicit.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q5",
+          "text": "How often did your school complete or update its resource mapping in the past 12 months?",
+          "type": "single",
+          "options": [
+            "More than once per year",
+            "Once per year",
+            "Less than once per year",
+            "Not in the past 12 months"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Frequency indicates whether the process is active and maintained. UI/UX: Single select keeps the question quick to answer. Data and evaluation: Supports comparability across schools and years. Senior front-end engineer: Straightforward radio input with low error risk. Senior back-end engineer: Easy to store as an enum for reporting. Product manager: Captures recency without requiring documentation.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q6",
+          "text": "Which resource categories were included in your mapping?",
+          "type": "multi",
+          "options": [
+            "School-based health services",
+            "Mental and behavioral health",
+            "Nutrition and food access",
+            "Physical activity",
+            "Housing insecurity",
+            "Transportation",
+            "Health insurance and benefits enrollment",
+            "Family support and parenting resources",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Validates breadth across health and social drivers. UI/UX: Multi-select list with an Other field keeps detail structured. Data and evaluation: Enables category-level gap analysis. Senior front-end engineer: Checkbox group is easy to implement and validate. Senior back-end engineer: Categories map to stable reference data. Product manager: Balances depth with a clear, bounded list.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q7",
+          "text": "How did you inform families, students, and staff about available resources?",
+          "type": "multi",
+          "options": [
+            "School website",
+            "Printed materials sent home",
+            "Email",
+            "Text or communication app",
+            "In-person events or meetings",
+            "Student services office",
+            "Staff training or briefing",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Confirms dissemination beyond a static list. UI/UX: Uses familiar channels so schools can answer quickly. Data and evaluation: Supports analysis of outreach practices. Senior front-end engineer: Standard multi-select with optional text. Senior back-end engineer: Captures outreach modes without free text sprawl. Product manager: Ensures the criterion is not just documented but communicated.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q8",
+          "text": "How are students and families matched to resources when needs are identified?",
+          "type": "multi",
+          "options": [
+            "Warm handoff or referral by school staff",
+            "Referral form or ticket system",
+            "Direct scheduling by school staff",
+            "Resource list provided for self-navigation",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Distinguishes active support from passive sharing. UI/UX: Options are concrete and easy to recognize. Data and evaluation: Enables assessment of referral intensity. Senior front-end engineer: Conditional text input only when needed. Senior back-end engineer: Methods map to discrete values for scoring. Product manager: Clarifies whether matching is actually operationalized.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q9",
+          "text": "Approximately how many students or families were matched to resources in the last 12 months?",
+          "type": "single",
+          "options": [
+            "0",
+            "1-9",
+            "10-49",
+            "50-99",
+            "100-249",
+            "250+"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Measures real-world usage of the system. UI/UX: Ranged options reduce precision pressure. Data and evaluation: Quantifies reach without requiring exact counts. Senior front-end engineer: Simple single-select input. Senior back-end engineer: Stored as a bucket for analysis. Product manager: Helps reviewers gauge scale quickly.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q10",
+          "text": "Which community partner types are included to address unmet needs?",
+          "type": "multi",
+          "options": [
+            "Public health department",
+            "Hospital or clinic",
+            "Behavioral health provider",
+            "Food bank or pantry",
+            "Community-based nonprofit",
+            "Faith-based organization",
+            "Local government social services",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Confirms external partnerships for gaps the school cannot fill. UI/UX: Clear list of recognizable partner types. Data and evaluation: Provides partner mix data for equity insights. Senior front-end engineer: Multi-select pattern is consistent with other checklist questions. Senior back-end engineer: Partner types map to controlled vocabulary. Product manager: Reinforces the unmet-needs component of the criterion.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q11",
+          "text": "How did you identify gaps or unmet needs in your mapping?",
+          "type": "multi",
+          "options": [
+            "Staff review of referral outcomes",
+            "Family or student surveys",
+            "Community partner feedback",
+            "School data (attendance, nurse visits, discipline, etc.)",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Confirms a feedback loop, not just a one-time list. UI/UX: Lets schools select multiple signals without narrative. Data and evaluation: Distinguishes data-driven from anecdotal approaches. Senior front-end engineer: Reuses multi-select component and validation. Senior back-end engineer: Captures audit-friendly evidence sources. Product manager: Helps reviewers see how mapping informs improvement.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q12",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Upload a current resource map or directory",
+            "Provide a link to the resource directory",
+            "Upload a communication sample (flyer, email, or website screenshot)"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Provides tangible proof without overburdening schools. UI/UX: Single required evidence keeps the step light. Data and evaluation: Optional artifacts support spot checks and QA. Senior front-end engineer: One-of-three input is straightforward to implement. Senior back-end engineer: Stores a single evidence artifact per submission. Product manager: Balances verification needs with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q4",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Any of Q1 through Q4 is \"No.\"",
+          "Q5 is \"Not in the past 12 months.\"",
+          "Q9 is \"0.\""
+        ],
+        "required": [
+          "Q6 includes at least 3 resource categories.",
+          "Q7 includes at least 2 communication channels.",
+          "Q8 includes at least 1 active matching method (Warm handoff, Referral form or ticket system, Direct scheduling).",
+          "Q10 includes at least 1 community partner type.",
+          "Q11 includes at least 1 gap-identification method.",
+          "Q12 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "shs_s5_questions.md"
+      }
+    }
+  ]
+}

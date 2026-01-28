@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype Admin</title>
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div>
+        <div class="kicker">Prototype Admin</div>
+        <h1>Questions Editor (JSON)</h1>
+        <div class="sub">Edits save to `content/criteria.json` via the local dev server.</div>
+      </div>
+      <div class="actions">
+        <button id="loadBuild">Load from build</button>
+        <button id="loadAdmin">Load from admin</button>
+        <button id="saveAdmin">Save</button>
+        <button id="downloadJson">Download</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <textarea id="editor" spellcheck="false"></textarea>
+      <div class="panel">
+        <h2>Help</h2>
+        <p>Use this editor to override criteria with matching <code>id</code> values.</p>
+        <p>Format:</p>
+        <pre>{
+  "criteria": [
+    {
+      "id": "LWP-S1",
+      "title": "LWP-S1: Wellness Policy Coordination Team",
+      "criterionText": "...",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Question text",
+          "type": "boolean | single | multi | evidence",
+          "options": ["Yes", "No"],
+          "showIf": [{ "id": "Q1", "equals": "Yes" }]
+        }
+      ],
+      "scoring": {
+        "hardFail": [],
+        "required": [],
+        "eligibility": ""
+      }
+    }
+  ]
+}</pre>
+        <p>Rules can also be set per question via <code>showIf</code> using <code>equals</code> or <code>includes</code>.</p>
+      </div>
+    </main>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

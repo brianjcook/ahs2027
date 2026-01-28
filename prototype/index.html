@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AHS 2027 Award Application Prototype</title>
+    <link rel="stylesheet" href="/prototype/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <div class="kicker">America's Healthiest Schools</div>
+        <h1>2027 Award Application Prototype</h1>
+        <div class="sub">Auto-synced from the question files.</div>
+      </div>
+      <div class="status">
+        <div id="dataStatus">Loading…</div>
+        <div class="small" id="dataTimestamp"></div>
+      </div>
+    </header>
+
+    <main class="app split">
+      <section class="content">
+        <aside class="sidebar">
+          <div class="sidebar-title">Criteria</div>
+          <div id="criteriaList" class="criteria-list"></div>
+        </aside>
+        <div class="form-area">
+          <div id="criterionHeader" class="criterion-header"></div>
+          <div id="questionsContainer" class="questions"></div>
+        </div>
+      </section>
+
+      <section class="explain">
+        <div class="explain-card">
+          <div id="explainSummary" class="explain-summary"></div>
+          <div id="explainVisibility" class="explain-block"></div>
+          <div id="explainEligibility" class="explain-block"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/prototype/app.js"></script>
+  </body>
+</html>
