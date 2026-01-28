@@ -14,7 +14,7 @@ function stripGenerated(data) {
 }
 
 function loadFromBuild() {
-  fetch(`/data/questions.json?t=${Date.now()}`)
+  fetch(`../data/questions.json?t=${Date.now()}`)
     .then((res) => res.json())
     .then((data) => {
       editor.value = formatJson(stripGenerated(data));

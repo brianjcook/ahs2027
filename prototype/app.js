@@ -16,7 +16,7 @@ const el = {
 };
 
 function fetchData() {
-  return fetch(`/data/questions.json?t=${Date.now()}`)
+  return fetch(`../data/questions.json?t=${Date.now()}`)
     .then((res) => res.json())
     .then((data) => {
       const prev = state.data?.generatedAt;
