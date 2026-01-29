@@ -20,15 +20,22 @@ function fetchData() {
     .then((res) => res.json())
     .then((data) => {
       const prev = state.data?.generatedAt;
+      const dataChanged = !prev || prev !== data.generatedAt;
+
       state.data = data;
       if (!state.selectedId && data.criteria.length) {
         state.selectedId = data.criteria[0].id;
       }
-      renderCriteriaList();
-      renderCriterion();
+
+      // Only re-render if data actually changed or this is the first load
+      if (dataChanged || !prev) {
+        renderCriteriaList();
+        renderCriterion();
+      }
+
       el.status.textContent = "Synced";
       el.timestamp.textContent = `Last updated: ${new Date(data.generatedAt).toLocaleString()}`;
-      if (prev && prev !== data.generatedAt) {
+      if (prev && dataChanged) {
         el.status.textContent = "Updated";
       }
     })
@@ -529,4 +536,4 @@ function showRationaleModal(question) {
 }
 
 fetchData();
-setInterval(fetchData, 5000);
+setInterval(fetchData, 30000); // Poll every 30 seconds instead of 5
