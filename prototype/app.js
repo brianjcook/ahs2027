@@ -65,7 +65,7 @@ function getCriterionStatus(crit) {
   const answers = ensureAnswers(crit.id);
   const answeredCount = Object.keys(answers).length;
   if (!answeredCount) {
-    return { icon: "○", className: "status-unanswered" };
+    return { icon: "−", className: "status-unanswered" };
   }
   const evaluation = evaluateCriterion(crit, answers);
   if (evaluation.eligible) {
@@ -97,7 +97,24 @@ function renderCriterion() {
     }
     const card = document.createElement("div");
     card.className = "question-card";
-    card.innerHTML = `<div class="question-title">${q.id}. ${q.text}</div>`;
+
+    const titleDiv = document.createElement("div");
+    titleDiv.className = "question-title";
+    titleDiv.innerHTML = `${q.id}. ${q.text}`;
+
+    if (q.rationales && q.rationales.trim() && q.rationales !== "None provided.") {
+      const infoIcon = document.createElement("button");
+      infoIcon.className = "info-icon";
+      infoIcon.innerHTML = "ⓘ";
+      infoIcon.title = "Show rationale";
+      infoIcon.addEventListener("click", (e) => {
+        e.preventDefault();
+        showRationaleModal(q);
+      });
+      titleDiv.appendChild(infoIcon);
+    }
+
+    card.appendChild(titleDiv);
     const optionsWrap = document.createElement("div");
     optionsWrap.className = "options";
 
@@ -302,7 +319,7 @@ function renderExplain(crit, answers, hiddenQuestions) {
 function getEligibilityStatusInfo(crit, answers, evaluation) {
   const answeredCount = Object.keys(answers).length;
   if (!answeredCount) {
-    return { label: "Unanswered", icon: "○", className: "status-unanswered" };
+    return { label: "Unanswered", icon: "−", className: "status-unanswered" };
   }
   if (evaluation.eligible) {
     return { label: "Eligible", icon: "✔", className: "status-eligible" };
@@ -444,6 +461,47 @@ function normalizeRuleLine(line) {
 
 function normalizeRuleValue(value) {
   return value.replace(/\.$/, "").trim();
+}
+
+function showRationaleModal(question) {
+  // Remove existing modal if any
+  const existing = document.getElementById("rationaleModal");
+  if (existing) existing.remove();
+
+  // Create modal
+  const modal = document.createElement("div");
+  modal.id = "rationaleModal";
+  modal.className = "modal-overlay";
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Rationale: ${question.id}</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-question">${question.text}</div>
+        <div class="modal-rationale">${question.rationales}</div>
+      </div>
+    </div>
+  `;
+
+  // Close handlers
+  const closeBtn = modal.querySelector(".modal-close");
+  closeBtn.addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.remove();
+  });
+
+  // Escape key handler
+  const escHandler = (e) => {
+    if (e.key === "Escape") {
+      modal.remove();
+      document.removeEventListener("keydown", escHandler);
+    }
+  };
+  document.addEventListener("keydown", escHandler);
+
+  document.body.appendChild(modal);
 }
 
 fetchData();
