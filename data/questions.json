@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T20:09:26.789Z",
+  "generatedAt": "2026-01-29T20:19:35.682Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -125,15 +125,38 @@
         },
         {
           "id": "Q6",
-          "text": "Evidence (choose one)",
-          "type": "evidence",
+          "text": "Upload at least one (1) file showing how the school wellness team worked together to implement or monitor the district wellness policy.",
+          "type": "single",
           "options": [
-            "Team roster",
-            "Meeting agendas or minutes",
-            "Wellness policy implementation plan that references the team"
+            "File upload"
           ],
           "allowOther": false,
-          "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement is efficient. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is easy to implement. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "rationales": "Local Wellness Policy expert: Allows schools to provide context-specific evidence of team collaboration. UI/UX: File upload reduces friction compared to multiple-choice constraints. Data and evaluation: Provides richer documentation for reviewers. Senior front-end engineer: Standard file upload component. Senior back-end engineer: Stores file metadata and validates presence. Product manager: Balances verification needs with applicant flexibility.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q3",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q7",
+          "text": "Describe how the uploaded file shows your team implemented or monitored the district wellness policy.",
+          "type": "single",
+          "options": [
+            "Text area"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Ensures applicants connect evidence to implementation. UI/UX: Open text allows for narrative context. Data and evaluation: Provides qualitative data for review. Senior front-end engineer: Standard textarea component. Senior back-end engineer: Stores text response. Product manager: Adds minimal burden while improving review quality.",
           "citations": "None provided.",
           "showIf": [
             {
@@ -160,7 +183,8 @@
         ],
         "required": [
           "Q5 includes at least 2 roles.",
-          "Q6 has one evidence item provided."
+          "Q6 has one file uploaded.",
+          "Q7 has text provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },

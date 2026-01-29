@@ -23,7 +23,8 @@ Our school has a team* that does all the following:
 | **Q3. Are wellness policy team members representative of your school community?** | Yes / No | Local Wellness Policy expert: Ensures stakeholder representation is intentional. UI/UX: Keeps cognitive load low with a single choice. Data and evaluation: Captures equity-related governance. Senior front-end engineer: Supports conditional detail in later questions. Senior back-end engineer: Boolean flag for eligibility. Product manager: Aligns with program expectations for representation. | None provided. |
 | **Q4. How many times did the wellness policy team meet in the past 12 months?** | 4 or more / 2-3 / 1 / 0 | Local Wellness Policy expert: Confirms ongoing coordination. UI/UX: Single select reduces ambiguity. Data and evaluation: Normalizes frequency for comparison. Senior front-end engineer: Simple radio input. Senior back-end engineer: Enum supports reporting. Product manager: Matches the criterion threshold. | None provided. |
 | **Q5. Which roles are represented on the wellness policy team?** | School administrators / Teachers / School health services staff / Food service staff / Students / Families or caregivers / Community partners / School counselors or mental health staff / Physical education teachers or coaches / Support staff or paraprofessionals / School board members / Before and after school program staff | Local Wellness Policy expert: Validates broad representation. UI/UX: Checklist keeps data structured. Data and evaluation: Enables role-mix analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Maps to controlled role values. Product manager: Makes representation criteria visible for reviewers. | None provided. |
-| **Q6. Evidence (choose one)** | Team roster / Meeting agendas or minutes / Wellness policy implementation plan that references the team | Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement is efficient. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is easy to implement. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort. | None provided. |
+| **Q6. Upload at least one (1) file showing how the school wellness team worked together to implement or monitor the district wellness policy.** | File upload | Local Wellness Policy expert: Allows schools to provide context-specific evidence of team collaboration. UI/UX: File upload reduces friction compared to multiple-choice constraints. Data and evaluation: Provides richer documentation for reviewers. Senior front-end engineer: Standard file upload component. Senior back-end engineer: Stores file metadata and validates presence. Product manager: Balances verification needs with applicant flexibility. | None provided. |
+| **Q7. Describe how the uploaded file shows your team implemented or monitored the district wellness policy.** | Text area | Local Wellness Policy expert: Ensures applicants connect evidence to implementation. UI/UX: Open text allows for narrative context. Data and evaluation: Provides qualitative data for review. Senior front-end engineer: Standard textarea component. Senior back-end engineer: Stores text response. Product manager: Adds minimal burden while improving review quality. | None provided. |
 
 ## Scoring Framework (Eligibility Logic)
 This framework is intended for rules-based eligibility decisions. If any hard-fail condition is met, the criterion is not awarded.
@@ -36,7 +37,8 @@ This framework is intended for rules-based eligibility decisions. If any hard-fa
 
 ### Required Combinations (Must All Be True)
 - Q5 includes at least 2 roles.
-- Q6 has one evidence item provided.
+- Q6 has one file uploaded.
+- Q7 has text provided.
 
 ### Eligibility Decision
 - Eligible if all required combinations are true and no hard-fail conditions are met.
