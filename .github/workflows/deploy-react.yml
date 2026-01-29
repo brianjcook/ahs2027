@@ -1,0 +1,62 @@
+name: Deploy React Prototype
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'prototype-v2/**'
+      - 'data/questions.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          cd prototype-v2
+          npm ci
+
+      - name: Build React app
+        run: |
+          cd prototype-v2
+          npm run build
+
+      - name: Deploy to prototype-react directory
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Remove old deployment
+          rm -rf prototype-react
+
+          # Create new deployment directory
+          mkdir -p prototype-react
+
+          # Copy built files
+          cp -r prototype-v2/dist/* prototype-react/
+
+          # Add and commit
+          git add prototype-react
+
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "Deploy React prototype [skip ci]"
+            git push
+          fi

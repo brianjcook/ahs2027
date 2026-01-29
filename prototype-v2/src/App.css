@@ -1,0 +1,460 @@
+/**
+ * Main Application Styles
+ */
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main app layout */
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background: #f5f5f5;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  margin: 0;
+  padding: 20px;
+  font-size: 1.2rem;
+  background: #2c3e50;
+  color: white;
+}
+
+.criteria-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+}
+
+.criterion-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.criterion-nav-item:hover {
+  background: #e8f4f8;
+  border-color: #3498db;
+}
+
+.criterion-nav-item.active {
+  background: #3498db;
+  color: white;
+  border-color: #2980b9;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.nav-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-id {
+  font-weight: bold;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.nav-title {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px 40px;
+  background: white;
+}
+
+/* Criterion */
+.criterion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.criterion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+}
+
+.criterion-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.criterion-id {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.criterion-description {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.criterion-description p {
+  margin: 0.5em 0;
+}
+
+/* Eligibility status badge */
+.eligibility-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.eligibility-status.status-eligible {
+  background: #d4edda;
+  color: #155724;
+}
+
+.eligibility-status.status-not-eligible {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.eligibility-status.status-in-progress {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.eligibility-status.status-unknown {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+/* Questions */
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.question {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.question-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.rationale-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.rationale-btn:hover {
+  background: #2980b9;
+}
+
+/* Question options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-label:hover {
+  background: #e8f4f8;
+  border-color: #3498db;
+}
+
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.option-label span {
+  flex: 1;
+}
+
+/* Text inputs */
+.text-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+textarea.text-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Other option */
+.other-option {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.other-text {
+  margin-left: 28px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+/* Evidence question */
+.evidence-option {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evidence-input {
+  margin-left: 28px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.evidence-input input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.evidence-preview {
+  margin-top: 10px;
+  padding: 10px;
+  background: #e8f4f8;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Eligibility panel */
+.eligibility-panel {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.eligibility-panel h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.eligibility-panel h4 {
+  margin: 15px 0 10px;
+  font-size: 1rem;
+}
+
+.eligibility-panel ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.eligibility-panel li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.hard-fails {
+  background: #f8d7da;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.missing-required {
+  background: #fff3cd;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.eligible-message {
+  background: #d4edda;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.eligibility-decision {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Loading and error states */
+.app-loading,
+.app-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.app-error h2 {
+  color: #e74c3c;
+}
+
+.app-error button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.app-error button:hover {
+  background: #2980b9;
+}
+
+/* No criterion selected */
+.no-criterion {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .criterion-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
