@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T21:29:02.060Z",
+  "generatedAt": "2026-01-29T21:33:59.600Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -700,41 +700,22 @@
       "questions": [
         {
           "id": "Q1",
-          "text": "Does your school ensure foods and beverages provided (not sold) to students during the school day meet or exceed Smart Snacks standards?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "allowOther": false,
-          "rationales": "Local Wellness Policy expert: Confirms the core compliance requirement. UI/UX: Simple gate reduces unnecessary follow-ups. Data and evaluation: Establishes a clear eligibility anchor. Senior front-end engineer: Supports branching without complexity. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Keeps the flow efficient for non-qualifying schools.",
-          "citations": "None provided.",
-          "showIf": []
-        },
-        {
-          "id": "Q2",
-          "text": "In which situations does your school apply the Smart Snacks standards to foods and beverages that are provided (not sold)?",
+          "text": "In which situations does your school provide (not sell) foods and/or beverages?",
           "type": "multi",
           "options": [
             "Classroom rewards or incentives",
             "Classroom parties",
             "School-wide celebrations",
             "Classroom snacks",
-            "After-school or enrichment programs during the school day",
-            "Other (specify)"
+            "After-school or enrichment programs during the school day"
           ],
-          "allowOther": true,
+          "allowOther": false,
           "rationales": "Local Wellness Policy expert: Confirms coverage across common non-sale contexts. UI/UX: Checklist keeps answers structured. Data and evaluation: Supports context-specific analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes the scope visible for reviewers.",
           "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            }
-          ]
+          "showIf": []
         },
         {
-          "id": "Q3",
+          "id": "Q2",
           "text": "How does your school ensure compliance with Smart Snacks standards for provided foods and beverages?",
           "type": "multi",
           "options": [
@@ -747,15 +728,10 @@
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies an operational compliance mechanism. UI/UX: Multi-select keeps responses concise. Data and evaluation: Captures implementation methods. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Ensures the process is more than a statement.",
           "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            }
-          ]
+          "showIf": []
         },
         {
-          "id": "Q4",
+          "id": "Q3",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -766,22 +742,17 @@
           "allowOther": false,
           "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
           "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            }
-          ]
+          "showIf": []
         }
       ],
       "scoring": {
         "hardFail": [
-          "Q1 is \"No.\""
+          "None."
         ],
         "required": [
-          "Q2 includes at least 3 situations.",
-          "Q3 includes at least 1 compliance method.",
-          "Q4 has one evidence item provided."
+          "Q1 includes at least 3 situations.",
+          "Q2 includes at least 1 compliance method.",
+          "Q3 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
