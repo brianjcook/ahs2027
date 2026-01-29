@@ -94,7 +94,7 @@ h1 {
 }
 
 .sidebar {
-  padding: 20px 16px;
+  padding: 16px 12px;
   border-right: 1px solid var(--line);
   background: var(--paper);
   overflow: auto;
@@ -108,29 +108,30 @@ h1 {
 }
 
 .sidebar-title {
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--muted);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .criteria-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .criteria-item {
-  padding: 10px 12px;
+  padding: 8px 10px;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   background: #ffffff;
   transition: all 0.15s ease;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 14px;
 }
 
 .criteria-item.active {
@@ -283,6 +284,16 @@ h1 {
   color: var(--muted);
   line-height: 1.5;
   white-space: pre-line;
+}
+
+.criterion-text ul {
+  margin: 8px 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.criterion-text li {
+  margin-bottom: 4px;
 }
 
 .question-card {

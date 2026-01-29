@@ -84,7 +84,7 @@ function renderCriterion() {
 
   el.header.innerHTML = `
     <h2>${crit.title}</h2>
-    <div class="criterion-text">${crit.criterionText || ""}</div>
+    <div class="criterion-text">${convertDashListsToUL(crit.criterionText || "")}</div>
   `;
 
   el.questions.innerHTML = "";
@@ -185,6 +185,54 @@ function renderMultiOptions(container, criterionId, q, answers) {
     });
     container.appendChild(otherInput);
   }
+}
+
+function convertDashListsToUL(text) {
+  if (!text) return text;
+
+  // Split by lines and identify dash list blocks
+  const lines = text.split('\n');
+  let result = [];
+  let inList = false;
+  let listItems = [];
+
+  lines.forEach((line, idx) => {
+    const isDashLine = /^\s*-\s+/.test(line);
+
+    if (isDashLine) {
+      if (!inList) {
+        inList = true;
+        listItems = [];
+      }
+      // Extract the content after the dash
+      listItems.push(line.replace(/^\s*-\s+/, '').trim());
+    } else {
+      if (inList) {
+        // End of list, output the <ul>
+        result.push('<ul>');
+        listItems.forEach(item => {
+          result.push(`<li>${item}</li>`);
+        });
+        result.push('</ul>');
+        inList = false;
+        listItems = [];
+      }
+      if (line.trim()) {
+        result.push(line);
+      }
+    }
+  });
+
+  // Handle list at end of text
+  if (inList) {
+    result.push('<ul>');
+    listItems.forEach(item => {
+      result.push(`<li>${item}</li>`);
+    });
+    result.push('</ul>');
+  }
+
+  return result.join('\n');
 }
 
 function shouldShowQuestion(q, answers) {
