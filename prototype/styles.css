@@ -312,7 +312,7 @@ h1 {
   margin-bottom: 10px;
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 4px;
 }
 
