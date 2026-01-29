@@ -35,9 +35,7 @@ This framework is intended for rules-based eligibility decisions. If any hard-fa
 - Q4 is not "4 or more."
 
 ### Required Combinations (Must All Be True)
-- Q5 includes at least 4 roles.
-- Q5 includes "School administrators."
-- Q5 includes "Families or caregivers."
+- Q5 includes at least 2 roles.
 - Q6 has one evidence item provided.
 
 ### Eligibility Decision
