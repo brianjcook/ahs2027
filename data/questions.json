@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T21:16:20.047Z",
+  "generatedAt": "2026-01-29T19:51:38.248Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -156,6 +156,7 @@
         ],
         "required": [
           "Q5 includes at least 4 roles.",
+          "Q5 includes \"School administrators.\"",
           "Q5 includes \"Families or caregivers.\"",
           "Q6 has one evidence item provided."
         ],
