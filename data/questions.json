@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T21:33:59.600Z",
+  "generatedAt": "2026-01-29T21:39:39.512Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -707,7 +707,8 @@
             "Classroom parties",
             "School-wide celebrations",
             "Classroom snacks",
-            "After-school or enrichment programs during the school day"
+            "After-school or enrichment programs during the school day",
+            "We don't provide foods or beverages at our school"
           ],
           "allowOther": false,
           "rationales": "Local Wellness Policy expert: Confirms coverage across common non-sale contexts. UI/UX: Checklist keeps answers structured. Data and evaluation: Supports context-specific analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes the scope visible for reviewers.",
@@ -715,8 +716,20 @@
           "showIf": []
         },
         {
+          "id": "Q7c9x",
+          "text": "**Q1a. (Conditional) If \"We don't provide foods or beverages at our school\" is selected:** Please explain your school's approach.",
+          "type": "single",
+          "options": [
+            "Text area"
+          ],
+          "allowOther": false,
+          "rationales": "Local Wellness Policy expert: Captures context for unusual situations. UI/UX: Only shown when needed. Data and evaluation: Provides qualitative context. Senior front-end engineer: Conditional text input. Senior back-end engineer: Optional field based on Q1 response. Product manager: Allows for edge cases without blocking.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
           "id": "Q2",
-          "text": "How does your school ensure compliance with Smart Snacks standards for provided foods and beverages?",
+          "text": "(Per-situation) For each situation selected in Q1 (except \"We don't provide\"): How does your school ensure compliance with Smart Snacks standards for [situation]?",
           "type": "multi",
           "options": [
             "Written policy or guidance",
@@ -726,7 +739,7 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "rationales": "Local Wellness Policy expert: Verifies an operational compliance mechanism. UI/UX: Multi-select keeps responses concise. Data and evaluation: Captures implementation methods. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Ensures the process is more than a statement.",
+          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Repeated question set based on Q1 selections. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
           "citations": "None provided.",
           "showIf": []
         },
@@ -750,8 +763,8 @@
           "None."
         ],
         "required": [
-          "Q1 includes at least 3 situations.",
-          "Q2 includes at least 1 compliance method.",
+          "Q1 includes at least 3 situations (excluding \"We don't provide\"), OR Q1 selects only \"We don't provide\" and Q1a is completed.",
+          "For each situation selected in Q1 (except \"We don't provide\"), Q2 includes at least 1 compliance method for that situation.",
           "Q3 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
