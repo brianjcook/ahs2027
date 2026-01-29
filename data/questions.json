@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T20:47:42.922Z",
+  "generatedAt": "2026-01-29T21:00:25.996Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -624,9 +624,9 @@
             "School store",
             "Snack or food carts",
             "Food-based fundraising",
-            "Other (specify)"
+            "No sales venues are covered"
           ],
-          "allowOther": true,
+          "allowOther": false,
           "rationales": "Local Wellness Policy expert: Confirms coverage across all required venues. UI/UX: Checklist keeps data structured. Data and evaluation: Enables venue-level analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes scope visible to reviewers.",
           "citations": "None provided.",
           "showIf": [
@@ -679,7 +679,7 @@
           "Q3 is \"No.\""
         ],
         "required": [
-          "Q4 includes at least 3 venues.",
+          "Q4 includes at least 1 venue.",
           "Q5 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
