@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T19:56:11.442Z",
+  "generatedAt": "2026-01-29T20:03:30.266Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -99,6 +99,14 @@
             "Students",
             "Families or caregivers",
             "Community partners",
+            "School counselors or mental health staff",
+            "Physical education teachers or coaches",
+            "Support staff or paraprofessionals",
+            "School board members",
+            "Before",
+            "after school program staff",
+            "Parent-Teacher Association (PTA",
+            "PTO) representatives",
             "Other (specify)"
           ],
           "allowOther": true,
