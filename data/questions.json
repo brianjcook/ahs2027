@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T21:00:34.824Z",
+  "generatedAt": "2026-01-29T21:29:02.060Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -239,7 +239,10 @@
           "type": "multi",
           "options": [
             "Thriving Schools Integrated Assessment (Action Center)",
-            "District or state wellness policy assessment tool",
+            "WellSAT (Wellness School Assessment Tool)",
+            "School Health Index (CDC)",
+            "District wellness policy assessment tool",
+            "State wellness policy assessment tool",
             "Other evidence-based tool (specify)"
           ],
           "allowOther": false,
