@@ -293,7 +293,7 @@ h1 {
 }
 
 .criterion-text li {
-  margin-bottom: 2px;
+  margin-bottom: 0;
 }
 
 .question-card {
@@ -527,7 +527,7 @@ h1 {
 }
 
 .modal-rationale li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   padding-left: 0;
 }
 

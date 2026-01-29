@@ -466,42 +466,23 @@ function normalizeRuleValue(value) {
 function parseRationaleToList(rationaleText) {
   if (!rationaleText || rationaleText.trim() === "") return "";
 
-  // Split by patterns like "Expert name: "
-  // Common patterns: "Local Wellness Policy expert:", "UI/UX:", "Data and evaluation:", etc.
-  const expertPattern = /([A-Z][^:]+?):\s*/g;
-  const parts = [];
-  let lastIndex = 0;
-  let match;
+  // Match pattern: "Expert name: rationale text until next expert or end"
+  // Lookahead finds next expert (capital letter + text + colon) or end of string
+  const pattern = /([A-Za-z][^:]*?):\s*([^]*?)(?=\s+[A-Z][^:]+:|$)/g;
+  const matches = [...rationaleText.matchAll(pattern)];
 
-  while ((match = expertPattern.exec(rationaleText)) !== null) {
-    if (lastIndex > 0) {
-      // Get the text between the previous match and this one
-      const text = rationaleText.substring(lastIndex, match.index).trim();
-      if (text) {
-        parts.push(text);
-      }
-    }
-    parts.push(match[1]); // The expert name
-    lastIndex = match.index + match[0].length;
+  if (matches.length === 0) {
+    // If no matches, return the original text
+    return rationaleText;
   }
 
-  // Add the last segment
-  if (lastIndex < rationaleText.length) {
-    const text = rationaleText.substring(lastIndex).trim();
-    if (text) {
-      parts.push(text);
-    }
-  }
+  const items = matches.map(match => {
+    const expert = match[1].trim();
+    const rationale = match[2].trim();
+    return `<li><strong>${expert}:</strong> ${rationale}</li>`;
+  });
 
-  // Now combine expert names with their rationales
-  const items = [];
-  for (let i = 0; i < parts.length; i += 2) {
-    if (i + 1 < parts.length) {
-      items.push(`<li><strong>${parts[i]}:</strong> ${parts[i + 1]}</li>`);
-    }
-  }
-
-  return items.length > 0 ? `<ul>${items.join("")}</ul>` : rationaleText;
+  return `<ul>${items.join("")}</ul>`;
 }
 
 function showRationaleModal(question) {
