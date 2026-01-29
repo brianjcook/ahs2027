@@ -20,22 +20,18 @@ function fetchData() {
     .then((res) => res.json())
     .then((data) => {
       const prev = state.data?.generatedAt;
-      const dataChanged = !prev || prev !== data.generatedAt;
-
       state.data = data;
       if (!state.selectedId && data.criteria.length) {
         state.selectedId = data.criteria[0].id;
       }
 
-      // Only re-render if data actually changed or this is the first load
-      if (dataChanged || !prev) {
-        renderCriteriaList();
-        renderCriterion();
-      }
+      // Always update the UI to ensure navigation icons reflect current state
+      renderCriteriaList();
+      renderCriterion();
 
       el.status.textContent = "Synced";
       el.timestamp.textContent = `Last updated: ${new Date(data.generatedAt).toLocaleString()}`;
-      if (prev && dataChanged) {
+      if (prev && prev !== data.generatedAt) {
         el.status.textContent = "Updated";
       }
     })
