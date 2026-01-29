@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T20:03:30.266Z",
+  "generatedAt": "2026-01-29T20:09:26.789Z",
   "criteria": [
     {
       "id": "LWP-S1",
@@ -103,13 +103,9 @@
             "Physical education teachers or coaches",
             "Support staff or paraprofessionals",
             "School board members",
-            "Before",
-            "after school program staff",
-            "Parent-Teacher Association (PTA",
-            "PTO) representatives",
-            "Other (specify)"
+            "Before and after school program staff"
           ],
-          "allowOther": true,
+          "allowOther": false,
           "rationales": "Local Wellness Policy expert: Validates broad representation. UI/UX: Checklist keeps data structured. Data and evaluation: Enables role-mix analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Maps to controlled role values. Product manager: Makes representation criteria visible for reviewers.",
           "citations": "None provided.",
           "showIf": [
