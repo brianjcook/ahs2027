@@ -7,7 +7,7 @@
       "criterionText": "Our school has a team* that does all the following:\n- Coordinates implementation of the district wellness policy at our school\n- Ensures members are representative* of our school community*\n- Meets at least four times per year",
       "questions": [
         {
-          "id": "Q001",
+          "id": "Q1",
           "text": "In your wellness policy implementation process, does your school have a wellness policy team?",
           "type": "boolean",
           "options": [
@@ -20,7 +20,7 @@
           "showIf": []
         },
         {
-          "id": "Q002",
+          "id": "Q2",
           "text": "Does the wellness policy team coordinate implementation of the district wellness policy at your school?",
           "type": "boolean",
           "options": [
@@ -32,13 +32,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q001",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q003",
+          "id": "Q3",
           "text": "Are wellness policy team members representative of your school community?",
           "type": "boolean",
           "options": [
@@ -50,17 +50,17 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q001",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q002",
+              "id": "Q2",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q004",
+          "id": "Q4",
           "text": "How many times did the wellness policy team meet in the past 12 months?",
           "type": "single",
           "options": [
@@ -74,21 +74,21 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q001",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q002",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q003",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q005",
+          "id": "Q5",
           "text": "Which roles are represented on the wellness policy team?",
           "type": "multi",
           "options": [
@@ -110,21 +110,21 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q001",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q002",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q003",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q006",
+          "id": "Q6",
           "text": "Upload at least one (1) file showing how the school wellness team worked together to implement or monitor the district wellness policy.",
           "type": "single",
           "options": [
@@ -135,21 +135,21 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q001",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q002",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q003",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q007",
+          "id": "Q7",
           "text": "Describe how the uploaded file shows your team implemented or monitored the district wellness policy.",
           "type": "single",
           "options": [
@@ -160,15 +160,15 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q001",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q002",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q003",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
@@ -176,48 +176,15 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "questionId": "Q001",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q1 is \"No.\""
-          },
-          {
-            "questionId": "Q002",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q2 is \"No.\""
-          },
-          {
-            "questionId": "Q003",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q3 is \"No.\""
-          },
-          {
-            "questionId": "Q004",
-            "operator": "notEquals",
-            "value": "4 or more.",
-            "description": "Q4 is not \"4 or more.\""
-          }
+          "Q1 is \"No.\"",
+          "Q2 is \"No.\"",
+          "Q3 is \"No.\"",
+          "Q4 is not \"4 or more.\""
         ],
         "required": [
-          {
-            "questionId": "Q005",
-            "operator": "includesMinimum",
-            "minimumCount": 2,
-            "description": "Q5 includes at least 2 roles."
-          },
-          {
-            "operator": "text",
-            "rule": "Q6 has one file uploaded.",
-            "description": "Q6 has one file uploaded."
-          },
-          {
-            "questionId": "Q007",
-            "operator": "isAnswered",
-            "description": "Q7 has text provided."
-          }
+          "Q5 includes at least 2 roles.",
+          "Q6 has one file uploaded.",
+          "Q7 has text provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -225,8 +192,7 @@
       "source": {
         "type": "md",
         "filename": "lwp_s1_questions.md"
-      },
-      "topicId": "T001"
+      }
     },
     {
       "id": "LWP-S2",
@@ -234,7 +200,7 @@
       "criterionText": "Our school uses an evidence-based* assessment tool(s) to measure progress made in implementing the district wellness policy at least once every three years.",
       "questions": [
         {
-          "id": "Q008",
+          "id": "Q1",
           "text": "Does your school use an evidence-based assessment tool to measure progress on district wellness policy implementation?",
           "type": "boolean",
           "options": [
@@ -247,7 +213,7 @@
           "showIf": []
         },
         {
-          "id": "Q009",
+          "id": "Q2",
           "text": "When did your school most recently use an assessment tool?",
           "type": "single",
           "options": [
@@ -262,13 +228,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q008",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q010",
+          "id": "Q3",
           "text": "Which evidence-based assessment tool(s) has your school used in the past 3 years?",
           "type": "multi",
           "options": [
@@ -284,13 +250,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q008",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q011",
+          "id": "Q4",
           "text": "How were assessment results used?",
           "type": "multi",
           "options": [
@@ -305,13 +271,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q008",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q012",
+          "id": "Q5",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -324,7 +290,7 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q008",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
@@ -332,30 +298,12 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "questionId": "Q008",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q1 is \"No.\""
-          },
-          {
-            "operator": "text",
-            "rule": "Q2 is \"More than 3 years ago\" or \"We have never used an assessment tool.\"",
-            "description": "Q2 is \"More than 3 years ago\" or \"We have never used an assessment tool.\""
-          }
+          "Q1 is \"No.\"",
+          "Q2 is \"More than 3 years ago\" or \"We have never used an assessment tool.\""
         ],
         "required": [
-          {
-            "questionId": "Q010",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q3 includes at least 1 tool."
-          },
-          {
-            "questionId": "Q012",
-            "operator": "isAnswered",
-            "description": "Q5 has one evidence item provided."
-          }
+          "Q3 includes at least 1 tool.",
+          "Q5 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -363,8 +311,7 @@
       "source": {
         "type": "md",
         "filename": "lwp_s2_questions.md"
-      },
-      "topicId": "T001"
+      }
     },
     {
       "id": "LWP-S3",
@@ -372,7 +319,7 @@
       "criterionText": "Our school uses a continuous improvement process* that includes all the following:\n- Engaging a diverse set of key stakeholders in developing a shared vision of success\n- Assessing strengths and opportunities for incremental improvement using disaggregated data*\n- Setting measurable goals based on priorities\n- Creating a detailed action plan\n- Connecting stakeholders with necessary resources and information, including data to measure progress\n- Evaluating and reflecting on progress, successes, and challenges",
       "questions": [
         {
-          "id": "Q013",
+          "id": "Q1",
           "text": "Does your school use a continuous improvement process to coordinate implementation of the district wellness policy?",
           "type": "boolean",
           "options": [
@@ -385,7 +332,7 @@
           "showIf": []
         },
         {
-          "id": "Q014",
+          "id": "Q2",
           "text": "Does the process engage a diverse set of key stakeholders to develop a shared vision of success?",
           "type": "boolean",
           "options": [
@@ -397,13 +344,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q015",
+          "id": "Q3",
           "text": "Does the process assess strengths and opportunities using disaggregated data?",
           "type": "boolean",
           "options": [
@@ -415,17 +362,17 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q014",
+              "id": "Q2",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q016",
+          "id": "Q4",
           "text": "Does the process set measurable goals based on priorities?",
           "type": "boolean",
           "options": [
@@ -437,21 +384,21 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q014",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q015",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q017",
+          "id": "Q5",
           "text": "Does the process create a detailed action plan?",
           "type": "boolean",
           "options": [
@@ -463,25 +410,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q014",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q015",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q016",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q018",
+          "id": "Q6",
           "text": "Does the process connect stakeholders with necessary resources and information, including data to measure progress?",
           "type": "boolean",
           "options": [
@@ -493,29 +440,29 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q014",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q015",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q016",
+              "id": "Q4",
               "equals": "Yes"
             },
             {
-              "id": "Q017",
+              "id": "Q5",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q019",
+          "id": "Q7",
           "text": "Does the process evaluate and reflect on progress, successes, and challenges?",
           "type": "boolean",
           "options": [
@@ -527,33 +474,33 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q014",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q015",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q016",
+              "id": "Q4",
               "equals": "Yes"
             },
             {
-              "id": "Q017",
+              "id": "Q5",
               "equals": "Yes"
             },
             {
-              "id": "Q018",
+              "id": "Q6",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q020",
+          "id": "Q8",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -566,31 +513,31 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q013",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q014",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q015",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q016",
+              "id": "Q4",
               "equals": "Yes"
             },
             {
-              "id": "Q017",
+              "id": "Q5",
               "equals": "Yes"
             },
             {
-              "id": "Q018",
+              "id": "Q6",
               "equals": "Yes"
             },
             {
-              "id": "Q019",
+              "id": "Q7",
               "equals": "Yes"
             }
           ]
@@ -598,27 +545,10 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "questionIds": [
-              "Q013",
-              "Q014",
-              "Q015",
-              "Q016",
-              "Q017",
-              "Q018",
-              "Q019"
-            ],
-            "operator": "anyEquals",
-            "value": "No.",
-            "description": "Any of Q1 through Q7 is \"No.\""
-          }
+          "Any of Q1 through Q7 is \"No.\""
         ],
         "required": [
-          {
-            "questionId": "Q020",
-            "operator": "isAnswered",
-            "description": "Q8 has one evidence item provided."
-          }
+          "Q8 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -626,8 +556,7 @@
       "source": {
         "type": "md",
         "filename": "lwp_s3_questions.md"
-      },
-      "topicId": "T001"
+      }
     },
     {
       "id": "LWP-S4",
@@ -635,7 +564,7 @@
       "criterionText": "Our school ensures all the following:\n- All foods and beverages sold to students during the school day meet or exceed the USDA's federal regulations for school meal programs*\n- All foods and beverages sold to students during the school day meet or exceed the Smart Snacks in School nutrition standards*, including all school meals, a la carte vending, school stores, snack or food carts, and any food-based fundraising*\n- We follow fundraising exemptions and guidance set by our state agency, which must also adhere to the Smart Snacks in School nutrition standards*",
       "questions": [
         {
-          "id": "Q021",
+          "id": "Q1",
           "text": "Does your school ensure all foods and beverages sold to students during the school day meet or exceed USDA school meal program regulations?",
           "type": "boolean",
           "options": [
@@ -648,7 +577,7 @@
           "showIf": []
         },
         {
-          "id": "Q022",
+          "id": "Q2",
           "text": "Does your school ensure all foods and beverages sold to students during the school day meet or exceed Smart Snacks in School standards across all sales venues?",
           "type": "boolean",
           "options": [
@@ -660,13 +589,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q021",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q023",
+          "id": "Q3",
           "text": "Does your school follow state fundraising exemptions and guidance that adhere to Smart Snacks standards?",
           "type": "boolean",
           "options": [
@@ -678,17 +607,17 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q021",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q022",
+              "id": "Q2",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q024",
+          "id": "Q4",
           "text": "Which sales venues are covered by your Smart Snacks compliance process?",
           "type": "multi",
           "options": [
@@ -705,21 +634,21 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q021",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q022",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q023",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q025",
+          "id": "Q5",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -732,15 +661,15 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q021",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q022",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q023",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
@@ -748,37 +677,13 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "questionId": "Q021",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q1 is \"No.\""
-          },
-          {
-            "questionId": "Q022",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q2 is \"No.\""
-          },
-          {
-            "questionId": "Q023",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q3 is \"No.\""
-          }
+          "Q1 is \"No.\"",
+          "Q2 is \"No.\"",
+          "Q3 is \"No.\""
         ],
         "required": [
-          {
-            "questionId": "Q024",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q4 includes at least 1 venue."
-          },
-          {
-            "questionId": "Q025",
-            "operator": "isAnswered",
-            "description": "Q5 has one evidence item provided."
-          }
+          "Q4 includes at least 1 venue.",
+          "Q5 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -786,8 +691,7 @@
       "source": {
         "type": "md",
         "filename": "lwp_s4_questions.md"
-      },
-      "topicId": "T001"
+      }
     },
     {
       "id": "LWP-S5",
@@ -795,7 +699,7 @@
       "criterionText": "Our school ensures all foods and beverages provided, but not sold, to students during the school day meet or exceed the Smart Snacks in School nutrition standards*.\nNote: This includes all foods and beverages that are not part of a federally reimbursed child nutrition program, such as foods or beverages provided to students for rewards, incentives, classroom parties (e.g., birthday parties, holiday parties), or school-wide celebrations.",
       "questions": [
         {
-          "id": "Q026",
+          "id": "Q1",
           "text": "In which situations does your school provide (not sell) foods and/or beverages?",
           "type": "multi",
           "options": [
@@ -812,7 +716,7 @@
           "showIf": []
         },
         {
-          "id": "Q027",
+          "id": "Q7c9x",
           "text": "**Q1a. (Conditional) If \"We don't provide foods or beverages at our school\" is selected:** Please explain your school's approach.",
           "type": "single",
           "options": [
@@ -824,7 +728,7 @@
           "showIf": []
         },
         {
-          "id": "Q028",
+          "id": "Q2",
           "text": "(Per-situation) For each situation selected in Q1 (except \"We don't provide\"): How does your school ensure compliance with Smart Snacks standards for [situation]?",
           "type": "multi",
           "options": [
@@ -840,7 +744,7 @@
           "showIf": []
         },
         {
-          "id": "Q029",
+          "id": "Q3",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -856,29 +760,12 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "operator": "text",
-            "rule": "None.",
-            "description": "None."
-          }
+          "None."
         ],
         "required": [
-          {
-            "questionId": "Q026",
-            "operator": "includesMinimum",
-            "minimumCount": 3,
-            "description": "Q1 includes at least 3 situations (excluding \"We don't provide\"), OR Q1 selects only \"We don't provide\" and Q1a is completed."
-          },
-          {
-            "operator": "text",
-            "rule": "For each situation selected in Q1 (except \"We don't provide\"), Q2 includes at least 1 compliance method for that situation.",
-            "description": "For each situation selected in Q1 (except \"We don't provide\"), Q2 includes at least 1 compliance method for that situation."
-          },
-          {
-            "questionId": "Q029",
-            "operator": "isAnswered",
-            "description": "Q3 has one evidence item provided."
-          }
+          "Q1 includes at least 3 situations (excluding \"We don't provide\"), OR Q1 selects only \"We don't provide\" and Q1a is completed.",
+          "For each situation selected in Q1 (except \"We don't provide\"), Q2 includes at least 1 compliance method for that situation.",
+          "Q3 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -886,8 +773,7 @@
       "source": {
         "type": "md",
         "filename": "lwp_s5_questions.md"
-      },
-      "topicId": "T001"
+      }
     },
     {
       "id": "LWP-S6",
@@ -895,7 +781,7 @@
       "criterionText": "Our school limits all marketing and advertising of foods and beverages on the school campus* during the school day (e.g., on book covers, coupons for foods or beverages, advertising on vending machines, and digital media) to only food and beverages that meet or exceed the Smart Snacks in School nutrition standards*.",
       "questions": [
         {
-          "id": "Q030",
+          "id": "Q1",
           "text": "Does your school limit all marketing and advertising of foods and beverages on campus during the school day to items that meet Smart Snacks standards?",
           "type": "boolean",
           "options": [
@@ -908,7 +794,7 @@
           "showIf": []
         },
         {
-          "id": "Q031",
+          "id": "Q2",
           "text": "Which marketing or advertising locations and media are covered by this restriction?",
           "type": "multi",
           "options": [
@@ -926,13 +812,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q030",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q032",
+          "id": "Q3",
           "text": "How does your school enforce or monitor this restriction?",
           "type": "multi",
           "options": [
@@ -947,13 +833,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q030",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q033",
+          "id": "Q4",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -966,7 +852,7 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q030",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
@@ -974,31 +860,12 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "questionId": "Q030",
-            "operator": "equals",
-            "value": "No.",
-            "description": "Q1 is \"No.\""
-          }
+          "Q1 is \"No.\""
         ],
         "required": [
-          {
-            "questionId": "Q031",
-            "operator": "includesMinimum",
-            "minimumCount": 3,
-            "description": "Q2 includes at least 3 locations or media."
-          },
-          {
-            "questionId": "Q032",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q3 includes at least 1 enforcement method."
-          },
-          {
-            "questionId": "Q033",
-            "operator": "isAnswered",
-            "description": "Q4 has one evidence item provided."
-          }
+          "Q2 includes at least 3 locations or media.",
+          "Q3 includes at least 1 enforcement method.",
+          "Q4 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -1006,8 +873,7 @@
       "source": {
         "type": "md",
         "filename": "lwp_s6_questions.md"
-      },
-      "topicId": "T001"
+      }
     },
     {
       "id": "SHS-S5",
@@ -1015,7 +881,7 @@
       "criterionText": "Our school’s resource mapping process includes all the following:\n- Identifying existing programs, services, and resources in the school and in the community\n- Informing the school community about the available resources\n- Matching students and families with available resources to address needs and support student achievement\n- Identifying community partners to support unmet needs",
       "questions": [
         {
-          "id": "Q034",
+          "id": "Q1",
           "text": "In your resource mapping process, does your school identify existing programs, services, and resources in the school and in the community?",
           "type": "boolean",
           "options": [
@@ -1028,7 +894,7 @@
           "showIf": []
         },
         {
-          "id": "Q035",
+          "id": "Q2",
           "text": "In your resource mapping process, does your school inform the school community about available resources?",
           "type": "boolean",
           "options": [
@@ -1040,13 +906,13 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q036",
+          "id": "Q3",
           "text": "In your resource mapping process, does your school match students and families to resources to address needs and support student achievement?",
           "type": "boolean",
           "options": [
@@ -1058,17 +924,17 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q037",
+          "id": "Q4",
           "text": "In your resource mapping process, does your school identify community partners to support unmet needs?",
           "type": "boolean",
           "options": [
@@ -1080,21 +946,21 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q038",
+          "id": "Q5",
           "text": "How often did your school complete or update its resource mapping in the past 12 months?",
           "type": "single",
           "options": [
@@ -1108,25 +974,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q039",
+          "id": "Q6",
           "text": "Which resource categories were included in your mapping?",
           "type": "multi",
           "options": [
@@ -1145,25 +1011,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q040",
+          "id": "Q7",
           "text": "How did you inform families, students, and staff about available resources?",
           "type": "multi",
           "options": [
@@ -1181,25 +1047,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q041",
+          "id": "Q8",
           "text": "How are students and families matched to resources when needs are identified?",
           "type": "multi",
           "options": [
@@ -1214,25 +1080,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q042",
+          "id": "Q9",
           "text": "Approximately how many students or families were matched to resources in the last 12 months?",
           "type": "single",
           "options": [
@@ -1248,25 +1114,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q043",
+          "id": "Q10",
           "text": "Which community partner types are included to address unmet needs?",
           "type": "multi",
           "options": [
@@ -1284,25 +1150,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q044",
+          "id": "Q11",
           "text": "How did you identify gaps or unmet needs in your mapping?",
           "type": "multi",
           "options": [
@@ -1317,25 +1183,25 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q045",
+          "id": "Q12",
           "text": "Evidence (choose one)",
           "type": "evidence",
           "options": [
@@ -1348,19 +1214,19 @@
           "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q034",
+              "id": "Q1",
               "equals": "Yes"
             },
             {
-              "id": "Q035",
+              "id": "Q2",
               "equals": "Yes"
             },
             {
-              "id": "Q036",
+              "id": "Q3",
               "equals": "Yes"
             },
             {
-              "id": "Q037",
+              "id": "Q4",
               "equals": "Yes"
             }
           ]
@@ -1368,66 +1234,17 @@
       ],
       "scoring": {
         "hardFail": [
-          {
-            "questionIds": [
-              "Q034",
-              "Q035",
-              "Q036",
-              "Q037"
-            ],
-            "operator": "anyEquals",
-            "value": "No.",
-            "description": "Any of Q1 through Q4 is \"No.\""
-          },
-          {
-            "questionId": "Q038",
-            "operator": "equals",
-            "value": "Not in the past 12 months.",
-            "description": "Q5 is \"Not in the past 12 months.\""
-          },
-          {
-            "questionId": "Q042",
-            "operator": "equals",
-            "value": "0.",
-            "description": "Q9 is \"0.\""
-          }
+          "Any of Q1 through Q4 is \"No.\"",
+          "Q5 is \"Not in the past 12 months.\"",
+          "Q9 is \"0.\""
         ],
         "required": [
-          {
-            "questionId": "Q039",
-            "operator": "includesMinimum",
-            "minimumCount": 3,
-            "description": "Q6 includes at least 3 resource categories."
-          },
-          {
-            "questionId": "Q040",
-            "operator": "includesMinimum",
-            "minimumCount": 2,
-            "description": "Q7 includes at least 2 communication channels."
-          },
-          {
-            "questionId": "Q041",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q8 includes at least 1 active matching method (Warm handoff, Referral form or ticket system, Direct scheduling)."
-          },
-          {
-            "questionId": "Q043",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q10 includes at least 1 community partner type."
-          },
-          {
-            "questionId": "Q044",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q11 includes at least 1 gap-identification method."
-          },
-          {
-            "questionId": "Q045",
-            "operator": "isAnswered",
-            "description": "Q12 has one evidence item provided."
-          }
+          "Q6 includes at least 3 resource categories.",
+          "Q7 includes at least 2 communication channels.",
+          "Q8 includes at least 1 active matching method (Warm handoff, Referral form or ticket system, Direct scheduling).",
+          "Q10 includes at least 1 community partner type.",
+          "Q11 includes at least 1 gap-identification method.",
+          "Q12 has one evidence item provided."
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
       },
@@ -1435,35 +1252,7 @@
       "source": {
         "type": "md",
         "filename": "shs_s5_questions.md"
-      },
-      "topicId": "T002"
-    }
-  ],
-  "topics": [
-    {
-      "id": "T001",
-      "title": "Local Wellness Policy",
-      "description": "Standards related to wellness policy development, implementation, and assessment"
-    },
-    {
-      "id": "T002",
-      "title": "School Health Services",
-      "description": "Standards related to health services and health promotion"
-    },
-    {
-      "id": "T003",
-      "title": "Physical Education",
-      "description": "Standards related to physical education curriculum and instruction"
-    },
-    {
-      "id": "T004",
-      "title": "Physical Activity",
-      "description": "Standards related to physical activity opportunities and promotion"
-    },
-    {
-      "id": "T005",
-      "title": "Health Education",
-      "description": "Standards related to health education curriculum and instruction"
+      }
     }
   ]
 }
