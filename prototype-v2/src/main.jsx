@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import AdminApp from './admin/AdminApp.jsx'
 
 function Root() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/admin" element={<AdminApp />} />
@@ -20,7 +20,7 @@ function Root() {
           </div>
         } />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
