@@ -4,7 +4,11 @@
  * Renders an evidence upload/link question
  */
 
+import { useState } from 'react';
+import Modal from '../Modal';
+
 export default function EvidenceQuestion({ question, answer, onChange }) {
+  const [showRationale, setShowRationale] = useState(false);
   const selectedType = answer?.type || null;
 
   const handleTypeChange = (type) => {
@@ -29,62 +33,75 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
   };
 
   return (
-    <div className="question evidence-question">
-      <label className="question-label">
-        {question.text}
-        {question.rationales && (
-          <button
-            type="button"
-            className="rationale-btn"
-            onClick={() => alert(question.rationales)}
-            title="View rationale"
-          >
-            ℹ️
-          </button>
-        )}
-      </label>
+    <>
+      <div className="question evidence-question">
+        <label className="question-label">
+          {question.text}
+          {question.rationales && (
+            <a
+              href="#"
+              className="rationale-link"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowRationale(true);
+              }}
+            >
+              See rationale &gt;
+            </a>
+          )}
+        </label>
 
-      <div className="options">
-        {question.options.map((option) => (
-          <div key={option} className="evidence-option">
-            <label className="option-label">
-              <input
-                type="radio"
-                name={question.id}
-                value={option}
-                checked={selectedType === option}
-                onChange={() => handleTypeChange(option)}
-              />
-              <span>{option}</span>
-            </label>
+        <div className="options">
+          {question.options.map((option) => (
+            <div key={option} className="evidence-option">
+              <label className="option">
+                <input
+                  type="radio"
+                  name={question.id}
+                  value={option}
+                  checked={selectedType === option}
+                  onChange={() => handleTypeChange(option)}
+                />
+                <span>{option}</span>
+              </label>
 
-            {selectedType === option && (
-              <div className="evidence-input">
-                {option.toLowerCase().includes('upload') ? (
-                  <input
-                    type="file"
-                    onChange={handleFileChange}
-                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                  />
-                ) : (
-                  <input
-                    type="url"
-                    placeholder="Enter URL..."
-                    value={answer?.value || ''}
-                    onChange={handleLinkChange}
-                  />
-                )}
-              </div>
-            )}
+              {selectedType === option && (
+                <div className="evidence-input">
+                  {option.toLowerCase().includes('upload') ? (
+                    <input
+                      type="file"
+                      onChange={handleFileChange}
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                    />
+                  ) : (
+                    <input
+                      type="url"
+                      placeholder="Enter URL..."
+                      value={answer?.value || ''}
+                      onChange={handleLinkChange}
+                    />
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {answer?.value && (
+          <div className="evidence-preview">
+            <strong>Selected:</strong> {answer.value}
           </div>
-        ))}
+        )}
       </div>
 
-      {answer?.value && (
-        <div className="evidence-preview">
-          <strong>Selected:</strong> {answer.value}
-        </div>
-      )}
-    </div>
+      <Modal
+        isOpen={showRationale}
+        onClose={() => setShowRationale(false)}
+        title="Question Rationale"
+      >
+        <div className="modal-question">{question.text}</div>
+        <div className="modal-rationale">{question.rationales}</div>
+      </Modal>
+    </>
   );
 }

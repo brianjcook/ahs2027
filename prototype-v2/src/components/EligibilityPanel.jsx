@@ -4,7 +4,9 @@
  * Right-side panel showing eligibility status and rules
  */
 
-export default function EligibilityPanel({ criterion, eligibilityResult }) {
+import { getHiddenReason } from '../utils/conditionalLogic';
+
+export default function EligibilityPanel({ criterion, answers, eligibilityResult, allQuestions, visibleQuestions }) {
   if (!criterion) {
     return (
       <div className="explain">
@@ -20,87 +22,98 @@ export default function EligibilityPanel({ criterion, eligibilityResult }) {
     );
   }
 
-  const statusClass = eligibilityResult.status.replace('_', '-');
+  const answeredCount = Object.keys(answers).filter(key =>
+    allQuestions.some(q => q.id === key)
+  ).length;
+
+  const statusInfo = getStatusInfo(eligibilityResult.status, answeredCount);
 
   return (
     <div className="explain">
       <div className="explain-card">
         <div className="explain-summary">
-          <h3>{criterion.title}</h3>
-          <div className="criterion-id">{criterion.id}</div>
+          Answered {answeredCount} of {allQuestions.length} questions.
+          Question flow is driven by explicit rules.
         </div>
 
-        {/* Current Status */}
+        {/* Question Visibility */}
         <div className="explain-block">
-          <h4>
-            📊 Current Status
-          </h4>
-          <div className={`status-badge ${statusClass}`}>
-            {getStatusIcon(eligibilityResult.status)} {getStatusText(eligibilityResult.status)}
-          </div>
+          <strong>Question Visibility</strong>
+          <ul className="visibility-list">
+            {allQuestions.map((question) => {
+              const visible = visibleQuestions.some(vq => vq.id === question.id);
+              const reason = getHiddenReason(question, answers);
+              const conditionText = reason ? `— ${reason}` : '— always shown';
+
+              return (
+                <li key={question.id} className={`visibility-item ${visible ? 'visible' : 'hidden'}`}>
+                  <span className="vis-mark">{visible ? '✔' : '✘'}</span>
+                  <span>{question.id} {conditionText}</span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
-        {/* Hard-Fail Conditions */}
-        {eligibilityResult.hardFails && eligibilityResult.hardFails.length > 0 && (
-          <div className="explain-block">
-            <h4>❌ Hard-Fail Conditions Triggered</h4>
-            <ul>
+        {/* Eligibility Status */}
+        <div className="explain-block">
+          <strong>Eligibility Status</strong>
+          <div className={`eligibility-status ${statusInfo.className}`}>
+            <span className="eligibility-icon">{statusInfo.icon}</span>
+            {statusInfo.label}
+          </div>
+
+          {/* Automatic Disqualifiers */}
+          <div className="explain-sub">Automatic disqualifiers:</div>
+          {eligibilityResult.hardFails && eligibilityResult.hardFails.length > 0 ? (
+            <ul className="requirements-list">
               {eligibilityResult.hardFails.map((condition, i) => (
-                <li key={i}>{condition}</li>
+                <li key={i} className="requirements-list-item hidden">
+                  <span className="vis-mark">✘</span>
+                  <span>{condition}</span>
+                </li>
               ))}
             </ul>
-          </div>
-        )}
+          ) : (
+            <div style={{ color: 'var(--muted)', fontSize: '13px', marginTop: '4px' }}>
+              No automatic disqualifiers triggered.
+            </div>
+          )}
 
-        {/* Missing Requirements */}
-        {eligibilityResult.missingRequired && eligibilityResult.missingRequired.length > 0 && (
-          <div className="explain-block">
-            <h4>⚠️ Missing Requirements</h4>
-            <ul>
-              {eligibilityResult.missingRequired.map((condition, i) => (
-                <li key={i}>{condition}</li>
-              ))}
+          {/* Required Items Checklist */}
+          <div className="explain-sub">Required items checklist:</div>
+          {criterion.eligibility && criterion.eligibility.required ? (
+            <ul className="requirements-list">
+              {criterion.eligibility.required.map((condition, i) => {
+                const isMissing = eligibilityResult.missingRequired?.includes(condition);
+                return (
+                  <li key={i} className={`requirements-list-item ${isMissing ? 'hidden' : 'visible'}`}>
+                    <span className="vis-mark">{isMissing ? '✘' : '✔'}</span>
+                    <span>{condition}</span>
+                  </li>
+                );
+              })}
             </ul>
-          </div>
-        )}
-
-        {/* Eligible Message */}
-        {eligibilityResult.status === 'eligible' && (
-          <div className="explain-block">
-            <h4>✅ All Requirements Met</h4>
-            <p style={{ color: 'var(--muted)', fontSize: '13px', margin: 0 }}>
-              This criterion meets all eligibility requirements.
-            </p>
-          </div>
-        )}
-
-        {/* Eligibility Decision Logic */}
-        {criterion.eligibility?.decision && (
-          <div className="eligibility-decision">
-            <strong>Decision Logic:</strong> {criterion.eligibility.decision}
-          </div>
-        )}
+          ) : (
+            <div style={{ color: 'var(--muted)', fontSize: '13px', marginTop: '4px' }}>
+              No required conditions defined.
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
-function getStatusText(status) {
-  const statusMap = {
-    eligible: 'Eligible',
-    not_eligible: 'Not Eligible',
-    in_progress: 'In Progress',
-    unknown: 'Unknown'
-  };
-  return statusMap[status] || 'Unknown';
-}
-
-function getStatusIcon(status) {
-  const iconMap = {
-    eligible: '✔',
-    not_eligible: '✘',
-    in_progress: '◐',
-    unknown: '−'
-  };
-  return iconMap[status] || '−';
+function getStatusInfo(status, answeredCount) {
+  if (answeredCount === 0) {
+    return { label: 'Unanswered', icon: '−', className: 'status-unanswered' };
+  }
+  if (status === 'eligible') {
+    return { label: 'Eligible', icon: '✔', className: 'status-eligible' };
+  }
+  if (status === 'not_eligible') {
+    return { label: 'Not eligible', icon: '✘', className: 'status-ineligible' };
+  }
+  return { label: 'In progress', icon: '◐', className: 'status-in-progress' };
 }

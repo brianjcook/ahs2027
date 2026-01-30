@@ -4,7 +4,11 @@
  * Renders a multi-select question with checkboxes
  */
 
+import { useState } from 'react';
+import Modal from '../Modal';
+
 export default function MultiQuestion({ question, answer, onChange }) {
+  const [showRationale, setShowRationale] = useState(false);
   const selectedValues = Array.isArray(answer) ? answer : [];
 
   const handleChange = (option, checked) => {
@@ -22,56 +26,69 @@ export default function MultiQuestion({ question, answer, onChange }) {
   };
 
   return (
-    <div className="question multi-question">
-      <label className="question-label">
-        {question.text}
-        {question.rationales && (
-          <button
-            type="button"
-            className="rationale-btn"
-            onClick={() => alert(question.rationales)}
-            title="View rationale"
-          >
-            ℹ️
-          </button>
-        )}
-      </label>
+    <>
+      <div className="question multi-question">
+        <label className="question-label">
+          {question.text}
+          {question.rationales && (
+            <a
+              href="#"
+              className="rationale-link"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowRationale(true);
+              }}
+            >
+              See rationale &gt;
+            </a>
+          )}
+        </label>
 
-      <div className="options">
-        {question.options.map((option) => (
-          <label key={option} className="option-label">
-            <input
-              type="checkbox"
-              value={option}
-              checked={selectedValues.includes(option)}
-              onChange={(e) => handleChange(option, e.target.checked)}
-            />
-            <span>{option}</span>
-          </label>
-        ))}
-
-        {question.allowOther && (
-          <div className="other-option">
-            <label className="option-label">
+        <div className="options">
+          {question.options.map((option) => (
+            <label key={option} className="option">
               <input
                 type="checkbox"
-                value="Other"
-                checked={selectedValues.includes('Other')}
-                onChange={(e) => handleChange('Other', e.target.checked)}
+                value={option}
+                checked={selectedValues.includes(option)}
+                onChange={(e) => handleChange(option, e.target.checked)}
               />
-              <span>Other (specify):</span>
+              <span>{option}</span>
             </label>
-            {selectedValues.includes('Other') && (
-              <input
-                type="text"
-                className="other-text"
-                placeholder="Please specify..."
-                onChange={(e) => handleOtherText(e.target.value)}
-              />
-            )}
-          </div>
-        )}
+          ))}
+
+          {question.allowOther && (
+            <div className="other-option">
+              <label className="option">
+                <input
+                  type="checkbox"
+                  value="Other"
+                  checked={selectedValues.includes('Other')}
+                  onChange={(e) => handleChange('Other', e.target.checked)}
+                />
+                <span>Other (specify):</span>
+              </label>
+              {selectedValues.includes('Other') && (
+                <input
+                  type="text"
+                  className="other-text"
+                  placeholder="Please specify..."
+                  onChange={(e) => handleOtherText(e.target.value)}
+                />
+              )}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+
+      <Modal
+        isOpen={showRationale}
+        onClose={() => setShowRationale(false)}
+        title="Question Rationale"
+      >
+        <div className="modal-question">{question.text}</div>
+        <div className="modal-rationale">{question.rationales}</div>
+      </Modal>
+    </>
   );
 }

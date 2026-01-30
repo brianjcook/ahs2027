@@ -9,7 +9,7 @@ import Sidebar from './components/Sidebar';
 import Criterion from './components/Criterion';
 import EligibilityPanel from './components/EligibilityPanel';
 import { evaluateEligibility } from './utils/eligibilityEngine';
-import { clearHiddenAnswers } from './utils/conditionalLogic';
+import { clearHiddenAnswers, getVisibleQuestions } from './utils/conditionalLogic';
 import './App.css';
 
 // Data source - can be configured for different environments
@@ -130,6 +130,11 @@ export default function App() {
     ? evaluateEligibility(currentCriterion.eligibility, answers, currentCriterion.questions)
     : null;
 
+  // Get visible questions for eligibility panel
+  const visibleQuestions = currentCriterion
+    ? getVisibleQuestions(currentCriterion.questions, answers)
+    : [];
+
   return (
     <>
       <header className="app-header">
@@ -174,7 +179,10 @@ export default function App() {
 
         <EligibilityPanel
           criterion={currentCriterion}
+          answers={answers}
           eligibilityResult={eligibilityResult}
+          allQuestions={currentCriterion?.questions || []}
+          visibleQuestions={visibleQuestions}
         />
       </main>
     </>
