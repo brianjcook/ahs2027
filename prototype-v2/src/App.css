@@ -25,25 +25,26 @@ body {
   color: var(--ink);
 }
 
-/* Custom Scrollbars */
+/* Custom Scrollbars - Wider and More Obvious */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--paper);
-  border-radius: 10px;
+  background: var(--line);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-soft);
-  border-radius: 10px;
-  border: 2px solid var(--paper);
+  background: var(--accent);
+  border-radius: 8px;
+  border: 3px solid var(--line);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: #a84a23;
+  border-color: var(--accent-soft);
 }
 
 #root {
@@ -51,6 +52,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  background: var(--bg);
 }
 
 /* App Header */

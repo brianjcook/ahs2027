@@ -152,16 +152,28 @@ function evaluateStructuredCondition(condition, answers) {
 
   switch (operator) {
     case 'equals':
+      // Only evaluate if question is answered
+      if (answers[questionId] === undefined || answers[questionId] === null || answers[questionId] === '') {
+        return false;
+      }
       return answers[questionId] === value;
 
     case 'notEquals':
+      // Only evaluate if question is answered
+      if (answers[questionId] === undefined || answers[questionId] === null || answers[questionId] === '') {
+        return false;
+      }
       return answers[questionId] !== value;
 
     case 'includes':
+      // Only evaluate if question is answered
+      if (!answers[questionId]) return false;
       return Array.isArray(answers[questionId]) && answers[questionId].includes(value);
 
     case 'includesMinimum':
-      return Array.isArray(answers[questionId]) && answers[questionId].length >= (minimumCount || 0);
+      // Only evaluate if question is answered
+      if (!answers[questionId] || !Array.isArray(answers[questionId])) return false;
+      return answers[questionId].length >= (minimumCount || 0);
 
     case 'anyEquals':
       if (!questionIds || !Array.isArray(questionIds)) return false;
