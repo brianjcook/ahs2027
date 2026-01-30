@@ -813,19 +813,22 @@
         },
         {
           "id": "Q027",
-          "text": "**Q1a. (Conditional) If \"We don't provide foods or beverages at our school\" is selected:** Please explain your school's approach.",
-          "type": "single",
-          "options": [
-            "Text area"
-          ],
+          "text": "Please explain your school's approach to not providing foods or beverages.",
+          "type": "text",
           "allowOther": false,
           "rationales": "Local Wellness Policy expert: Captures context for unusual situations. UI/UX: Only shown when needed. Data and evaluation: Provides qualitative context. Senior front-end engineer: Conditional text input. Senior back-end engineer: Optional field based on Q1 response. Product manager: Allows for edge cases without blocking.",
           "citations": "None provided.",
-          "showIf": []
+          "showIf": [
+            {
+              "id": "Q026",
+              "includes": "We don't provide foods or beverages at our school"
+            }
+          ],
+          "multiline": true
         },
         {
           "id": "Q028",
-          "text": "(Per-situation) For each situation selected in Q1 (except \"We don't provide\"): How does your school ensure compliance with Smart Snacks standards for [situation]?",
+          "text": "How does your school ensure compliance with Smart Snacks standards for this situation?",
           "type": "multi",
           "options": [
             "Written policy or guidance",
@@ -837,7 +840,14 @@
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Repeated question set based on Q1 selections. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
           "citations": "None provided.",
-          "showIf": []
+          "showIf": [
+            {
+              "id": "Q026",
+              "operator": "notIncludes",
+              "value": "We don't provide foods or beverages at our school"
+            }
+          ],
+          "repeatedFor": "Q026"
         },
         {
           "id": "Q029",
