@@ -4,12 +4,14 @@
  */
 
 import { useState, useEffect } from 'react';
-import { getQuestionsData, updateQuestionsData } from '../utils/githubAPI';
+import { getQuestionsData, updateQuestionsData, setAdminPassword, hasAdminPassword } from '../utils/vercelAPI';
 import CriteriaList from './CriteriaList';
 import CriterionEditor from './CriterionEditor';
+import AdminLogin from './AdminLogin';
 import './Admin.css';
 
 export default function AdminApp() {
+  const [isAuthenticated, setIsAuthenticated] = useState(hasAdminPassword());
   const [data, setData] = useState(null);
   const [sha, setSha] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,10 +20,19 @@ export default function AdminApp() {
   const [saving, setSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
 
+  // Handle login
+  const handleLogin = async (password) => {
+    setAdminPassword(password);
+    setIsAuthenticated(true);
+    setError(null);
+  };
+
   // Load data from GitHub
   useEffect(() => {
-    loadData();
-  }, []);
+    if (isAuthenticated) {
+      loadData();
+    }
+  }, [isAuthenticated]);
 
   const loadData = async () => {
     try {
@@ -111,6 +122,11 @@ export default function AdminApp() {
 
   const selectedCriterion = data?.criteria.find(c => c.id === selectedCriterionId);
 
+  // Show login screen if not authenticated
+  if (!isAuthenticated) {
+    return <AdminLogin onLogin={handleLogin} />;
+  }
+
   if (loading) {
     return (
       <div className="admin-app">
@@ -120,13 +136,20 @@ export default function AdminApp() {
   }
 
   if (error) {
+    const isAuthError = error.includes('password') || error.includes('401');
     return (
       <div className="admin-app">
         <div className="error">
           <h2>Error Loading Data</h2>
           <p>{error}</p>
-          <p>Make sure you've added your GitHub token to <code>src/config/github.js</code></p>
-          <button onClick={loadData}>Retry</button>
+          {isAuthError ? (
+            <button onClick={() => {
+              setIsAuthenticated(false);
+              setError(null);
+            }}>Re-enter Password</button>
+          ) : (
+            <button onClick={loadData}>Retry</button>
+          )}
         </div>
       </div>
     );
