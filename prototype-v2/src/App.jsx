@@ -186,6 +186,7 @@ export default function App() {
             currentCriterionId={currentCriterionId}
             onSelectCriterion={setCurrentCriterionId}
             statusMap={statusMap}
+            topics={data.topics || []}
           />
 
           <div className="form-area">

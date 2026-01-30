@@ -30,24 +30,26 @@ const TOPICS = {
   }
 };
 
-export default function Sidebar({ criteria, currentCriterionId, onSelectCriterion, statusMap }) {
-  // Group criteria by topic
+export default function Sidebar({ criteria, currentCriterionId, onSelectCriterion, statusMap, topics }) {
+  // Group criteria by topicId
   const groupedCriteria = {};
 
   criteria.forEach((criterion) => {
-    const prefix = criterion.id.split('-')[0];
-    if (!groupedCriteria[prefix]) {
-      groupedCriteria[prefix] = [];
+    const topicId = criterion.topicId || 'unassigned';
+    if (!groupedCriteria[topicId]) {
+      groupedCriteria[topicId] = [];
     }
-    groupedCriteria[prefix].push(criterion);
+    groupedCriteria[topicId].push(criterion);
   });
 
   // Initialize all topics as open by default
   const [openTopics, setOpenTopics] = useState(() => {
     const initial = {};
-    Object.keys(groupedCriteria).forEach(prefix => {
-      initial[prefix] = true;
-    });
+    if (topics) {
+      topics.forEach(topic => {
+        initial[topic.id] = true;
+      });
+    }
     return initial;
   });
 
@@ -83,19 +85,19 @@ export default function Sidebar({ criteria, currentCriterionId, onSelectCriterio
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-title">Criteria</div>
+      <div className="sidebar-title">Navigation</div>
       <div className="topics-list">
-        {Object.entries(groupedCriteria).map(([prefix, criteriaInTopic]) => {
-          const topic = TOPICS[prefix] || { title: prefix, prefix };
-          const topicStatus = getTopicStatus(criteriaInTopic);
-          const isOpen = openTopics[prefix];
+        {topics && topics.map((topic) => {
+          const criteriaInTopic = groupedCriteria[topic.id] || [];
+          const topicStatus = criteriaInTopic.length > 0 ? getTopicStatus(criteriaInTopic) : 'unknown';
+          const isOpen = openTopics[topic.id];
           const statusClass = getStatusClass(topicStatus);
 
           return (
-            <div key={prefix} className="topic-group">
+            <div key={topic.id} className="topic-group">
               <button
                 className="topic-header"
-                onClick={() => toggleTopic(prefix)}
+                onClick={() => toggleTopic(topic.id)}
               >
                 <span className="topic-toggle">{isOpen ? '▼' : '▶'}</span>
                 <span className={`nav-icon ${statusClass}`}>
@@ -106,24 +108,28 @@ export default function Sidebar({ criteria, currentCriterionId, onSelectCriterio
 
               {isOpen && (
                 <div className="topic-criteria">
-                  {criteriaInTopic.map((criterion) => {
-                    const status = statusMap[criterion.id] || 'unknown';
-                    const isActive = criterion.id === currentCriterionId;
-                    const criterionStatusClass = getStatusClass(status);
+                  {criteriaInTopic.length > 0 ? (
+                    criteriaInTopic.map((criterion) => {
+                      const status = statusMap[criterion.id] || 'unknown';
+                      const isActive = criterion.id === currentCriterionId;
+                      const criterionStatusClass = getStatusClass(status);
 
-                    return (
-                      <button
-                        key={criterion.id}
-                        className={`criterion-nav-item ${isActive ? 'active' : ''}`}
-                        onClick={() => onSelectCriterion(criterion.id)}
-                      >
-                        <span className={`nav-icon ${criterionStatusClass}`}>
-                          {getStatusIcon(status)}
-                        </span>
-                        <span className="nav-text">{criterion.id}</span>
-                      </button>
-                    );
-                  })}
+                      return (
+                        <button
+                          key={criterion.id}
+                          className={`criterion-nav-item ${isActive ? 'active' : ''}`}
+                          onClick={() => onSelectCriterion(criterion.id)}
+                        >
+                          <span className={`nav-icon ${criterionStatusClass}`}>
+                            {getStatusIcon(status)}
+                          </span>
+                          <span className="nav-text">{criterion.id}</span>
+                        </button>
+                      );
+                    })
+                  ) : (
+                    <div className="no-criteria">No criteria yet</div>
+                  )}
                 </div>
               )}
             </div>
