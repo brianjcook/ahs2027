@@ -17,6 +17,7 @@ export default function AdminApp() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCriterionId, setSelectedCriterionId] = useState(null);
+  const [activeTab, setActiveTab] = useState('criteria'); // 'criteria' or 'topics'
   const [saving, setSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
 
@@ -82,6 +83,43 @@ export default function AdminApp() {
       )
     };
     setData(newData);
+  };
+
+  // Topic management
+  const handleAddTopic = () => {
+    const newTopics = data.topics || [];
+    const newId = `T${String(newTopics.length + 1).padStart(3, '0')}`;
+    const newTopic = {
+      id: newId,
+      title: 'New Topic',
+      description: ''
+    };
+
+    setData({
+      ...data,
+      topics: [...newTopics, newTopic]
+    });
+  };
+
+  const handleUpdateTopic = (topicId, updates) => {
+    setData({
+      ...data,
+      topics: data.topics.map(t =>
+        t.id === topicId ? { ...t, ...updates } : t
+      )
+    });
+  };
+
+  const handleDeleteTopic = (topicId) => {
+    if (!confirm('Delete this topic? Criteria will remain but lose their topic assignment.')) return;
+
+    setData({
+      ...data,
+      topics: data.topics.filter(t => t.id !== topicId),
+      criteria: data.criteria.map(c =>
+        c.topicId === topicId ? { ...c, topicId: null } : c
+      )
+    });
   };
 
   // Add a new criterion
@@ -188,16 +226,60 @@ export default function AdminApp() {
 
       <div className="admin-layout">
         <aside className="admin-sidebar">
-          <div className="sidebar-header">
-            <h2>Criteria</h2>
-            <button onClick={handleAddCriterion} className="btn-add">+ Add New</button>
+          <div className="sidebar-tabs">
+            <button
+              className={activeTab === 'criteria' ? 'active' : ''}
+              onClick={() => setActiveTab('criteria')}
+            >
+              Criteria ({data.criteria.length})
+            </button>
+            <button
+              className={activeTab === 'topics' ? 'active' : ''}
+              onClick={() => setActiveTab('topics')}
+            >
+              Topics ({data.topics?.length || 0})
+            </button>
           </div>
-          <CriteriaList
-            criteria={data.criteria}
-            selectedId={selectedCriterionId}
-            onSelect={setSelectedCriterionId}
-            onDelete={handleDeleteCriterion}
-          />
+
+          {activeTab === 'criteria' ? (
+            <>
+              <div className="sidebar-header">
+                <h2>Criteria</h2>
+                <button onClick={handleAddCriterion} className="btn-add">+ Add New</button>
+              </div>
+              <CriteriaList
+                criteria={data.criteria}
+                selectedId={selectedCriterionId}
+                onSelect={setSelectedCriterionId}
+                onDelete={handleDeleteCriterion}
+              />
+            </>
+          ) : (
+            <>
+              <div className="sidebar-header">
+                <h2>Topics</h2>
+                <button onClick={handleAddTopic} className="btn-add">+ Add New</button>
+              </div>
+              <div className="topics-list">
+                {(data.topics || []).map(topic => (
+                  <div key={topic.id} className="topic-item">
+                    <input
+                      type="text"
+                      value={topic.title}
+                      onChange={(e) => handleUpdateTopic(topic.id, { title: e.target.value })}
+                      className="topic-title-input"
+                    />
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDeleteTopic(topic.id)}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </aside>
 
         <main className="admin-content">
@@ -205,6 +287,7 @@ export default function AdminApp() {
             <CriterionEditor
               criterion={selectedCriterion}
               onChange={handleUpdateCriterion}
+              topics={data.topics || []}
             />
           ) : (
             <div className="no-selection">

@@ -5,9 +5,9 @@
 
 import { useState } from 'react';
 import QuestionEditor from './QuestionEditor';
-import ScoringEditor from './ScoringEditor';
+import ScoringEditor from './ScoringEditor2';
 
-export default function CriterionEditor({ criterion, onChange }) {
+export default function CriterionEditor({ criterion, onChange, topics }) {
   const [activeTab, setActiveTab] = useState('basic');
 
   const handleFieldChange = (field, value) => {
@@ -113,6 +113,22 @@ export default function CriterionEditor({ criterion, onChange }) {
                 onChange={(e) => handleFieldChange('title', e.target.value)}
                 placeholder="e.g., LWP-S1: Wellness Policy Coordination Team"
               />
+            </div>
+
+            <div className="form-group">
+              <label>Topic</label>
+              <select
+                value={criterion.topicId || ''}
+                onChange={(e) => handleFieldChange('topicId', e.target.value || null)}
+              >
+                <option value="">No Topic</option>
+                {topics && topics.map(topic => (
+                  <option key={topic.id} value={topic.id}>
+                    {topic.title}
+                  </option>
+                ))}
+              </select>
+              <small>Assign this criterion to a topic for organization</small>
             </div>
 
             <div className="form-group">

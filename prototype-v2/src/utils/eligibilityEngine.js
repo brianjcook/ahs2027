@@ -122,22 +122,78 @@ function evaluateRequired(conditions, answers, questions) {
 }
 
 /**
- * Evaluates a single condition string
+ * Evaluates a single condition (string or structured object)
  *
- * Parses and evaluates various condition formats:
- * - "Q1 is \"Yes\""
- * - "Q1 is not \"No\""
- * - "Any of Q1 through Q5 is \"No\""
- * - "Q2 includes at least 3 venues"
- * - "Q5 has one evidence item provided"
+ * Supports both formats:
+ * - Text: "Q1 is \"Yes\""
+ * - Structured: { questionId: "Q001", operator: "equals", value: "Yes" }
  *
- * @param {string} condition - Condition string to evaluate
+ * @param {string|Object} condition - Condition string or object to evaluate
  * @param {Object} answers - Current form answers
  * @returns {boolean} - True if condition is met
  *
  * @private
  */
 function evaluateCondition(condition, answers) {
+  // Handle structured format (new)
+  if (typeof condition === 'object' && condition.operator) {
+    return evaluateStructuredCondition(condition, answers);
+  }
+
+  // Handle text format (legacy) - call the original text parser
+  return evaluateTextCondition(condition, answers);
+}
+
+/**
+ * Evaluates a structured condition object
+ */
+function evaluateStructuredCondition(condition, answers) {
+  const { questionId, questionIds, operator, value, minimumCount } = condition;
+
+  switch (operator) {
+    case 'equals':
+      return answers[questionId] === value;
+
+    case 'notEquals':
+      return answers[questionId] !== value;
+
+    case 'includes':
+      return Array.isArray(answers[questionId]) && answers[questionId].includes(value);
+
+    case 'includesMinimum':
+      return Array.isArray(answers[questionId]) && answers[questionId].length >= (minimumCount || 0);
+
+    case 'anyEquals':
+      if (!questionIds || !Array.isArray(questionIds)) return false;
+      return questionIds.some(qid => answers[qid] === value);
+
+    case 'isAnswered':
+      const answer = answers[questionId];
+      if (answer === undefined || answer === null || answer === '') return false;
+      if (typeof answer === 'object' && answer.value) return true;
+      return true;
+
+    case 'greaterThan':
+      return Number(answers[questionId]) > Number(value);
+
+    case 'lessThan':
+      return Number(answers[questionId]) < Number(value);
+
+    case 'text':
+    case 'complex':
+      // Fallback to text parsing for complex rules
+      return evaluateTextCondition(condition.rule || condition.description, answers);
+
+    default:
+      console.warn('Unknown operator:', operator, condition);
+      return false;
+  }
+}
+
+/**
+ * Evaluates a text condition string (legacy format)
+ */
+function evaluateTextCondition(condition, answers) {
   // Pattern: Q1 is "Value"
   const isPattern = /^(\w+)\s+is\s+"([^"]+)"$/i;
   const isMatch = condition.match(isPattern);
@@ -208,6 +264,7 @@ function evaluateCondition(condition, answers) {
   console.warn('Unknown condition format:', condition);
   return false;
 }
+// End of evaluateTextCondition
 
 /**
  * Checks if any question in a range has a specific value
