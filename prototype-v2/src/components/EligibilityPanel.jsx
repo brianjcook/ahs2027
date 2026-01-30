@@ -5,6 +5,7 @@
  */
 
 import { getHiddenReason } from '../utils/conditionalLogic';
+import { formatRule } from '../utils/ruleFormatter';
 
 export default function EligibilityPanel({ criterion, answers, eligibilityResult, allQuestions, visibleQuestions }) {
   if (!criterion) {
@@ -67,12 +68,16 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
           <div className="explain-sub">Automatic disqualifiers:</div>
           {eligibilityResult.hardFails && eligibilityResult.hardFails.length > 0 ? (
             <ul className="requirements-list">
-              {eligibilityResult.hardFails.map((condition, i) => (
-                <li key={i} className="requirements-list-item hidden">
-                  <span className="vis-mark">✘</span>
-                  <span>{condition}</span>
-                </li>
-              ))}
+              {eligibilityResult.hardFails.map((condition, i) => {
+                const formatted = formatRule(condition);
+                if (!formatted) return null;
+                return (
+                  <li key={i} className="requirements-list-item hidden">
+                    <span className="vis-mark">✘</span>
+                    <span>{formatted}</span>
+                  </li>
+                );
+              })}
             </ul>
           ) : (
             <div style={{ color: 'var(--muted)', fontSize: '13px', marginTop: '4px' }}>
@@ -85,11 +90,17 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
           {(criterion.scoring || criterion.eligibility) && (criterion.scoring?.required || criterion.eligibility?.required) ? (
             <ul className="requirements-list">
               {(criterion.scoring?.required || criterion.eligibility?.required).map((condition, i) => {
-                const isMissing = eligibilityResult.missingRequired?.includes(condition);
+                const formatted = formatRule(condition);
+                if (!formatted) return null;
+                const isMissing = eligibilityResult.missingRequired?.some(missing =>
+                  typeof missing === 'object' && typeof condition === 'object'
+                    ? missing.questionId === condition.questionId && missing.operator === condition.operator
+                    : missing === condition
+                );
                 return (
                   <li key={i} className={`requirements-list-item ${isMissing ? 'hidden' : 'visible'}`}>
                     <span className="vis-mark">{isMissing ? '✘' : '✔'}</span>
-                    <span>{condition}</span>
+                    <span>{formatted}</span>
                   </li>
                 );
               })}

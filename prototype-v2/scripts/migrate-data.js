@@ -121,7 +121,11 @@ console.log(`   Output: ${outputPath}`);
  * Convert text-based rules to structured format
  */
 function convertRulesToStructured(rules, criterionId, idMap) {
-  return rules.map(rule => {
+  return rules.filter(rule => {
+    // Filter out "None." entries
+    if (rule === 'None.' || rule === 'None') return false;
+    return true;
+  }).map(rule => {
     // Parse different rule patterns
 
     // Pattern: "Q1 is "Value.""
