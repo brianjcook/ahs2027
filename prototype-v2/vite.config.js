@@ -27,6 +27,6 @@ export default defineConfig({
     }
   },
 
-  // Base path for GitHub Pages
-  base: '/ahs2027/prototype-react/'
+  // Base path - use root for Vercel, subdirectory for GitHub Pages
+  base: process.env.VERCEL ? '/' : '/ahs2027/prototype-react/'
 })
