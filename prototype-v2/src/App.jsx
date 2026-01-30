@@ -87,7 +87,19 @@ export default function App() {
 
     const statusMap = {};
     for (const criterion of data.criteria) {
-      const result = evaluateEligibility(criterion.eligibility, answers, criterion.questions);
+      // Filter answers to only include those for this criterion's questions
+      const criterionQuestionIds = new Set(criterion.questions.map(q => q.id));
+      const filteredAnswers = {};
+
+      for (const [key, value] of Object.entries(answers)) {
+        // Include if it's a direct question ID or a generated ID (for repeated questions)
+        const baseId = key.split('_')[0];
+        if (criterionQuestionIds.has(key) || criterionQuestionIds.has(baseId)) {
+          filteredAnswers[key] = value;
+        }
+      }
+
+      const result = evaluateEligibility(criterion.eligibility, filteredAnswers, criterion.questions);
       statusMap[criterion.id] = result.status;
     }
     return statusMap;
@@ -126,13 +138,27 @@ export default function App() {
 
   const currentCriterion = data.criteria.find((c) => c.id === currentCriterionId);
   const statusMap = getStatusMap();
+
+  // Filter answers for current criterion
+  const currentAnswers = currentCriterion ? (() => {
+    const criterionQuestionIds = new Set(currentCriterion.questions.map(q => q.id));
+    const filtered = {};
+    for (const [key, value] of Object.entries(answers)) {
+      const baseId = key.split('_')[0];
+      if (criterionQuestionIds.has(key) || criterionQuestionIds.has(baseId)) {
+        filtered[key] = value;
+      }
+    }
+    return filtered;
+  })() : {};
+
   const eligibilityResult = currentCriterion
-    ? evaluateEligibility(currentCriterion.eligibility, answers, currentCriterion.questions)
+    ? evaluateEligibility(currentCriterion.eligibility, currentAnswers, currentCriterion.questions)
     : null;
 
   // Get visible questions for eligibility panel
   const visibleQuestions = currentCriterion
-    ? getVisibleQuestions(currentCriterion.questions, answers)
+    ? getVisibleQuestions(currentCriterion.questions, currentAnswers)
     : [];
 
   return (
@@ -166,7 +192,7 @@ export default function App() {
             {currentCriterion ? (
               <Criterion
                 criterion={currentCriterion}
-                answers={answers}
+                answers={currentAnswers}
                 onAnswerChange={handleAnswerChange}
               />
             ) : (
@@ -179,7 +205,7 @@ export default function App() {
 
         <EligibilityPanel
           criterion={currentCriterion}
-          answers={answers}
+          answers={currentAnswers}
           eligibilityResult={eligibilityResult}
           allQuestions={currentCriterion?.questions || []}
           visibleQuestions={visibleQuestions}
