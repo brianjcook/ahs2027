@@ -7,6 +7,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Criterion from './components/Criterion';
+import EligibilityPanel from './components/EligibilityPanel';
 import { evaluateEligibility } from './utils/eligibilityEngine';
 import { clearHiddenAnswers } from './utils/conditionalLogic';
 import './App.css';
@@ -22,6 +23,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [answers, setAnswers] = useState({});
   const [currentCriterionId, setCurrentCriterionId] = useState(null);
+  const [lastUpdate, setLastUpdate] = useState(null);
 
   // Fetch questions data
   useEffect(() => {
@@ -51,6 +53,7 @@ export default function App() {
       setData(jsonData);
       setLoading(false);
       setError(null);
+      setLastUpdate(new Date());
     } catch (err) {
       console.error('Error fetching data:', err);
       setError(err.message);
@@ -123,29 +126,57 @@ export default function App() {
 
   const currentCriterion = data.criteria.find((c) => c.id === currentCriterionId);
   const statusMap = getStatusMap();
+  const eligibilityResult = currentCriterion
+    ? evaluateEligibility(currentCriterion.eligibility, answers, currentCriterion.questions)
+    : null;
 
   return (
-    <div className="app">
-      <Sidebar
-        criteria={data.criteria}
-        currentCriterionId={currentCriterionId}
-        onSelectCriterion={setCurrentCriterionId}
-        statusMap={statusMap}
-      />
+    <>
+      <header className="app-header">
+        <div>
+          <div className="kicker">America's Healthiest Schools</div>
+          <h1>2027 Award Application Prototype</h1>
+          <div className="sub">Auto-synced from the question files.</div>
+        </div>
+        <div className="status">
+          <div>Data loaded</div>
+          {lastUpdate && (
+            <div className="small">
+              Last updated: {lastUpdate.toLocaleTimeString()}
+            </div>
+          )}
+        </div>
+      </header>
 
-      <main className="main-content">
-        {currentCriterion ? (
-          <Criterion
-            criterion={currentCriterion}
-            answers={answers}
-            onAnswerChange={handleAnswerChange}
+      <main className="app">
+        <section className="content">
+          <Sidebar
+            criteria={data.criteria}
+            currentCriterionId={currentCriterionId}
+            onSelectCriterion={setCurrentCriterionId}
+            statusMap={statusMap}
           />
-        ) : (
-          <div className="no-criterion">
-            <p>Select a criterion from the sidebar to begin.</p>
+
+          <div className="form-area">
+            {currentCriterion ? (
+              <Criterion
+                criterion={currentCriterion}
+                answers={answers}
+                onAnswerChange={handleAnswerChange}
+              />
+            ) : (
+              <div className="no-criterion">
+                <p>Select a criterion from the sidebar to begin.</p>
+              </div>
+            )}
           </div>
-        )}
+        </section>
+
+        <EligibilityPanel
+          criterion={currentCriterion}
+          eligibilityResult={eligibilityResult}
+        />
       </main>
-    </div>
+    </>
   );
 }
