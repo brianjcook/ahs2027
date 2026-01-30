@@ -285,6 +285,11 @@ body {
   line-height: 1.4;
 }
 
+.question-id {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .rationale-btn {
   background: var(--accent);
   color: white;

@@ -18,7 +18,7 @@ export default function SingleQuestion({ question, answer, onChange }) {
     <>
       <div className="question single-question">
         <label className="question-label">
-          {question.text}
+          <span className="question-id">{question.id}.</span> {question.text}
           {question.rationales && (
             <a
               href="#"

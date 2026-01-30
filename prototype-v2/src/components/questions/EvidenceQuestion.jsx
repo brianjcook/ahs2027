@@ -36,7 +36,7 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
     <>
       <div className="question evidence-question">
         <label className="question-label">
-          {question.text}
+          <span className="question-id">{question.id}.</span> {question.text}
           {question.rationales && (
             <a
               href="#"

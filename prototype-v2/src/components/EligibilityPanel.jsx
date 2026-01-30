@@ -82,9 +82,9 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
 
           {/* Required Items Checklist */}
           <div className="explain-sub">Required items checklist:</div>
-          {criterion.eligibility && criterion.eligibility.required ? (
+          {(criterion.scoring || criterion.eligibility) && (criterion.scoring?.required || criterion.eligibility?.required) ? (
             <ul className="requirements-list">
-              {criterion.eligibility.required.map((condition, i) => {
+              {(criterion.scoring?.required || criterion.eligibility?.required).map((condition, i) => {
                 const isMissing = eligibilityResult.missingRequired?.includes(condition);
                 return (
                   <li key={i} className={`requirements-list-item ${isMissing ? 'hidden' : 'visible'}`}>

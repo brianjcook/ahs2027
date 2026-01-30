@@ -99,7 +99,7 @@ export default function App() {
         }
       }
 
-      const result = evaluateEligibility(criterion.eligibility, filteredAnswers, criterion.questions);
+      const result = evaluateEligibility(criterion.scoring || criterion.eligibility, filteredAnswers, criterion.questions);
       statusMap[criterion.id] = result.status;
     }
     return statusMap;
@@ -153,7 +153,7 @@ export default function App() {
   })() : {};
 
   const eligibilityResult = currentCriterion
-    ? evaluateEligibility(currentCriterion.eligibility, currentAnswers, currentCriterion.questions)
+    ? evaluateEligibility(currentCriterion.scoring || currentCriterion.eligibility, currentAnswers, currentCriterion.questions)
     : null;
 
   // Get visible questions for eligibility panel

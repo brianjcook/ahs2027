@@ -18,7 +18,7 @@ export default function BooleanQuestion({ question, answer, onChange }) {
     <>
       <div className="question boolean-question">
         <label className="question-label">
-          {question.text}
+          <span className="question-id">{question.id}.</span> {question.text}
           {question.rationales && (
             <a
               href="#"
