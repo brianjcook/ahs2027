@@ -179,25 +179,25 @@
           {
             "questionId": "Q001",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q1 is \"No.\""
           },
           {
             "questionId": "Q002",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q2 is \"No.\""
           },
           {
             "questionId": "Q003",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q3 is \"No.\""
           },
           {
             "questionId": "Q004",
             "operator": "notEquals",
-            "value": "4 or more.",
+            "value": "4 or more",
             "description": "Q4 is not \"4 or more.\""
           }
         ],
@@ -335,7 +335,7 @@
           {
             "questionId": "Q008",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q1 is \"No.\""
           },
           {
@@ -751,19 +751,19 @@
           {
             "questionId": "Q021",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q1 is \"No.\""
           },
           {
             "questionId": "Q022",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q2 is \"No.\""
           },
           {
             "questionId": "Q023",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q3 is \"No.\""
           }
         ],
@@ -987,7 +987,7 @@
           {
             "questionId": "Q030",
             "operator": "equals",
-            "value": "No.",
+            "value": "No",
             "description": "Q1 is \"No.\""
           }
         ],
@@ -1392,13 +1392,13 @@
           {
             "questionId": "Q038",
             "operator": "equals",
-            "value": "Not in the past 12 months.",
+            "value": "Not in the past 12 months",
             "description": "Q5 is \"Not in the past 12 months.\""
           },
           {
             "questionId": "Q042",
             "operator": "equals",
-            "value": "0.",
+            "value": "0",
             "description": "Q9 is \"0.\""
           }
         ],
