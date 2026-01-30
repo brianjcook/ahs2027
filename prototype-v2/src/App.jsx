@@ -12,7 +12,8 @@ import { clearHiddenAnswers } from './utils/conditionalLogic';
 import './App.css';
 
 // Data source - can be configured for different environments
-const DATA_URL = '/data/questions.json';
+// Use relative path that works with Vite's base configuration
+const DATA_URL = `${import.meta.env.BASE_URL}data/questions.json`;
 const POLL_INTERVAL = 30000; // 30 seconds
 
 export default function App() {
