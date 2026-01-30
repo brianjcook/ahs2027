@@ -11,7 +11,7 @@ import AdminLogin from './AdminLogin';
 import './Admin.css';
 
 export default function AdminApp() {
-  const [isAuthenticated, setIsAuthenticated] = useState(hasAdminPassword());
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [data, setData] = useState(null);
   const [sha, setSha] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -19,6 +19,11 @@ export default function AdminApp() {
   const [selectedCriterionId, setSelectedCriterionId] = useState(null);
   const [saving, setSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
+
+  // Check for existing session on mount
+  useEffect(() => {
+    setIsAuthenticated(hasAdminPassword());
+  }, []);
 
   // Handle login
   const handleLogin = async (password) => {
@@ -124,8 +129,11 @@ export default function AdminApp() {
 
   // Show login screen if not authenticated
   if (!isAuthenticated) {
+    console.log('AdminApp: Not authenticated, showing login');
     return <AdminLogin onLogin={handleLogin} />;
   }
+
+  console.log('AdminApp: Authenticated, loading:', loading, 'error:', error);
 
   if (loading) {
     return (
