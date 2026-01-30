@@ -3,35 +3,19 @@
  * Handles reading and writing to the GitHub repository
  */
 
-const API_BASE = 'https://api.github.com';
+import { GITHUB_CONFIG } from '../config/github';
 
-// Lazy load config to avoid build errors when file doesn't exist
-async function getConfig() {
-  try {
-    const configModule = await import('../config/github.js');
-    return configModule.GITHUB_CONFIG;
-  } catch {
-    // Config file not found - return placeholder
-    return {
-      owner: '',
-      repo: '',
-      branch: 'main',
-      dataPath: '',
-      token: ''
-    };
-  }
-}
+const API_BASE = 'https://api.github.com';
 
 /**
  * Get the current questions.json file from GitHub
  */
 export async function getQuestionsData() {
-  const config = await getConfig();
-  const url = `${API_BASE}/repos/${config.owner}/${config.repo}/contents/${config.dataPath}?ref=${config.branch}`;
+  const url = `${API_BASE}/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.dataPath}?ref=${GITHUB_CONFIG.branch}`;
 
   const response = await fetch(url, {
     headers: {
-      'Authorization': `token ${config.token}`,
+      'Authorization': `token ${GITHUB_CONFIG.token}`,
       'Accept': 'application/vnd.github.v3+json'
     }
   });
@@ -52,15 +36,14 @@ export async function getQuestionsData() {
  * Commit updated questions.json to GitHub
  */
 export async function updateQuestionsData(newData, commitMessage, sha) {
-  const config = await getConfig();
-  const url = `${API_BASE}/repos/${config.owner}/${config.repo}/contents/${config.dataPath}`;
+  const url = `${API_BASE}/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.dataPath}`;
 
   const content = btoa(JSON.stringify(newData, null, 2)); // Encode to base64
 
   const response = await fetch(url, {
     method: 'PUT',
     headers: {
-      'Authorization': `token ${config.token}`,
+      'Authorization': `token ${GITHUB_CONFIG.token}`,
       'Accept': 'application/vnd.github.v3+json',
       'Content-Type': 'application/json'
     },
@@ -68,7 +51,7 @@ export async function updateQuestionsData(newData, commitMessage, sha) {
       message: commitMessage,
       content: content,
       sha: sha,
-      branch: config.branch
+      branch: GITHUB_CONFIG.branch
     })
   });
 

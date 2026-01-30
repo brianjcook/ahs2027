@@ -6,6 +6,3 @@ node_modules/
 # React prototype build artifacts
 prototype-v2/dist/
 prototype-v2/node_modules/
-
-# GitHub token configuration (admin panel)
-prototype-v2/src/config/github.js
