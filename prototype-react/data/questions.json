@@ -151,11 +151,7 @@
         {
           "id": "Q007",
           "text": "Describe how the uploaded file shows your team implemented or monitored the district wellness policy.",
-          "type": "single",
-          "options": [
-            "Text area"
-          ],
-          "allowOther": false,
+          "type": "text",
           "rationales": "Local Wellness Policy expert: Ensures applicants connect evidence to implementation. UI/UX: Open text allows for narrative context. Data and evaluation: Provides qualitative data for review. Senior front-end engineer: Standard textarea component. Senior back-end engineer: Stores text response. Product manager: Adds minimal burden while improving review quality.",
           "citations": "None provided.",
           "showIf": [
@@ -171,7 +167,8 @@
               "id": "Q003",
               "equals": "Yes"
             }
-          ]
+          ],
+          "multiline": true
         }
       ],
       "scoring": {
