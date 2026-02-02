@@ -23,10 +23,18 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      onChange(question.id, {
+      const answerObj = {
         type: selectedType || question.options[0],
         value: file.name // In production, this would upload the file
+      };
+      console.log('EvidenceQuestion handleFileChange:', {
+        questionId: question.id,
+        file: file.name,
+        selectedType,
+        answerObj,
+        currentAnswer: answer
       });
+      onChange(question.id, answerObj);
     }
   };
 

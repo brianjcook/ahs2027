@@ -63,16 +63,21 @@ export default function App() {
 
   // Handle answer changes
   function handleAnswerChange(questionId, value) {
+    console.log('App handleAnswerChange:', { questionId, value, valueType: typeof value });
     setAnswers((prev) => {
       const updated = {
         ...prev,
         [questionId]: value
       };
 
+      console.log('App answers updated:', updated);
+
       // Clean up hidden answers
       const currentCriterion = data?.criteria.find((c) => c.id === currentCriterionId);
       if (currentCriterion) {
-        return clearHiddenAnswers(currentCriterion.questions, updated);
+        const cleaned = clearHiddenAnswers(currentCriterion.questions, updated);
+        console.log('App answers after clearHiddenAnswers:', cleaned);
+        return cleaned;
       }
 
       return updated;
