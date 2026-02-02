@@ -9,7 +9,12 @@ import Modal from '../Modal';
 
 export default function EvidenceQuestion({ question, answer, onChange }) {
   const [showRationale, setShowRationale] = useState(false);
-  const selectedType = answer?.type || null;
+
+  // If only one option and it's a file upload, auto-select it
+  const isSingleFileUpload = question.options.length === 1 &&
+                             question.options[0].toLowerCase().includes('upload');
+
+  const selectedType = answer?.type || (isSingleFileUpload ? question.options[0] : null);
 
   const handleTypeChange = (type) => {
     onChange(question.id, { type, value: null });
@@ -19,7 +24,7 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
     const file = e.target.files[0];
     if (file) {
       onChange(question.id, {
-        type: selectedType,
+        type: selectedType || question.options[0],
         value: file.name // In production, this would upload the file
       });
     }
@@ -51,41 +56,53 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
           )}
         </label>
 
-        <div className="options">
-          {question.options.map((option) => (
-            <div key={option} className="evidence-option">
-              <label className="option">
-                <input
-                  type="radio"
-                  name={question.id}
-                  value={option}
-                  checked={selectedType === option}
-                  onChange={() => handleTypeChange(option)}
-                />
-                <span>{option}</span>
-              </label>
+        {isSingleFileUpload ? (
+          // Single file upload - show directly without radio button
+          <div className="evidence-input">
+            <input
+              type="file"
+              onChange={handleFileChange}
+              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            />
+          </div>
+        ) : (
+          // Multiple options - show radio buttons
+          <div className="options">
+            {question.options.map((option) => (
+              <div key={option} className="evidence-option">
+                <label className="option">
+                  <input
+                    type="radio"
+                    name={question.id}
+                    value={option}
+                    checked={selectedType === option}
+                    onChange={() => handleTypeChange(option)}
+                  />
+                  <span>{option}</span>
+                </label>
 
-              {selectedType === option && (
-                <div className="evidence-input">
-                  {option.toLowerCase().includes('upload') ? (
-                    <input
-                      type="file"
-                      onChange={handleFileChange}
-                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                    />
-                  ) : (
-                    <input
-                      type="url"
-                      placeholder="Enter URL..."
-                      value={answer?.value || ''}
-                      onChange={handleLinkChange}
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+                {selectedType === option && (
+                  <div className="evidence-input">
+                    {option.toLowerCase().includes('upload') ? (
+                      <input
+                        type="file"
+                        onChange={handleFileChange}
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      />
+                    ) : (
+                      <input
+                        type="url"
+                        placeholder="Enter URL..."
+                        value={answer?.value || ''}
+                        onChange={handleLinkChange}
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
         {answer?.value && (
           <div className="evidence-preview">
