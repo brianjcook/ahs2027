@@ -2,6 +2,7 @@
   "name": "prototype-v2",
   "private": true,
   "version": "0.0.0",
+  "description": "AHS 2027 Award Application Prototype",
   "type": "module",
   "scripts": {
     "dev": "vite",
