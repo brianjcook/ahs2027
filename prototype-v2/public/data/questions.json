@@ -126,7 +126,7 @@
         {
           "id": "Q006",
           "text": "Upload at least one (1) file showing how the school wellness team worked together to implement or monitor the district wellness policy.",
-          "type": "single",
+          "type": "evidence",
           "options": [
             "File upload"
           ],
