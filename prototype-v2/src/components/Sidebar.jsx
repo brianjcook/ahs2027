@@ -62,7 +62,7 @@ export default function Sidebar({ criteria, currentCriterionId, onSelectCriterio
 
   // Calculate topic-level status
   const getTopicStatus = (criteriaInTopic) => {
-    const statuses = criteriaInTopic.map(c => statusMap[c.id] || 'unknown');
+    const statuses = criteriaInTopic.map(c => statusMap[c.id] || 'unanswered');
 
     // If ANY criterion is not_eligible, topic is not_eligible
     if (statuses.includes('not_eligible')) {
@@ -74,9 +74,9 @@ export default function Sidebar({ criteria, currentCriterionId, onSelectCriterio
       return 'eligible';
     }
 
-    // If none are answered (all unknown), topic is unknown
-    if (statuses.every(s => s === 'unknown')) {
-      return 'unknown';
+    // If none are answered (all unanswered), topic is unanswered
+    if (statuses.every(s => s === 'unanswered')) {
+      return 'unanswered';
     }
 
     // Otherwise, in progress
@@ -143,7 +143,8 @@ export default function Sidebar({ criteria, currentCriterionId, onSelectCriterio
 function getStatusClass(status) {
   return status === 'not_eligible' ? 'status-not-eligible' :
          status === 'in_progress' ? 'status-in-progress' :
-         status === 'eligible' ? 'status-eligible' : '';
+         status === 'eligible' ? 'status-eligible' :
+         status === 'unanswered' ? 'status-unanswered' : '';
 }
 
 function getStatusIcon(status) {
@@ -151,6 +152,7 @@ function getStatusIcon(status) {
     eligible: '✔',
     not_eligible: '✘',
     in_progress: '◐',
+    unanswered: '−',
     unknown: '−'
   };
   return iconMap[status] || '−';

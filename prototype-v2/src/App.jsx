@@ -63,21 +63,36 @@ export default function App() {
 
   // Handle answer changes
   function handleAnswerChange(questionId, value) {
-    console.log('App handleAnswerChange:', { questionId, value, valueType: typeof value });
     setAnswers((prev) => {
       const updated = {
         ...prev,
         [questionId]: value
       };
 
-      console.log('App answers updated:', updated);
-
-      // Clean up hidden answers
+      // Clean up hidden answers only for current criterion
       const currentCriterion = data?.criteria.find((c) => c.id === currentCriterionId);
       if (currentCriterion) {
-        const cleaned = clearHiddenAnswers(currentCriterion.questions, updated);
-        console.log('App answers after clearHiddenAnswers:', cleaned);
-        return cleaned;
+        // Get question IDs for current criterion
+        const currentQuestionIds = new Set(currentCriterion.questions.map(q => q.id));
+
+        // Separate current criterion answers from other answers
+        const currentAnswers = {};
+        const otherAnswers = {};
+
+        for (const [key, val] of Object.entries(updated)) {
+          const baseId = key.split('_')[0];
+          if (currentQuestionIds.has(key) || currentQuestionIds.has(baseId)) {
+            currentAnswers[key] = val;
+          } else {
+            otherAnswers[key] = val;
+          }
+        }
+
+        // Clean only current criterion answers
+        const cleanedCurrent = clearHiddenAnswers(currentCriterion.questions, currentAnswers);
+
+        // Merge back with other answers
+        return { ...otherAnswers, ...cleanedCurrent };
       }
 
       return updated;
@@ -104,8 +119,13 @@ export default function App() {
         }
       }
 
-      const result = evaluateEligibility(criterion.scoring || criterion.eligibility, filteredAnswers, criterion.questions);
-      statusMap[criterion.id] = result.status;
+      // If no questions answered for this criterion, mark as unanswered
+      if (Object.keys(filteredAnswers).length === 0) {
+        statusMap[criterion.id] = 'unanswered';
+      } else {
+        const result = evaluateEligibility(criterion.scoring || criterion.eligibility, filteredAnswers, criterion.questions);
+        statusMap[criterion.id] = result.status;
+      }
     }
     return statusMap;
   }

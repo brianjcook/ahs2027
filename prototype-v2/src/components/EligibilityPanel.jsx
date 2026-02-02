@@ -27,13 +27,6 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
     allQuestions.some(q => q.id === key)
   ).length;
 
-  console.log('EligibilityPanel:', {
-    answers,
-    answeredCount,
-    allQuestionIds: allQuestions.map(q => q.id),
-    answersKeys: Object.keys(answers)
-  });
-
   const statusInfo = getStatusInfo(eligibilityResult.status, answeredCount);
 
   return (
