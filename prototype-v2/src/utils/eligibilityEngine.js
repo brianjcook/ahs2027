@@ -182,7 +182,11 @@ function evaluateStructuredCondition(condition, answers) {
     case 'isAnswered':
       const answer = answers[questionId];
       if (answer === undefined || answer === null || answer === '') return false;
-      if (typeof answer === 'object' && answer.value) return true;
+      if (typeof answer === 'object') {
+        // For objects (like evidence answers), check if value exists and is truthy
+        return !!(answer.value && answer.value !== '');
+      }
+      // For simple values, any non-empty value counts as answered
       return true;
 
     case 'greaterThan':
