@@ -42,19 +42,36 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
           <strong>Question Visibility</strong>
           <ul className="visibility-list">
             {allQuestions.map((question) => {
-              // Check if question or any of its repeated instances are visible
-              const visible = visibleQuestions.some(vq =>
-                vq.id === question.id || vq.originalId === question.id
-              );
-              const reason = getHiddenReason(question, answers);
-              const conditionText = reason ? `— ${reason}` : '— always shown';
+              // Check if this question has repeated instances
+              const repeatedInstances = visibleQuestions.filter(vq => vq.originalId === question.id);
 
-              return (
-                <li key={question.id} className={`visibility-item ${visible ? 'visible' : 'hidden'}`}>
-                  <span className="vis-mark">{visible ? '✔' : '✘'}</span>
-                  <span>{question.id} {conditionText}</span>
-                </li>
-              );
+              if (repeatedInstances.length > 0) {
+                // Show each repeated instance separately
+                return repeatedInstances.map((instance) => {
+                  const conditionText = instance.situationValue
+                    ? `— ${question.repeatedFor} includes '${instance.situationValue}'`
+                    : '— generated for selected option';
+
+                  return (
+                    <li key={instance.id} className="visibility-item visible">
+                      <span className="vis-mark">✔</span>
+                      <span>{instance.id} {conditionText}</span>
+                    </li>
+                  );
+                });
+              } else {
+                // Show base question
+                const visible = visibleQuestions.some(vq => vq.id === question.id);
+                const reason = getHiddenReason(question, answers);
+                const conditionText = reason ? `— ${reason}` : '— always shown';
+
+                return (
+                  <li key={question.id} className={`visibility-item ${visible ? 'visible' : 'hidden'}`}>
+                    <span className="vis-mark">{visible ? '✔' : '✘'}</span>
+                    <span>{question.id} {conditionText}</span>
+                  </li>
+                );
+              }
             })}
           </ul>
         </div>

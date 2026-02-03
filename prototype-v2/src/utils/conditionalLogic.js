@@ -118,8 +118,8 @@ export function generateRepeatedQuestions(question, answers) {
   const filteredOptions = filterExclusions(refAnswer, question);
 
   // Generate one question instance per selected option
-  return filteredOptions.map((option) => {
-    const generatedId = generateQuestionId(question.id, option);
+  return filteredOptions.map((option, index) => {
+    const generatedId = `${question.id}.${index + 1}`;
 
     return {
       ...question,
@@ -127,6 +127,7 @@ export function generateRepeatedQuestions(question, answers) {
       text: interpolateText(question.text, option),
       originalId: question.id,
       situationValue: option,
+      situationIndex: index,
       isRepeated: true
     };
   });

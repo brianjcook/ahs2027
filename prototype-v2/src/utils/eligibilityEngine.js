@@ -328,15 +328,20 @@ function checkPerSituationCompliance(refQuestionId, questionId, minCount, answer
     return true;
   }
 
-  // Check each repeated instance
-  for (const option of refAnswer) {
-    // Skip exclusion patterns
-    if (/^We don't/i.test(option) || /^No\s/i.test(option)) {
-      continue;
-    }
+  // Filter out exclusion patterns (must match filterExclusions in conditionalLogic.js)
+  const exclusionPatterns = [
+    /^We don't/i,
+    /^No\s/i,
+    /^None\b/i
+  ];
 
-    // Generate expected question ID
-    const instanceId = `${questionId}_${option.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
+  const validOptions = refAnswer.filter(option => {
+    return !exclusionPatterns.some(pattern => pattern.test(option));
+  });
+
+  // Check each repeated instance using numbered IDs
+  for (let i = 0; i < validOptions.length; i++) {
+    const instanceId = `${questionId}.${i + 1}`;
     const instanceAnswer = answers[instanceId];
 
     // Check if answer meets minimum count
