@@ -11,13 +11,29 @@ export default function MultiQuestion({ question, answer, onChange }) {
   const [showRationale, setShowRationale] = useState(false);
   const selectedValues = Array.isArray(answer) ? answer : [];
 
+  console.log('MultiQuestion render:', {
+    questionId: question.id,
+    questionText: question.text,
+    answer,
+    selectedValues,
+    options: question.options
+  });
+
   const handleChange = (option, checked) => {
+    console.log('MultiQuestion handleChange:', {
+      questionId: question.id,
+      option,
+      checked,
+      currentAnswer: answer,
+      selectedValues
+    });
     let newValue;
     if (checked) {
       newValue = [...selectedValues, option];
     } else {
       newValue = selectedValues.filter((v) => v !== option);
     }
+    console.log('MultiQuestion calling onChange with:', question.id, newValue);
     onChange(question.id, newValue);
   };
 
