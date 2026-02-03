@@ -1,0 +1,699 @@
+{
+  "topicId": "T003",
+  "topicTitle": "Physical Education & Activity",
+  "criteria": [
+    {
+      "id": "PEA-S8",
+      "title": "PEA-S8: Provide Physical Education",
+      "criterionText": "Our school provides physical education in all grades, and prohibits waivers, exemptions, and substitutions for physical education class time or credit (except for accommodations made for students with medical, cultural, or religious considerations).",
+      "questions": [
+        {
+          "id": "Q046",
+          "text": "Does your school provide physical education classes?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q047",
+          "text": "Which grade levels receive physical education at your school?",
+          "type": "multi",
+          "options": [
+            "Kindergarten",
+            "1st grade",
+            "2nd grade",
+            "3rd grade",
+            "4th grade",
+            "5th grade",
+            "6th grade",
+            "7th grade",
+            "8th grade",
+            "9th grade",
+            "10th grade",
+            "11th grade",
+            "12th grade"
+          ],
+          "showIf": [{"id": "Q046", "equals": "Yes"}]
+        },
+        {
+          "id": "Q048",
+          "text": "Can students waive, be exempted from, or substitute other activities for physical education class time or credit?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": [{"id": "Q046", "equals": "Yes"}]
+        },
+        {
+          "id": "Q049",
+          "text": "Under what circumstances can students waive, be exempted from, or substitute for physical education?",
+          "type": "multi",
+          "options": [
+            "Medical considerations (with documentation)",
+            "Cultural considerations",
+            "Religious considerations",
+            "Participation in other sports or activities",
+            "Academic scheduling conflicts",
+            "Student or parent request",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q048", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q046",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q046 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q047",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q047 includes all grade levels present at the school."
+          },
+          {
+            "questionId": "Q048",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q048 is \"No\" OR Q049 only includes medical, cultural, or religious considerations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PEA-S9",
+      "title": "PEA-S9: Physical Education Curriculum",
+      "criterionText": "Our school requires all physical education teachers to use a curriculum that is developmentally appropriate, culturally responsive, sequential, and consistent with national or state standards for physical education.",
+      "questions": [
+        {
+          "id": "Q050",
+          "text": "Do physical education teachers at your school use a defined curriculum?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q051",
+          "text": "Which of the following characteristics describe your school's physical education curriculum?",
+          "type": "multi",
+          "options": [
+            "Developmentally appropriate (designed to meet the needs of students at different developmental stages)",
+            "Culturally responsive (reflects and respects diverse cultural backgrounds)",
+            "Sequential (builds skills progressively across grade levels)",
+            "Consistent with national or state standards for physical education",
+            "None of the above"
+          ],
+          "showIf": [{"id": "Q050", "equals": "Yes"}]
+        },
+        {
+          "id": "Q052",
+          "text": "Are all physical education teachers required to use this curriculum?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": [{"id": "Q050", "equals": "Yes"}]
+        },
+        {
+          "id": "Q053",
+          "text": "How does your school ensure the curriculum is implemented consistently?",
+          "type": "multi",
+          "options": [
+            "Regular professional development for PE teachers",
+            "Curriculum guides or lesson plans provided",
+            "Observations or evaluations of PE classes",
+            "Common assessments across PE classes",
+            "PE teacher collaboration meetings",
+            "We do not have a formal process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q052", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q050",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q050 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q051",
+            "operator": "includesMinimum",
+            "minimumCount": 4,
+            "description": "Q051 includes all four characteristics (developmentally appropriate, culturally responsive, sequential, and consistent with standards)."
+          },
+          {
+            "questionId": "Q052",
+            "operator": "equals",
+            "value": "Yes",
+            "description": "Q052 is \"Yes.\""
+          },
+          {
+            "questionId": "Q053",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q053 includes at least 1 method (not 'We do not have a formal process')."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PEA-S11",
+      "title": "PEA-S11: Physical Activity During the School Day",
+      "criterionText": "All students are provided opportunities to engage in at least 30 cumulative minutes of physical activity during each school day (e.g., recess, physical activity breaks, active instruction). Note: Physical activity minutes do not include physical education or class transitions.",
+      "questions": [
+        {
+          "id": "Q054",
+          "text": "Do students at your school have opportunities for physical activity during the school day outside of physical education classes?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q055",
+          "text": "What types of physical activity opportunities are provided during the school day?",
+          "type": "multi",
+          "options": [
+            "Recess",
+            "Physical activity breaks in classrooms",
+            "Active instruction (lessons incorporating movement)",
+            "Before-school activities",
+            "After-school activities",
+            "Lunch-time activities",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q054", "equals": "Yes"}]
+        },
+        {
+          "id": "Q056",
+          "text": "Approximately how many cumulative minutes of physical activity (outside of PE class) do students typically get during each school day?",
+          "type": "single",
+          "options": [
+            "Less than 10 minutes",
+            "10-19 minutes",
+            "20-29 minutes",
+            "30-44 minutes",
+            "45-59 minutes",
+            "60 minutes or more"
+          ],
+          "showIf": [{"id": "Q054", "equals": "Yes"}]
+        },
+        {
+          "id": "Q057",
+          "text": "Are these physical activity opportunities available to all students?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": [{"id": "Q054", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q054",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q054 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q055",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q055 includes at least 1 type of physical activity."
+          },
+          {
+            "questionId": "Q056",
+            "operator": "anyEquals",
+            "questionIds": ["Q056"],
+            "value": "30-44 minutes",
+            "description": "Q056 is \"30-44 minutes\", \"45-59 minutes\", or \"60 minutes or more.\""
+          },
+          {
+            "questionId": "Q057",
+            "operator": "equals",
+            "value": "Yes",
+            "description": "Q057 is \"Yes.\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "PEA-S13",
+      "title": "PEA-S13: Physical Activity and Disciplinary Practices",
+      "criterionText": "Our school prohibits staff from assigning physical activity as punishment (e.g., walking laps or doing pushups) and prohibits staff from withholding physical activity as punishment (e.g., withholding recess, physical activity breaks, or physical education class).",
+      "questions": [
+        {
+          "id": "Q058",
+          "text": "Does your school have a policy or practice regarding the use of physical activity in disciplinary situations?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q059",
+          "text": "Which of the following statements describe your school's policy or practice?",
+          "type": "multi",
+          "options": [
+            "Staff are prohibited from assigning physical activity as punishment (e.g., making students walk laps or do pushups)",
+            "Staff are prohibited from withholding recess as punishment",
+            "Staff are prohibited from withholding physical activity breaks as punishment",
+            "Staff are prohibited from withholding physical education class as punishment",
+            "Staff may use physical activity as punishment in some situations",
+            "Staff may withhold physical activity as punishment in some situations"
+          ],
+          "showIf": [{"id": "Q058", "equals": "Yes"}]
+        },
+        {
+          "id": "Q060",
+          "text": "How is this policy communicated to staff?",
+          "type": "multi",
+          "options": [
+            "Included in staff handbook or policy manual",
+            "Discussed during staff orientation or onboarding",
+            "Reviewed during professional development",
+            "Posted in common areas",
+            "Communicated via email or memo",
+            "It is not formally communicated",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q058", "equals": "Yes"}]
+        },
+        {
+          "id": "Q061",
+          "text": "How does your school ensure compliance with this policy?",
+          "type": "multi",
+          "options": [
+            "Administrator observations",
+            "Staff self-reporting",
+            "Student or family feedback mechanisms",
+            "Regular policy reviews",
+            "Consequences for non-compliance",
+            "We do not have a formal process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q058", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q058",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q058 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q059",
+            "operator": "includesMinimum",
+            "minimumCount": 4,
+            "description": "Q059 includes all four prohibitions (assigning PA as punishment, withholding recess, withholding PA breaks, withholding PE class)."
+          },
+          {
+            "questionId": "Q060",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q060 includes at least 1 communication method (not 'It is not formally communicated')."
+          },
+          {
+            "questionId": "Q061",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q061 includes at least 1 compliance mechanism (not 'We do not have a formal process')."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PEA-S14",
+      "title": "PEA-S14: School Facilities Open to Community",
+      "criterionText": "Our school's indoor and outdoor facilities (e.g., tracks, playgrounds, athletic fields, gymnasiums, classrooms) are open to students, families, caregivers, and community members outside of school hours.",
+      "questions": [
+        {
+          "id": "Q062",
+          "text": "Are your school's facilities available for use outside of regular school hours?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q063",
+          "text": "Which facilities are available for community use outside of school hours?",
+          "type": "multi",
+          "options": [
+            "Outdoor playgrounds",
+            "Athletic fields",
+            "Tracks",
+            "Gymnasiums",
+            "Indoor multipurpose rooms",
+            "Classrooms",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q062", "equals": "Yes"}]
+        },
+        {
+          "id": "Q064",
+          "text": "Who can access these facilities outside of school hours?",
+          "type": "multi",
+          "options": [
+            "Current students",
+            "Families of current students",
+            "School staff",
+            "General community members",
+            "Organized groups or programs only"
+          ],
+          "showIf": [{"id": "Q062", "equals": "Yes"}]
+        },
+        {
+          "id": "Q065",
+          "text": "When are facilities available for community use?",
+          "type": "multi",
+          "options": [
+            "Weekday evenings",
+            "Weekday early mornings",
+            "Weekends",
+            "School breaks and holidays",
+            "Summer"
+          ],
+          "showIf": [{"id": "Q062", "equals": "Yes"}]
+        },
+        {
+          "id": "Q066",
+          "text": "How is information about facility availability communicated to the community?",
+          "type": "multi",
+          "options": [
+            "School website",
+            "Social media",
+            "Newsletters or emails to families",
+            "Flyers or posters",
+            "Community organizations",
+            "It is not actively communicated",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q062", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q062",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q062 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q063",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q063 includes at least 1 facility type."
+          },
+          {
+            "questionId": "Q064",
+            "operator": "includes",
+            "value": "General community members",
+            "description": "Q064 includes 'General community members' (open to broader community, not just school families)."
+          },
+          {
+            "questionId": "Q065",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q065 includes at least 1 time period."
+          },
+          {
+            "questionId": "Q066",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q066 includes at least 1 communication method (not 'It is not actively communicated')."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PEA-S15",
+      "title": "PEA-S15: Collaborate with Community to Support Physical Activity",
+      "criterionText": "Our school's process for collaborating with community organizations includes implementing shared goals, defined roles and responsibilities, ongoing communication, and evaluation plans.",
+      "questions": [
+        {
+          "id": "Q067",
+          "text": "Does your school collaborate with community organizations to support physical activity for students?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q068",
+          "text": "Which types of community organizations does your school collaborate with for physical activity?",
+          "type": "multi",
+          "options": [
+            "YMCA or similar community centers",
+            "Boys and Girls Clubs",
+            "Other after-school programs",
+            "Local parks and recreation departments",
+            "Sports leagues or clubs",
+            "Health or fitness organizations",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q067", "equals": "Yes"}]
+        },
+        {
+          "id": "Q069",
+          "text": "Which of the following elements are part of your collaboration process with community organizations?",
+          "type": "multi",
+          "options": [
+            "Shared goals (we've identified common objectives together)",
+            "Defined roles and responsibilities (we're clear about who does what)",
+            "Ongoing communication (we have regular check-ins or updates)",
+            "Evaluation plans (we assess the effectiveness of the collaboration)",
+            "None of the above"
+          ],
+          "showIf": [{"id": "Q067", "equals": "Yes"}]
+        },
+        {
+          "id": "Q070",
+          "text": "How often does your school communicate with community partners about physical activity collaborations?",
+          "type": "single",
+          "options": [
+            "Weekly or more often",
+            "Monthly",
+            "A few times per year",
+            "Once per year",
+            "As needed/not on a regular schedule"
+          ],
+          "showIf": [{"id": "Q067", "equals": "Yes"}]
+        },
+        {
+          "id": "Q071",
+          "text": "What types of physical activity opportunities result from these collaborations?",
+          "type": "multi",
+          "options": [
+            "After-school sports or activities",
+            "Community sports leagues",
+            "Special events (fun runs, sports days, etc.)",
+            "Access to community facilities",
+            "Coaching or instruction from community partners",
+            "Equipment or resource sharing",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q067", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q067",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q067 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q068",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q068 includes at least 1 type of community organization."
+          },
+          {
+            "questionId": "Q069",
+            "operator": "includesMinimum",
+            "minimumCount": 4,
+            "description": "Q069 includes all four elements (shared goals, defined roles, ongoing communication, evaluation plans)."
+          },
+          {
+            "questionId": "Q071",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q071 includes at least 1 type of physical activity opportunity."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PEA-S16",
+      "title": "PEA-S16: Active Transportation Initiatives",
+      "criterionText": "Our school supports active transportation initiatives through engaging the school community, ensuring equitable and inclusive opportunities to participate, designating safe routes or preferred routes, providing events/activities/programs, educating students to walk and bicycle safely, and evaluating the initiatives.",
+      "questions": [
+        {
+          "id": "Q072",
+          "text": "Does your school support active transportation initiatives (e.g., walk to school, bike to school programs)?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": []
+        },
+        {
+          "id": "Q073",
+          "text": "How does your school engage the school community in active transportation initiatives?",
+          "type": "multi",
+          "options": [
+            "Surveys or input sessions with families and students",
+            "Communications promoting walking/biking to school",
+            "Involvement of parent/family groups",
+            "Student leadership opportunities",
+            "Staff participation and modeling",
+            "We do not actively engage the community",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q072", "equals": "Yes"}]
+        },
+        {
+          "id": "Q074",
+          "text": "How does your school ensure equitable and inclusive opportunities for students to participate in active transportation?",
+          "type": "multi",
+          "options": [
+            "Consider barriers different families may face",
+            "Provide resources or support (e.g., bikes, helmets)",
+            "Create walking school bus or bike trains for safety",
+            "Offer alternatives for students who can't walk/bike",
+            "Gather feedback from diverse family groups",
+            "We have not specifically addressed equity and inclusion",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q072", "equals": "Yes"}]
+        },
+        {
+          "id": "Q075",
+          "text": "Has your school designated safe routes or preferred routes for students walking or biking?",
+          "type": "boolean",
+          "options": ["Yes", "No"],
+          "showIf": [{"id": "Q072", "equals": "Yes"}]
+        },
+        {
+          "id": "Q076",
+          "text": "What events, activities, or programs does your school provide related to active transportation?",
+          "type": "multi",
+          "options": [
+            "Walk to School Day",
+            "Bike to School Day",
+            "Walking school buses",
+            "Bike trains",
+            "Regular walk/bike challenges or incentive programs",
+            "None",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q072", "equals": "Yes"}]
+        },
+        {
+          "id": "Q077",
+          "text": "How does your school educate students about walking and bicycling safely?",
+          "type": "multi",
+          "options": [
+            "Pedestrian safety instruction",
+            "Bicycle safety instruction",
+            "Distribution of safety materials (maps, guides)",
+            "Bike rodeos or skills courses",
+            "Classroom lessons on traffic safety",
+            "We do not provide safety education",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q072", "equals": "Yes"}]
+        },
+        {
+          "id": "Q078",
+          "text": "How does your school evaluate your active transportation initiatives?",
+          "type": "multi",
+          "options": [
+            "Track participation rates",
+            "Conduct surveys or gather feedback",
+            "Monitor safety incidents",
+            "Assess community engagement",
+            "Review and adjust strategies based on data",
+            "We do not formally evaluate",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [{"id": "Q072", "equals": "Yes"}]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q072",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q072 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q073",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q073 includes at least 1 engagement method (not 'We do not actively engage the community')."
+          },
+          {
+            "questionId": "Q074",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q074 includes at least 1 equity/inclusion strategy (not 'We have not specifically addressed equity and inclusion')."
+          },
+          {
+            "questionId": "Q075",
+            "operator": "equals",
+            "value": "Yes",
+            "description": "Q075 is \"Yes.\""
+          },
+          {
+            "questionId": "Q076",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q076 includes at least 1 event/activity/program (not 'None')."
+          },
+          {
+            "questionId": "Q077",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q077 includes at least 1 safety education method (not 'We do not provide safety education')."
+          },
+          {
+            "questionId": "Q078",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q078 includes at least 1 evaluation method (not 'We do not formally evaluate')."
+          }
+        ]
+      }
+    }
+  ]
+}

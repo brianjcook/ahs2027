@@ -52,14 +52,18 @@ export default function Criterion({ criterion, answers, onAnswerChange }) {
     <div className="criterion">
       <div className="criterion-header">
         <h2>{criterion.title}</h2>
-        <button
-          className="info-link"
-          onClick={() => setShowCriterionInfo(true)}
-          aria-label="View criterion definition"
-        >
-          View criterion definition
-        </button>
       </div>
+
+      <a
+        href="#"
+        className="criterion-info-link"
+        onClick={(e) => {
+          e.preventDefault();
+          setShowCriterionInfo(true);
+        }}
+      >
+        View criterion definition
+      </a>
 
       {criterion.description && (
         <div

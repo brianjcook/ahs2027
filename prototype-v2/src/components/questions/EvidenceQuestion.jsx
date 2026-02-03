@@ -94,14 +94,12 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
         )}
       </div>
 
-      <Modal
-        isOpen={showRationale}
-        onClose={() => setShowRationale(false)}
-        title="Question Rationale"
-      >
-        <div className="modal-question">{question.text}</div>
-        <div className="modal-rationale">{question.rationales}</div>
-      </Modal>
+      {showRationale && (
+        <QuestionRationaleModal
+          question={question}
+          onClose={() => setShowRationale(false)}
+        />
+      )}
     </>
   );
 }

@@ -1641,7 +1641,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent does your school provide physical education?"
     },
     {
       "id": "PEA-S9",
@@ -1763,7 +1764,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent do physical education teachers use a sequential physical education curriculum at your school?"
     },
     {
       "id": "PEA-S11",
@@ -1877,7 +1879,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent are students provided opportunities for physical activity during the school day?"
     },
     {
       "id": "PEA-S13",
@@ -2006,7 +2009,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent does your school address physical activity and disciplinary practices?"
     },
     {
       "id": "PEA-S14",
@@ -2154,7 +2158,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent are your school's facilities open outside of school hours?"
     },
     {
       "id": "PEA-S15",
@@ -2290,7 +2295,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent does your school have a process in place to collaborate with community organizations to support physical activity for students?"
     },
     {
       "id": "PEA-S16",
@@ -2520,7 +2526,8 @@
           }
         ]
       },
-      "topicId": "T003"
+      "topicId": "T003",
+      "question": "To what extent does your school support active transportation initiatives?"
     }
   ],
   "topics": [

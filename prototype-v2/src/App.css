@@ -1215,3 +1215,35 @@ textarea.text-input {
   background: var(--muted);
   color: var(--paper);
 }
+
+/* Criterion Info Link - Simple Link Style */
+.criterion-info-link {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+}
+
+.criterion-info-link:hover {
+  text-decoration: underline;
+  color: #a84a23;
+}
+
+/* Update criterion header to remove flex */
+.criterion-header {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Criterion question in modal */
+.criterion-question {
+  line-height: 1.6;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}

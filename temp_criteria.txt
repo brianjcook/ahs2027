@@ -1,0 +1,910 @@
+Prepared by: Emily T, Sonia
+
+Prepared for: Traci, Rachal, Sarah
+
+Purpose: Introduce and provide rationale for the 2027 application
+recommendations
+
+Last Updated: February 3, 2026
+
+Executive Summary
+
+America’s Healthiest Schools has demonstrated strong momentum and plays
+a clear role within Healthier Generation’s Theory of Change as a lever
+to encourage adoption and implementation of evidence-based policies and
+practices. As recognition has scaled to more than 1,000 schools,
+maintaining clarity about what the award represents has become essential
+to preserving trust, credibility, and value. Staff feedback has surfaced
+a growing concern that the current application design can
+unintentionally signal recognition for the existence of a policy or
+completion of a checklist, rather than the meaningful changes to school
+environments the award is intended to recognize.
+
+In practice, earning recognition has always required real
+implementation. This includes how the school day is structured, how
+access to services is provided, and how policies and practices reach
+students in ways that support health and learning. That work is often
+rigorous and transformational, but it has not consistently been visible
+through the application. As a result, the depth and value of the award
+can be unclear, both to schools earning recognition and to the external
+audiences we aim to engage.
+
+The 2027 application rewrite presents an opportunity to strengthen the
+integrity of the award by more clearly surfacing implementation,
+relevance, and impact, while ensuring the program remains accessible,
+motivating, and inspiring for schools to engage in the work.
+
+How we will know the application redesign is successful
+
+- More new schools apply for America’s Healthiest Schools recognition
+
+- More evidence-based policies and practices are verified each award
+  year
+
+- Currently recognized schools pursue recognition across more topic
+  areas
+
+- Schools engage with Healthier Generation beyond initial recognition
+
+- Partners and funders show increased engagement aligned to the award
+
+This document outlines the rationale for the redesign and proposes the
+criteria for the 2027 America’s Healthiest Schools application.
+
+I.  Parameters for the 2027 Award Application: Rigor, Fairness,
+    Relevance
+
+Responding directly to staff feedback and programmatic need, the award
+model requires a clear set of parameters to ensure rigor, fairness, and
+relevance across all topic areas. The following parameters define what
+the criteria must accomplish.
+
+1.  Each topic award must clearly represent what it means to be an
+    America’s Healthiest School. Regardless of topic, each topic award
+    must reflect a shared definition of a healthy school and make that
+    meaning clear to schools and partners.
+
+2.  Award criteria must be consistent in difficulty across topic areas.
+
+3.  Award criteria must reflect and surface Healthier Generation’s core
+    work. If Healthier Generation is actively supporting schools to
+    change practice, that work should be visible within America’s
+    Healthiest Schools.
+
+4.  The framework must work for both education and public health
+    audiences.
+    The award should reflect schools as places that support learning and
+    as settings for prevention, early intervention, and student support
+    to align with the associated outcomes of the TSIA criteria.
+
+5.  Criteria should reflect the needs and realities facing today’s
+    students, staff, and school communities.
+
+6.  Criteria must be selected from the TSIA and retain nine topic areas.
+
+7.  A single topic award must be meaningful on its own. Earning one
+    topic award should signal strong, credible implementation, not a
+    lesser form of recognition compared to achieving recognition in
+    multiple topics.
+
+8.  The award model must remain motivating across different school
+    contexts
+    Recognition should encourage schools at different starting points
+    and capacities to adopt and implement evidence-based policies and
+    practices.
+
+II. 2027 Application: Criteria Selection
+
+Each topic award includes 4 to 8 TSIA criteria. The criteria expansion
+moves the AHS application from a checkbox approach to one that showcases
+the actual changes happening in a school building that improve student
+well-being.
+
+Thus, AHS criteria were selected based on
+
+1) their likelihood of contributing to the outcomes identified by topic
+area and
+
+2) how well they cover the key mechanisms by which schools influence
+health: real-time healthy habits development; supportive
+conditions/environments, and identification and connection to preventive
+services.
+
+Table 3: Criteria Counts by Topic Areas, Compared to Current Award 2026
+
+  ---------------------------------------------------------------------
+                                   Current Topic    2027 Topic Criteria
+                                      Criteria      
+  ------------------------------ ------------------ -------------------
+  School Health Services                 3                   7
+
+  Nutrition & Food Access                3                   6
+
+  Physical Education & Activity          4                   7
+
+  Staff Well-Being                       3                   6
+
+  Family & Community Engagement          3                   8
+
+  Health Education                       3                   4
+
+  Tobacco-Free Schools                   3                   6
+
+  Local Wellness Policy                  3                   6
+
+  Social-Emotional Health &              4                   7
+  Learning                                          
+  ---------------------------------------------------------------------
+
+Anchoring to National Population Indicators
+
+For the three AHS topic areas where Healthier Generation has explicitly
+defined Impact Goals (Nutrition and Food Access, Physical Activity,
+Staff Well-Being), our goal in criteria selection was to choose school
+practices that, collectively, create conditions for progress toward
+those student/staff outcomes.
+
+- Nutrition and Food Access: Increase the proportion of students
+  participating in the School Breakfast Program (Healthy People 2030),
+  decrease household food insecurity and hunger (Healthy People 2030)
+
+- Physical Activity: Increase the proportion of youth meeting physical
+  activity guidelines (Healthy People 2030)
+
+- Staff Well-Being: Decrease the level of burnout experienced by
+  teachers (RAND)
+
+For the other six AHS topic areas, we identified relevant student health
+or wellness outcomes that research shows are linked to Healthier
+Generation’s priorities, including Healthy People 2030 objectives,
+tagged to children to improve the health and well-being of children,
+adolescents to improve the health and well-being of adolescents, and
+schools to promote health, safety, and learning in school settings.
+
+We recognize that implementing these criteria does not guarantee
+improvements in a given metric; however, these practices are
+evidence-informed and set the stage for positive trends in those
+outcomes. In this way, the Impact Goals and outcomes serve as an anchor
+— ensuring the AHS criteria maintain a clear line of sight to what
+ultimately matters—while we remain careful not to overstate direct
+causality.
+
+Table 2: Alignment of AHS Topic Areas with Healthier Generation’s Impact
+Goals and Related Health Outcomes
+
++------------------+------------------------------------------------------+
+| AHS Topic Area   | Impact Goal / Health Outcome                         |
++==================+======================================================+
+| Supporting       | - Increase the proportion of low-income youth who    |
+| School Health    |   have a preventive dental visit (OH-09, HP2030,     |
+| Services         |   schools)                                           |
+|                  |                                                      |
+|                  | - Increase proportion of schools that provide case   |
+|                  |   management for chronic conditions (ECBP-D01,       |
+|                  |   HP2030, schools)                                   |
+|                  |                                                      |
+|                  | - Increase the proportion of adolescents who had a   |
+|                  |   preventive health care visit in the past year      |
+|                  |   (AH‑01, HP2030, adolescents)                       |
++------------------+------------------------------------------------------+
+| Improving        | - Increase the proportion of students participating  |
+| Nutrition & Food |   in the School Breakfast Program (AH-04, HP2030,    |
+| Access           |   schools)                                           |
+|                  |                                                      |
+|                  | - Reduce household food insecurity and hunger        |
+|                  |   (NWS-01, HP2030)                                   |
++------------------+------------------------------------------------------+
+| Bolstering       | - Increase the proportion of youth meeting physical  |
+| Physical         |   activity guidelines (PA-06, HP2030, children)      |
+| Education &      |                                                      |
+| Activity         |                                                      |
++------------------+------------------------------------------------------+
+| Cultivating      | - Decrease the level of burnout experienced by       |
+| Staff            |   teachers (RAND)                                    |
+| Well-Being       |                                                      |
++------------------+------------------------------------------------------+
+| Increasing       | - Increase the proportion of schools with policies   |
+| Family &         |   and practices that promote health and safety       |
+| Community        |   (EH-D01, HP2030, schools)                          |
+| Engagement       |                                                      |
++------------------+------------------------------------------------------+
+| Enriching Health | - Increase proportion of schools requiring students  |
+| Education        |   to take at least 2 health education courses from   |
+|                  |   6-12 (AH-R06, HP2030, schools)                     |
+|                  |                                                      |
+|                  | - Reduce adolescent tobacco use (TU-04, HP2030,      |
+|                  |   adolescents)                                       |
+|                  |                                                      |
+|                  | - Reduce the proportion of adolescents who used      |
+|                  |   drugs in the past month (SU‑05, HP2030,            |
+|                  |   adolescents)                                       |
++------------------+------------------------------------------------------+
+| Promoting        | - Reduce adolescent tobacco use (TU-04, HP2030,      |
+| Tobacco-Free     |   adolescents)                                       |
+| Schools          |                                                      |
+|                  | - Increase the proportion of schools with policies   |
+|                  |   and practices that promote health and safety       |
+|                  |   (EH-D01, HP2030, schools)                          |
++------------------+------------------------------------------------------+
+| Implementing the | - Increase the proportion of schools that don't sell |
+| Local Wellness   |   less healthy foods and drinks (ECBP‑D02, HP2030,   |
+| Policy           |   schools)                                           |
+|                  |                                                      |
+|                  | - Increase the proportion of youth meeting physical  |
+|                  |   activity guidelines (PA-06, HP2030, children)      |
+|                  |                                                      |
+|                  | - Increase the proportion of schools with policies   |
+|                  |   and practices that promote health and safety       |
+|                  |   (EH-D01, HP2030, schools)                          |
++------------------+------------------------------------------------------+
+| Strengthening    | - Fostering Healthy Mental, Emotional, and           |
+| Social-Emotional |   Behavioral Development in Children and Youth: A    |
+| Health &         |   National Agenda (2019)                             |
+| Learning         |                                                      |
+|                  | - Increase the proportion of children and            |
+|                  |   adolescents who show resilience to challenges and  |
+|                  |   stress (EMC‑D07, HP2030, children)                 |
++------------------+------------------------------------------------------+
+
+Grouping TSIA Criteria: What it Means to be one of America’s Healthiest
+Schools
+
+The updated criteria emphasize policies and practices that are most
+closely tied to the day-to-day experiences of students and staff.
+Criteria were prioritized if they contribute to one or more of three
+core elements: daily experiences, supportive conditions, and clear
+pathways to support when needs arise. Together, these elements define
+what it means to be a healthy school.
+
+- Daily Practice (Lived Experiences): What students (or staff) regularly
+  do or experience as part of the school day.
+
+- Supportive Conditions: Policies, norms, structures that make health
+  and healthy choices easier and consistent.
+
+- Early Identification and Connection to Support: Identify needs and
+  trigger action or connection to care.
+
+Together, the grouped criteria describes what it means to be a healthy
+school by combining daily experiences, supportive conditions, and clear
+pathways to support when needs arise.
+
+Table 3: Criteria Counts by Topic Areas
+
+  ------------------------------------------------------------------------------
+                        Experiences   Supportive       Early         HG Impact
+                                      Conditions   Identification      Goal
+                                                   and Connection  
+                                                     to Support    
+  -------------------- ------------- ------------ ---------------- -------------
+  School Health                           3              4         
+  Services                                                         
+
+  Nutrition & Food           2            3              1               X
+  Access                                                           
+
+  Physical Education &       2            5                              X
+  Activity                                                         
+
+  Staff Well-Being           4            2                              X
+
+  Family & Community         2            4              2         
+  Engagement                                                       
+
+  Health Education           2            2                        
+
+  Tobacco-Free Schools       2            3              1         
+
+  Local Wellness                          6                        
+  Policy                                                           
+
+  Social-Emotional           3            3              1         
+  Health & Learning                                                
+  ------------------------------------------------------------------------------
+
+Table 4: Criteria by Topic Areas and Impact Goal/Health Outcomes
+
++------------------+-------------------+------------------------------------+
+| AHS Topic Area   | Impact Goal /     | 2027 Criteria (*2026 criteria)     |
+|                  | Health Outcome    |                                    |
+|                  |                   |                                    |
+|                  | Bold = Healthier  |                                    |
+|                  | Generation        |                                    |
++==================+===================+====================================+
+| Supporting       | - Increase the    | SHS-S6 (collaborate with community |
+| School Health    |   proportion of   | to support school health services) |
+| Services         |   low-income      |                                    |
+|                  |   youth who have  | SHS-S9 (qualified staff)           |
+|                  |   a preventive    |                                    |
+|                  |   dental visit    | *SHS-S10 (conduct physical         |
+|                  |   (HP2030)        | screenings)                        |
+|                  |                   |                                    |
+|                  | - Increase        | *SHS-S11 (manage chronic           |
+|                  |   proportion of   | conditions)                        |
+|                  |   schools that    |                                    |
+|                  |   provide case    | SHS-S13 (medical emergency         |
+|                  |   management for  | preparedness)                      |
+|                  |   chronic         |                                    |
+|                  |   conditions      | SHS-S14 (collaborate with families |
+|                  |   (HP2030)        | of students with health concerns)  |
+|                  |                   | Evidence suggests well-informed    |
+|                  | - Increase the    | families lead to managed chronic   |
+|                  |   proportion of   | conditions via assurance           |
+|                  |   adolescents who | treatments at home and             |
+|                  |   had a           | preventative care.)                |
+|                  |   preventive      |                                    |
+|                  |   health care     | *SHS-S16 (referral pathway)        |
+|                  |   visit in the    |                                    |
+|                  |   past year       | Total = 7                          |
+|                  |   (HP2030)        |                                    |
++------------------+-------------------+------------------------------------+
+| Improving        | - Increase the    | *NFA-S5 (collaborate with          |
+| Nutrition & Food |   proportion of   | community to support food access)  |
+| Access           |   students        |                                    |
+|                  |   participating   | *NFA-S8 (participation in meal     |
+|                  |   in the School   | programs)                          |
+|                  |   Breakfast       |                                    |
+|                  |   Program         | NFA-S9 (meal program stigma)       |
+|                  |   (HP2030)        |                                    |
+|                  |                   | NFA-S11 (time to eat)              |
+|                  | - Reduce          |                                    |
+|                  |   household food  | NFA-S15 (family nutrition          |
+|                  |   insecurity and  | education) Evidence suggests       |
+|                  |   hunger (HP2030) | well-informed families are better  |
+|                  |                   | equipped to keep children fed and  |
+|                  |                   | nourished, supporting HP2030 goal  |
+|                  |                   | to reduce household hunger.        |
+|                  |                   |                                    |
+|                  |                   | *NFA-S16 (student nutrition        |
+|                  |                   | education)                         |
+|                  |                   |                                    |
+|                  |                   | Total = 6                          |
++------------------+-------------------+------------------------------------+
+| Bolstering       | - Increase the    | *PEA-S8 (provide physical          |
+| Physical         |   proportion of   | education)                         |
+| Education &      |   youth meeting   |                                    |
+| Activity         |   physical        | PEA-S9 (physical education         |
+|                  |   activity        | curriculum)                        |
+|                  |   guidelines      |                                    |
+|                  |   (HP2030)        | *PEA-S11 (physical activity during |
+|                  |                   | day)                               |
+|                  |                   |                                    |
+|                  |                   | PEA-S13 (prohibit physical         |
+|                  |                   | activity as punishment)            |
+|                  |                   |                                    |
+|                  |                   | PEA-S14 (school facilities open to |
+|                  |                   | community)                         |
+|                  |                   |                                    |
+|                  |                   | PEA-S15 (collaborate with          |
+|                  |                   | community to support physical      |
+|                  |                   | activity)                          |
+|                  |                   |                                    |
+|                  |                   | PEA-S16 (active routes to school)  |
+|                  |                   |                                    |
+|                  |                   | Total = 7                          |
++------------------+-------------------+------------------------------------+
+| Cultivating      | - Decrease the    | SWB-S4 (school-level professional  |
+| Staff            |   level of        | learning on staff well-being)      |
+| Well-Being       |   burnout         |                                    |
+|                  |   experienced by  | SWB-S6 (gathering input on school  |
+|                  |   teachers (RAND) | staff well-being policies)         |
+|                  |                   |                                    |
+|                  |                   | SWB-S8 (promoting positive staff   |
+|                  |                   | relationships)                     |
+|                  |                   |                                    |
+|                  |                   | SWB-S9 (school offers              |
+|                  |                   | opportunities for staff gratitude) |
+|                  |                   |                                    |
+|                  |                   | SWB-S10 (fostering positive work   |
+|                  |                   | culture)                           |
+|                  |                   |                                    |
+|                  |                   | SWB-S11 (space in school for staff |
+|                  |                   | breaks)                            |
+|                  |                   |                                    |
+|                  |                   | Total = 6                          |
++------------------+-------------------+------------------------------------+
+| Increasing       | - Increase the    | *FCE-S6 (school support for social |
+| Family &         |   proportion of   | drivers of health)                 |
+| Community        |   schools with    |                                    |
+| Engagement       |   policies and    | FCE-S7 (collaborate with community |
+|                  |   practices that  | to support family and community    |
+|                  |   promote health  | engagement)                        |
+|                  |   and safety      |                                    |
+|                  |   (HP2030)        | *FCE-S8 (gathering input on school |
+|                  |                   | family and community engagement    |
+|                  |                   | policies) Research shows that when |
+|                  |                   | schools meaningfully listen to     |
+|                  |                   | families and treat engagement as a |
+|                  |                   | shared responsibility, students    |
+|                  |                   | experience stronger academic,      |
+|                  |                   | social, and emotional outcomes.    |
+|                  |                   |                                    |
+|                  |                   | NFA-S7 (gathering input on         |
+|                  |                   | nutrition/food access)             |
+|                  |                   |                                    |
+|                  |                   | SHS-S7 (gathering input on school  |
+|                  |                   | health services)                   |
+|                  |                   |                                    |
+|                  |                   | SEH-S9 (gathering input on social  |
+|                  |                   | emotional health/learning)         |
+|                  |                   |                                    |
+|                  |                   | FCE-S9 (communicate about          |
+|                  |                   | community-based supports)          |
+|                  |                   |                                    |
+|                  |                   | *FCE-S10 (school resources to      |
+|                  |                   | support student success)           |
+|                  |                   |                                    |
+|                  |                   | Total = 8                          |
++------------------+-------------------+------------------------------------+
+| Enriching Health | - Increase        | HED-S6 (school communication about |
+| Education        |   proportion of   | health education)                  |
+|                  |   schools         |                                    |
+|                  |   requiring       | *HED-S7 (provide health education) |
+|                  |   students to     |                                    |
+|                  |   take at least 2 | *HED-S8 (health education          |
+|                  |   health          | curriculum)                        |
+|                  |   education       |                                    |
+|                  |   courses from    | *HED-S9 (practice and reinforce    |
+|                  |   6-12 (HP2030)   | skills)                            |
+|                  |                   |                                    |
+|                  | - Reduce          | Total = 4                          |
+|                  |   adolescent      |                                    |
+|                  |   tobacco use     |                                    |
+|                  |   (HP2030)        |                                    |
+|                  |                   |                                    |
+|                  | - Reduce the      |                                    |
+|                  |   proportion of   |                                    |
+|                  |   adolescents who |                                    |
+|                  |   used drugs in   |                                    |
+|                  |   the past month  |                                    |
+|                  |   (HP2030)        |                                    |
++------------------+-------------------+------------------------------------+
+| Promoting        | - Reduce          | TOB-S4 (Referral pathway for       |
+| Tobacco-Free     |   adolescent      | tobacco product and cessation      |
+| Schools          |   tobacco use     | programs)                          |
+|                  |   (HP2030)        |                                    |
+|                  |                   | TOB-S5 (collaborate with community |
+|                  | - Increase the    | to implement tobacco-free policy)  |
+|                  |   proportion of   |                                    |
+|                  |   schools with    | *TOB-S6 (student engagement in     |
+|                  |   policies and    | policy)                            |
+|                  |   practices that  |                                    |
+|                  |   promote health  | TOB-S7 (school communication about |
+|                  |   and safety      | the district tobacco-free policy)  |
+|                  |   (HP2030)        |                                    |
+|                  |                   | *TOB-S8 (tobacco education)        |
+|                  |                   |                                    |
+|                  |                   | *TOB-S9 (supportive disciplinary   |
+|                  |                   | practices for violations)          |
+|                  |                   |                                    |
+|                  |                   | Total = 6                          |
++------------------+-------------------+------------------------------------+
+| Implementing the | - Increase the    | *LWP-S1 (team to coordinate LWP)   |
+| Local Wellness   |   proportion of   |                                    |
+| Policy           |   schools that    | *LWP-S2 (measures school progress  |
+|                  |   don't sell less | against district wellness)         |
+|                  |   healthy foods   |                                    |
+|                  |   and drinks      | *LWP-S3 (continuous improvement to |
+|                  |   (HP2030)        | implement wellness policy)         |
+|                  |                   |                                    |
+|                  | - Increase the    | LWP-S4 (Smart Snacks – sold)       |
+|                  |   proportion of   |                                    |
+|                  |   youth meeting   | LWP-S5 (Smart Snacks – provided)   |
+|                  |   physical        |                                    |
+|                  |   activity        | LWP-S6 (Smart Snacks – marketing)  |
+|                  |   guidelines      |                                    |
+|                  |   (HP2030)        | Total = 6                          |
+|                  |                   |                                    |
+|                  | - Increase the    |                                    |
+|                  |   proportion of   |                                    |
+|                  |   schools with    |                                    |
+|                  |   policies and    |                                    |
+|                  |   practices that  |                                    |
+|                  |   promote health  |                                    |
+|                  |   and safety      |                                    |
+|                  |   (HP2030)        |                                    |
++------------------+-------------------+------------------------------------+
+| Strengthening    | - Fostering       | SEH-S12 (dedicate instructional    |
+| Social-Emotional |   Healthy Mental, | time to positive classroom         |
+| Health &         |   Emotional, and  | climate)                           |
+| Learning         |   Behavioral      |                                    |
+|                  |   Development in  | *SEH-S13 (motivate student         |
+|                  |   Children and    | learning)                          |
+|                  |   Youth: A        |                                    |
+|                  |   National Agenda | *SEH-S14 (calming spaces)          |
+|                  |   (2019)          |                                    |
+|                  |                   | *SEH-S15 (implement a schoolwide   |
+|                  | - Increase the    | SEL curriculum)                    |
+|                  |   proportion of   |                                    |
+|                  |   children and    | SCC-S16 (implement a bullying      |
+|                  |   adolescents who | prevention program)                |
+|                  |   show resilience |                                    |
+|                  |   to challenges   | SEH-S17 (referral)                 |
+|                  |   and stress      |                                    |
+|                  |   (HP2030)        | *SEH-S23 (supportive disciplinary  |
+|                  |                   | practices)                         |
+|                  |                   |                                    |
+|                  |                   | Total = 7                          |
++------------------+-------------------+------------------------------------+
+
+Table 5: Primary Role and Rationale of Criteria Within AHS
+
++------------------+-------------------+----------------------+------------------+
+|                  | Daily Practice    | Supportive           | Early            |
+|                  | (Lived            | Conditions           | Identification   |
+|                  | Experiences)      |                      | and Connection   |
+|                  |                   | Policies, norms,     | to Support       |
+|                  | What students (or | structures that make |                  |
+|                  | staff) regularly  | health and healthy   | Identify needs   |
+|                  | do or experience  | choices easier and   | and trigger      |
+|                  | as part of the    | consistent.          | action or        |
+|                  | school day.       |                      | connection to    |
+|                  |                   |                      | care.            |
++==================+===================+======================+==================+
+| Supporting       |                   | The staffing,        | How schools      |
+| School Health    |                   | readiness, and care  | identify needs   |
+| Services         |                   | structures that      | and connect      |
+|                  |                   | allow learning to    | students and     |
+|                  |                   | continue safely.     | families to      |
+|                  |                   |                      | care.            |
+|                  |                   | SHS-S9 – Qualified   |                  |
+|                  |                   | staff                | SHS-S10 –        |
+|                  |                   |                      | Screenings       |
+|                  |                   | A condition that     | Identifies       |
+|                  |                   | makes identification | health needs     |
+|                  |                   | and response         | early.           |
+|                  |                   | possible.            |                  |
+|                  |                   |                      | SHS-S16 –        |
+|                  |                   | SHS-S13 – Medical    | Referral pathway |
+|                  |                   | emergency            | Direct           |
+|                  |                   | preparedness         | connection to    |
+|                  |                   |                      | care.            |
+|                  |                   | A safety condition   |                  |
+|                  |                   | that ensures the     | SHS-S14 –        |
+|                  |                   | school can respond   | Collaborate with |
+|                  |                   | when urgent needs    | families of      |
+|                  |                   | arise.               | students with    |
+|                  |                   |                      | health concerns  |
+|                  |                   | SHS-S11 – Managing   | Enables          |
+|                  |                   | chronic conditions   | follow-through   |
+|                  |                   | Supportive care      | and access to    |
+|                  |                   | structures that keep | services once a  |
+|                  |                   | students with health | need is          |
+|                  |                   | needs engaged in     | identified.      |
+|                  |                   | learning.            |                  |
+|                  |                   |                      | SHS-S6 –         |
+|                  |                   |                      | Community        |
+|                  |                   |                      | partnerships     |
+|                  |                   |                      | Extends the      |
+|                  |                   |                      | school’s ability |
+|                  |                   |                      | to connect       |
+|                  |                   |                      | students to      |
+|                  |                   |                      | preventive and   |
+|                  |                   |                      | follow-up care.  |
++------------------+-------------------+----------------------+------------------+
+| Improving        | NFA-S8 – Max      | Shape the            | How schools      |
+| Nutrition & Food | participation in  | environment around   | identify needs   |
+| Access           | meal programs     | food access          | and connect      |
+|                  |                   |                      | students and     |
+|                  | Students eating   | NFA-S9 – Meal        | families to      |
+|                  | school meals.     | program stigma       | food.            |
+|                  |                   |                      |                  |
+|                  | NFA-S16 – School  | Social conditions    | NFA-S5 –         |
+|                  | collaboration for | influence whether    | Collaborate with |
+|                  | nutrition         | students             | community to     |
+|                  | education         | participate.         | support food     |
+|                  |                   |                      | access           |
+|                  | Students receive  | NFA-S11 – Adequate   |                  |
+|                  | nutrition         | time to eat          | Enables response |
+|                  | education and     |                      | when students or |
+|                  | skill-building.   | Structural condition | families         |
+|                  |                   | that enables         | experience food  |
+|                  |                   | students to eat      | insecurity       |
+|                  |                   | meals.               | beyond the       |
+|                  |                   |                      | school day.      |
+|                  |                   | NFA-S15 –            |                  |
+|                  |                   | Family/student       |                  |
+|                  |                   | nutrition education  |                  |
+|                  |                   |                      |                  |
+|                  |                   | Builds family        |                  |
+|                  |                   | knowledge and        |                  |
+|                  |                   | reinforces healthy   |                  |
+|                  |                   | food norms that      |                  |
+|                  |                   | support consistent   |                  |
+|                  |                   | access to            |                  |
+|                  |                   | nourishment at home  |                  |
+|                  |                   | and school.          |                  |
++------------------+-------------------+----------------------+------------------+
+| Bolstering       | PEA-S8 – Provide  | Policies, norms, and |                  |
+| Physical         | physical          | structures that      |                  |
+| Education &      | education         | reinforce positive   |                  |
+| Activity         |                   | activity             |                  |
+|                  | Students receive  | environments         |                  |
+|                  | regular physical  |                      |                  |
+|                  | education as part | PEA-S9 – Physical    |                  |
+|                  | of the school     | education curriculum |                  |
+|                  | day.              |                      |                  |
+|                  |                   | Sets expectations    |                  |
+|                  | PEA-S11 –         | for quality and      |                  |
+|                  | Physical activity | consistency in PE    |                  |
+|                  | during the day    | instruction.         |                  |
+|                  |                   |                      |                  |
+|                  | Students have     | PEA-S13 – Prohibit   |                  |
+|                  | opportunities to  | physical activity as |                  |
+|                  | move and be       | punishment           |                  |
+|                  | active beyond     |                      |                  |
+|                  | scheduled PE.     | Establishes norms    |                  |
+|                  |                   | that position        |                  |
+|                  |                   | activity as positive |                  |
+|                  |                   | and inclusive.       |                  |
+|                  |                   |                      |                  |
+|                  |                   | PEA-S14 – School     |                  |
+|                  |                   | facilities open to   |                  |
+|                  |                   | community            |                  |
+|                  |                   |                      |                  |
+|                  |                   | Expands access to    |                  |
+|                  |                   | safe spaces for      |                  |
+|                  |                   | physical activity.   |                  |
+|                  |                   |                      |                  |
+|                  |                   | PEA-S15 –            |                  |
+|                  |                   | Collaborate with     |                  |
+|                  |                   | community to support |                  |
+|                  |                   | physical activity    |                  |
+|                  |                   |                      |                  |
+|                  |                   | Strengthens access   |                  |
+|                  |                   | and opportunities    |                  |
+|                  |                   | beyond the school    |                  |
+|                  |                   | day.                 |                  |
+|                  |                   |                      |                  |
+|                  |                   | PEA-S16 – Active     |                  |
+|                  |                   | routes to school     |                  |
+|                  |                   |                      |                  |
+|                  |                   | Students can safely  |                  |
+|                  |                   | walk or bike to and  |                  |
+|                  |                   | from school.         |                  |
++------------------+-------------------+----------------------+------------------+
+| Cultivating      | What staff        | Policies, norms, and |                  |
+| Staff            | regularly         | structures that      |                  |
+| Well-Being       | experience as     | shape staff          |                  |
+|                  | part of the       | experience over time |                  |
+|                  | workday           |                      |                  |
+|                  |                   | SWB-S6 – Gathering   |                  |
+|                  | SWB-S4 –          | input on staff       |                  |
+|                  | School-level      | well-being policies  |                  |
+|                  | professional      | How schools listen   |                  |
+|                  | learning on staff | and respond to staff |                  |
+|                  | well-being        | needs                |                  |
+|                  |                   |                      |                  |
+|                  | Staff receive     | SWB-S10 – Fostering  |                  |
+|                  | professional      | positive work        |                  |
+|                  | learning during   | culture              |                  |
+|                  | school year.      |                      |                  |
+|                  |                   | Sets expectations    |                  |
+|                  | SWB-S8 –          | and norms for how    |                  |
+|                  | Promoting         | staff experience     |                  |
+|                  | positive staff    | their work           |                  |
+|                  | relationships     | environment.         |                  |
+|                  |                   |                      |                  |
+|                  | Day-to-day        |                      |                  |
+|                  | interactions that |                      |                  |
+|                  | support trust,    |                      |                  |
+|                  | collaboration,    |                      |                  |
+|                  | and connection.   |                      |                  |
+|                  |                   |                      |                  |
+|                  | SWB-S9 –          |                      |                  |
+|                  | Opportunities for |                      |                  |
+|                  | staff gratitude   |                      |                  |
+|                  |                   |                      |                  |
+|                  | Regular practices |                      |                  |
+|                  | that recognize    |                      |                  |
+|                  | effort and        |                      |                  |
+|                  | contribution.     |                      |                  |
+|                  |                   |                      |                  |
+|                  | SWB-S11 – Space   |                      |                  |
+|                  | in school for     |                      |                  |
+|                  | staff breaks      |                      |                  |
+|                  |                   |                      |                  |
+|                  | Built-in          |                      |                  |
+|                  | opportunities for |                      |                  |
+|                  | rest and recovery |                      |                  |
+|                  | during the        |                      |                  |
+|                  | workday.          |                      |                  |
++------------------+-------------------+----------------------+------------------+
+| Increasing       | What families and | Practices that build | How schools      |
+| Family &         | students          | trust, voice, and    | respond when     |
+| Community        | regularly         | shared               | families or      |
+| Engagement       | experience        | responsibility with  | students face    |
+|                  | through school    | families             | barriers         |
+|                  | interaction       |                      |                  |
+|                  |                   | FCE-S8 – Gathering   | FCE-S6 – School  |
+|                  | FCE-S9 –          | input on school      | support for      |
+|                  | Communicate about | family and community | social drivers   |
+|                  | community-based   | engagement policies  | of health        |
+|                  | supports          |                      |                  |
+|                  | Ongoing           | NFA-S7 – Gathering   | Responds to      |
+|                  | communication     | input on nutrition   | needs such as    |
+|                  | families receive  | and food access      | food, housing,   |
+|                  | about available   |                      | transportation,  |
+|                  | resources.        | SHS-S7 – Gathering   | or access to     |
+|                  |                   | input on school      | care once        |
+|                  | FCE-S10 – School  | health services      | identified.      |
+|                  | resources to      |                      |                  |
+|                  | support student   | SEH-S9 – Gathering   | FCE-S7 –         |
+|                  | success           | input on             | Collaborate with |
+|                  | Regular access to | social-emotional     | community to     |
+|                  | school-based      | health and learning  | support resource |
+|                  | supports that     |                      | access           |
+|                  | families and      |                      |                  |
+|                  | students use.     |                      | Connects         |
+|                  |                   |                      | families to      |
+|                  |                   |                      | external         |
+|                  |                   |                      | services and     |
+|                  |                   |                      | supports beyond  |
+|                  |                   |                      | the school.      |
++------------------+-------------------+----------------------+------------------+
+| Enriching Health | What students     | Structures and       |                  |
+| Education        | directly do or    | expectations that    |                  |
+|                  | experience as     | shape how health     |                  |
+|                  | part of learning  | education is         |                  |
+|                  |                   | delivered            |                  |
+|                  | HED-S7 – Provide  |                      |                  |
+|                  | health education  | HED-S8 – Health      |                  |
+|                  |                   | education curriculum |                  |
+|                  | Students receive  |                      |                  |
+|                  | health education  | Establishes          |                  |
+|                  | instruction       | consistency, scope,  |                  |
+|                  | during the school | and quality of       |                  |
+|                  | day.              | instruction.         |                  |
+|                  |                   |                      |                  |
+|                  | HED-S9 – Practice | HED-S6 – School      |                  |
+|                  | and reinforce     | communication about  |                  |
+|                  | skills            | health education     |                  |
+|                  |                   |                      |                  |
+|                  | Students actively | Reinforces shared    |                  |
+|                  | practice and      | understanding of     |                  |
+|                  | apply             | what is taught and   |                  |
+|                  | health-related    | why it matters.      |                  |
+|                  | skills, not just  |                      |                  |
+|                  | learn content.    |                      |                  |
++------------------+-------------------+----------------------+------------------+
+| Promoting        | What students     | Policies, norms, and | What happens     |
+|                  | directly          | practices that       | when use is      |
+| Tobacco-Free     | experience during | reinforce a          | identified       |
+| Schools          | the school day    | tobacco-free         |                  |
+|                  |                   | environment          | TOB-S4 –         |
+|                  | TOB-S6 – Student  |                      | Referral pathway |
+|                  | engagement in     | TOB-S5 – Collaborate | for tobacco      |
+|                  | policy            | with community to    | product and      |
+|                  |                   | implement            | cessation        |
+|                  | Students are      | tobacco-free policy  | programs         |
+|                  | involved in       | Strengthens          |                  |
+|                  | shaping and       | consistent           | Connects         |
+|                  | reinforcing       | tobacco-free         | students to      |
+|                  | tobacco-free      | expectations during  | support when     |
+|                  | expectations.     | and beyond the       | tobacco use is   |
+|                  |                   | school day           | identified.      |
+|                  | TOB-S8 – Tobacco  |                      |                  |
+|                  | education         | TOB-S7 – School      |                  |
+|                  |                   | communication about  |                  |
+|                  | Students receive  | the district         |                  |
+|                  | instruction on    | tobacco-free policy  |                  |
+|                  | the risks of      | Establishes clear,   |                  |
+|                  | tobacco and       | consistent           |                  |
+|                  | nicotine use.     | expectations across  |                  |
+|                  |                   | the school           |                  |
+|                  |                   | community.           |                  |
+|                  |                   |                      |                  |
+|                  |                   | TOB-S9 – Supportive  |                  |
+|                  |                   | disciplinary         |                  |
+|                  |                   | practices for        |                  |
+|                  |                   | violations           |                  |
+|                  |                   | How the school       |                  |
+|                  |                   | responds when a      |                  |
+|                  |                   | behavior occurs      |                  |
++------------------+-------------------+----------------------+------------------+
+| Implementing the |                   | The structures and   |                  |
+| Local Wellness   |                   | systems that guide   |                  |
+| Policy           |                   | and sustain wellness |                  |
+|                  |                   | implementation       |                  |
+|                  |                   | (governance and      |                  |
+|                  |                   | follow-through)      |                  |
+|                  |                   |                      |                  |
+|                  |                   | LWP-S1 – Team to     |                  |
+|                  |                   | coordinate the Local |                  |
+|                  |                   | Wellness Policy      |                  |
+|                  |                   |                      |                  |
+|                  |                   | Establishes shared   |                  |
+|                  |                   | responsibility and   |                  |
+|                  |                   | coordination for     |                  |
+|                  |                   | wellness efforts.    |                  |
+|                  |                   |                      |                  |
+|                  |                   | LWP-S2 – Measures    |                  |
+|                  |                   | school progress      |                  |
+|                  |                   | against district     |                  |
+|                  |                   | wellness goals       |                  |
+|                  |                   |                      |                  |
+|                  |                   | Creates              |                  |
+|                  |                   | accountability and   |                  |
+|                  |                   | visibility into      |                  |
+|                  |                   | implementation.      |                  |
+|                  |                   |                      |                  |
+|                  |                   | LWP-S3 – Continuous  |                  |
+|                  |                   | improvement to       |                  |
+|                  |                   | implement the        |                  |
+|                  |                   | wellness policy      |                  |
+|                  |                   |                      |                  |
+|                  |                   | Ensures the policy   |                  |
+|                  |                   | is actively used,    |                  |
+|                  |                   | monitored, and       |                  |
+|                  |                   | strengthened over    |                  |
+|                  |                   | time.                |                  |
+|                  |                   |                      |                  |
+|                  |                   | Policies and         |                  |
+|                  |                   | practices that shape |                  |
+|                  |                   | the nutrition        |                  |
+|                  |                   | environment students |                  |
+|                  |                   | experience           |                  |
+|                  |                   |                      |                  |
+|                  |                   | LWP-S4 – Smart       |                  |
+|                  |                   | Snacks (sold)        |                  |
+|                  |                   |                      |                  |
+|                  |                   | Sets standards for   |                  |
+|                  |                   | foods sold on        |                  |
+|                  |                   | campus.              |                  |
+|                  |                   |                      |                  |
+|                  |                   | LWP-S5 – Smart       |                  |
+|                  |                   | Snacks (provided)    |                  |
+|                  |                   |                      |                  |
+|                  |                   | Ensures foods        |                  |
+|                  |                   | provided during the  |                  |
+|                  |                   | school day meet      |                  |
+|                  |                   | nutrition standards. |                  |
+|                  |                   |                      |                  |
+|                  |                   | LWP-S6 – Smart       |                  |
+|                  |                   | Snacks (marketing)   |                  |
+|                  |                   |                      |                  |
+|                  |                   | Reinforces healthy   |                  |
+|                  |                   | food norms through   |                  |
+|                  |                   | consistent messaging |                  |
+|                  |                   | and promotion.       |                  |
++------------------+-------------------+----------------------+------------------+
+| Strengthening    | What students     | Policies, programs,  | How schools      |
+| Social-Emotional | regularly         | and norms that shape | respond when     |
+| Health &         | experience during | how the school       | additional       |
+| Learning         | the school day    | responds to behavior | support is       |
+|                  |                   | and well-being       | needed           |
+|                  | SEH-S12 –         |                      |                  |
+|                  | Dedicate          | SEH-S15 – Implement  | SEH-S17 –        |
+|                  | instructional     | a schoolwide SEL     | Referral pathway |
+|                  | time to positive  | curriculum           | for              |
+|                  | classroom climate |                      | social-emotional |
+|                  | Students          | Establishes          | and behavioral   |
+|                  | experience        | consistent           | interventions    |
+|                  | consistent        | expectations and     |                  |
+|                  | routines and      | skill development    | Provides a clear |
+|                  | relationships     | across classrooms.   | process to       |
+|                  | that support      |                      | connect students |
+|                  | engagement and    | SCC-S16 – Implement  | to additional    |
+|                  | learning.         | a bullying           | support when     |
+|                  |                   | prevention program   | needs are        |
+|                  | SEH-S13 –         |                      | identified.      |
+|                  | Motivate student  | Sets clear norms for |                  |
+|                  | learning          | safety, respect, and |                  |
+|                  | Students are      | peer interaction.    |                  |
+|                  | encouraged        |                      |                  |
+|                  | through positive, | SEH-S23 – Supportive |                  |
+|                  | inclusive         | disciplinary         |                  |
+|                  | approaches that   | practices            |                  |
+|                  | support           |                      |                  |
+|                  | persistence and   | Defines how behavior |                  |
+|                  | connection.       | is addressed in ways |                  |
+|                  |                   | that keep students   |                  |
+|                  | SEH-S14 – Calming | connected to         |                  |
+|                  | spaces            | learning.            |                  |
+|                  | Students have     |                      |                  |
+|                  | access to spaces  |                      |                  |
+|                  | that support      |                      |                  |
+|                  | regulation and    |                      |                  |
+|                  | return to         |                      |                  |
+|                  | learning.         |                      |                  |
++------------------+-------------------+----------------------+------------------+
