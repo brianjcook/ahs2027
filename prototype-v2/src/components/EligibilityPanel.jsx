@@ -42,7 +42,10 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
           <strong>Question Visibility</strong>
           <ul className="visibility-list">
             {allQuestions.map((question) => {
-              const visible = visibleQuestions.some(vq => vq.id === question.id);
+              // Check if question or any of its repeated instances are visible
+              const visible = visibleQuestions.some(vq =>
+                vq.id === question.id || vq.originalId === question.id
+              );
               const reason = getHiddenReason(question, answers);
               const conditionText = reason ? `— ${reason}` : '— always shown';
 

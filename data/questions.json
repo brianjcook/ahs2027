@@ -873,18 +873,18 @@
           {
             "questionId": "Q026",
             "operator": "includesMinimum",
-            "minimumCount": 3,
-            "description": "Q1 includes at least 3 situations (excluding \"We don't provide\"), OR Q1 selects only \"We don't provide\" and Q1a is completed."
+            "minimumCount": 1,
+            "description": "Q026 includes at least 1 situation."
           },
           {
             "operator": "text",
-            "rule": "For each situation selected in Q1 (except \"We don't provide\"), Q2 includes at least 1 compliance method for that situation.",
-            "description": "For each situation selected in Q1 (except \"We don't provide\"), Q2 includes at least 1 compliance method for that situation."
+            "rule": "For each situation selected in Q026 (except \"We don't provide\"), Q028 includes at least 1 compliance method for that situation.",
+            "description": "For each situation selected in Q026 (except \"We don't provide\"), Q028 includes at least 1 compliance method for that situation."
           },
           {
             "questionId": "Q029",
             "operator": "isAnswered",
-            "description": "Q3 has one evidence item provided."
+            "description": "Q029 has one evidence item provided."
           }
         ],
         "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
