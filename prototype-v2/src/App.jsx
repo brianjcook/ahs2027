@@ -80,7 +80,8 @@ export default function App() {
         const otherAnswers = {};
 
         for (const [key, val] of Object.entries(updated)) {
-          const baseId = key.split('_')[0];
+          // Extract base ID from repeated questions (Q028.1 -> Q028, Q028_old -> Q028)
+          const baseId = key.split(/[._]/)[0];
           if (currentQuestionIds.has(key) || currentQuestionIds.has(baseId)) {
             currentAnswers[key] = val;
           } else {
@@ -113,7 +114,8 @@ export default function App() {
 
       for (const [key, value] of Object.entries(answers)) {
         // Include if it's a direct question ID or a generated ID (for repeated questions)
-        const baseId = key.split('_')[0];
+        // Extract base ID (Q028.1 -> Q028, Q028_old -> Q028)
+        const baseId = key.split(/[._]/)[0];
         if (criterionQuestionIds.has(key) || criterionQuestionIds.has(baseId)) {
           filteredAnswers[key] = value;
         }
@@ -169,7 +171,8 @@ export default function App() {
     const criterionQuestionIds = new Set(currentCriterion.questions.map(q => q.id));
     const filtered = {};
     for (const [key, value] of Object.entries(answers)) {
-      const baseId = key.split('_')[0];
+      // Extract base ID (Q028.1 -> Q028, Q028_old -> Q028)
+      const baseId = key.split(/[._]/)[0];
       if (criterionQuestionIds.has(key) || criterionQuestionIds.has(baseId)) {
         filtered[key] = value;
       }
