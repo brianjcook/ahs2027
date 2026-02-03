@@ -309,12 +309,11 @@
         },
         {
           "id": "Q012",
-          "text": "Evidence (choose one)",
+          "text": "Upload evidence (choose one)",
           "type": "evidence",
           "options": [
-            "Upload assessment results or report",
-            "Upload Action Center download or screenshot",
-            "Provide a link to the assessment results"
+            "Assessment results or report",
+            "Action Center download or screenshot"
           ],
           "allowOther": false,
           "rationales": "Local Wellness Policy expert: Provides verification without excessive burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
@@ -551,12 +550,11 @@
         },
         {
           "id": "Q020",
-          "text": "Evidence (choose one)",
+          "text": "Upload evidence (choose one)",
           "type": "evidence",
           "options": [
-            "Upload a wellness action plan",
-            "Upload a continuous improvement report or summary",
-            "Provide a link to the plan or report"
+            "Wellness action plan",
+            "Continuous improvement report or summary"
           ],
           "allowOther": false,
           "rationales": "Local Wellness Policy expert: Provides proof with minimal burden. UI/UX: Single evidence requirement. Data and evaluation: Supports spot checks and QA. Senior front-end engineer: One-of-three input is straightforward. Senior back-end engineer: Stores a single artifact per submission. Product manager: Balances verification with applicant effort.",
@@ -1337,12 +1335,11 @@
         },
         {
           "id": "Q045",
-          "text": "Evidence (choose one)",
+          "text": "Upload evidence (choose one)",
           "type": "evidence",
           "options": [
-            "Upload a current resource map or directory",
-            "Provide a link to the resource directory",
-            "Upload a communication sample (flyer, email, or website screenshot)"
+            "Current resource map or directory",
+            "Communication sample (flyer, email, or website screenshot)"
           ],
           "allowOther": false,
           "rationales": "Content expert: Provides tangible proof without overburdening schools. UI/UX: Single required evidence keeps the step light. Data and evaluation: Optional artifacts support spot checks and QA. Senior front-end engineer: One-of-three input is straightforward to implement. Senior back-end engineer: Stores a single evidence artifact per submission. Product manager: Balances verification needs with applicant effort.",
