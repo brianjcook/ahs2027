@@ -269,8 +269,8 @@ function evaluateTextCondition(condition, answers) {
     return Array.isArray(answer) && answer.length >= parseInt(minCount, 10);
   }
 
-  // Pattern: For each situation selected in Q1, Q2 includes at least 1 compliance method
-  const perSituationPattern = /^For\s+each\s+situation\s+selected\s+in\s+(\w+),\s+(\w+)\s+includes\s+at\s+least\s+(\d+)/i;
+  // Pattern: For each situation selected in Q026 (except "..."), Q028 includes at least 1...
+  const perSituationPattern = /^For\s+each\s+situation\s+selected\s+in\s+(\w+)(?:\s+\(except[^)]*\))?,\s+(\w+)\s+includes\s+at\s+least\s+(\d+)/i;
   const perSituationMatch = condition.match(perSituationPattern);
   if (perSituationMatch) {
     const [, refQuestionId, questionId, minCount] = perSituationMatch;

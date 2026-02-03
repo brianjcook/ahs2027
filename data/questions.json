@@ -825,7 +825,7 @@
         },
         {
           "id": "Q028",
-          "text": "How does your school ensure compliance with Smart Snacks standards for this situation?",
+          "text": "How does your school ensure compliance with Smart Snacks standards for {situation}?",
           "type": "multi",
           "options": [
             "Written policy or guidance",
