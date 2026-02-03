@@ -63,7 +63,7 @@ export default function AdminApp() {
       const commitMessage = `Update application data via admin panel\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>`;
 
       const result = await updateQuestionsData(data, commitMessage, sha);
-      setSha(result.content.sha); // Update SHA for next save
+      setSha(result.sha); // Update SHA for next save
       setSaveMessage('✓ Saved successfully! Changes will deploy shortly.');
 
       setTimeout(() => setSaveMessage(''), 5000);
