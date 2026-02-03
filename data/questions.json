@@ -1577,6 +1577,24 @@
             "operator": "equals",
             "value": "No",
             "description": "Q046 is \"No.\""
+          },
+          {
+            "questionId": "Q049",
+            "operator": "includes",
+            "value": "Participation in other sports or activities",
+            "description": "Q049 includes \"Participation in other sports or activities.\""
+          },
+          {
+            "questionId": "Q049",
+            "operator": "includes",
+            "value": "Academic scheduling conflicts",
+            "description": "Q049 includes \"Academic scheduling conflicts.\""
+          },
+          {
+            "questionId": "Q049",
+            "operator": "includes",
+            "value": "Student or parent request",
+            "description": "Q049 includes \"Student or parent request.\""
           }
         ],
         "required": [
@@ -1590,7 +1608,7 @@
             "questionId": "Q048",
             "operator": "equals",
             "value": "No",
-            "description": "Q048 is \"No\" OR Q049 only includes medical, cultural, or religious considerations."
+            "description": "Q048 is \"No.\""
           }
         ]
       },
