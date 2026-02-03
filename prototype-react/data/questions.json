@@ -1904,15 +1904,15 @@
         },
         {
           "id": "Q059",
-          "text": "Which of the following statements describe your school's policy or practice?",
+          "text": "Which of the following reflects your school's policy or practice related to physical activity and punishment?",
           "type": "multi",
           "options": [
-            "Staff are prohibited from assigning physical activity as punishment (e.g., making students walk laps or do pushups)",
+            "Staff may use physical activity as punishment in some situations",
+            "Staff are prohibited from using physical activity as punishment (e.g., making students walk laps or do pushups)",
+            "Staff may withhold physical activity as punishment in some situations",
             "Staff are prohibited from withholding recess as punishment",
             "Staff are prohibited from withholding physical activity breaks as punishment",
-            "Staff are prohibited from withholding physical education class as punishment",
-            "Staff may use physical activity as punishment in some situations",
-            "Staff may withhold physical activity as punishment in some situations"
+            "Staff are prohibited from withholding physical education class as punishment"
           ],
           "showIf": [
             {
