@@ -1682,23 +1682,6 @@
           "citations": "None provided."
         },
         {
-          "id": "Q052",
-          "text": "Are all physical education teachers required to use this curriculum?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "showIf": [
-            {
-              "id": "Q050",
-              "equals": "Yes"
-            }
-          ],
-          "rationales": "Physical Education expert: Verifies consistent implementation. UI/UX: Direct yes/no reduces friction. Data and evaluation: Identifies implementation gaps. Senior front-end engineer: Boolean input for consistency check. Senior back-end engineer: Required flag for eligibility. Product manager: Ensures curriculum isn't optional.",
-          "citations": "None provided."
-        },
-        {
           "id": "Q053",
           "text": "How does your school ensure the curriculum is implemented consistently?",
           "type": "multi",
