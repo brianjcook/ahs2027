@@ -7,6 +7,7 @@
  * Supported operators:
  * - `equals`: Answer must exactly match a value
  * - `includes`: Answer array must contain a value (for multi-select questions)
+ * - `notIncludes`: Answer array must NOT contain a value (for multi-select negation)
  *
  * See docs/CONDITIONAL_LOGIC.md for full documentation.
  */
@@ -65,6 +66,12 @@ function evaluateRule(rule, answers) {
   if (rule.includes !== undefined) {
     // Answer must be an array containing the specified value
     return Array.isArray(refAnswer) && refAnswer.includes(rule.includes);
+  }
+
+  // Handle "notIncludes" operator (for multi-select negation)
+  if (rule.operator === 'notIncludes' && rule.value !== undefined) {
+    // Answer must be an array that does NOT contain the specified value
+    return Array.isArray(refAnswer) && !refAnswer.includes(rule.value);
   }
 
   // Unknown operator
@@ -249,6 +256,9 @@ export function getHiddenReason(question, answers) {
     }
     if (rule.includes !== undefined) {
       return `${rule.id} includes '${rule.includes}'`;
+    }
+    if (rule.operator === 'notIncludes' && rule.value !== undefined) {
+      return `${rule.id} does not include '${rule.value}'`;
     }
     return `${rule.id} (unknown condition)`;
   });
