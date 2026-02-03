@@ -5,7 +5,7 @@
  */
 
 import { useState } from 'react';
-import Modal from '../Modal';
+import QuestionRationaleModal from '../QuestionRationaleModal';
 
 export default function URLQuestion({ question, answer, onChange }) {
   const [showRationale, setShowRationale] = useState(false);

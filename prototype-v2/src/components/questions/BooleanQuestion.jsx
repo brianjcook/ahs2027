@@ -5,7 +5,7 @@
  */
 
 import { useState } from 'react';
-import Modal from '../Modal';
+import QuestionRationaleModal from '../QuestionRationaleModal';
 
 export default function BooleanQuestion({ question, answer, onChange }) {
   const [showRationale, setShowRationale] = useState(false);
@@ -49,14 +49,12 @@ export default function BooleanQuestion({ question, answer, onChange }) {
         </div>
       </div>
 
-      <Modal
-        isOpen={showRationale}
-        onClose={() => setShowRationale(false)}
-        title="Question Rationale"
-      >
-        <div className="modal-question">{question.text}</div>
-        <div className="modal-rationale">{question.rationales}</div>
-      </Modal>
+      {showRationale && (
+        <QuestionRationaleModal
+          question={question}
+          onClose={() => setShowRationale(false)}
+        />
+      )}
     </>
   );
 }
