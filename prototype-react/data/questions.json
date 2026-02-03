@@ -294,8 +294,7 @@
             "Reported to the wellness policy team",
             "Set or updated measurable goals",
             "Informed a wellness action plan",
-            "Shared with district leadership",
-            "Other (specify)"
+            "Shared with district leadership"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Shows the assessment drives action. UI/UX: Multi-select keeps responses structured. Data and evaluation: Indicates use of results. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Encourages actionable use without heavy burden.",
@@ -829,8 +828,7 @@
             "Written policy or guidance",
             "Staff training or briefings",
             "Approved foods list",
-            "Pre-approval or review process",
-            "Other (specify)"
+            "Pre-approval or review process"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
@@ -850,8 +848,7 @@
             "Written policy or guidance",
             "Staff training or briefings",
             "Approved foods list",
-            "Pre-approval or review process",
-            "Other (specify)"
+            "Pre-approval or review process"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
@@ -871,8 +868,7 @@
             "Written policy or guidance",
             "Staff training or briefings",
             "Approved foods list",
-            "Pre-approval or review process",
-            "Other (specify)"
+            "Pre-approval or review process"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
@@ -892,8 +888,7 @@
             "Written policy or guidance",
             "Staff training or briefings",
             "Approved foods list",
-            "Pre-approval or review process",
-            "Other (specify)"
+            "Pre-approval or review process"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
@@ -913,8 +908,7 @@
             "Written policy or guidance",
             "Staff training or briefings",
             "Approved foods list",
-            "Pre-approval or review process",
-            "Other (specify)"
+            "Pre-approval or review process"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
@@ -994,8 +988,7 @@
             "Digital media or websites",
             "Book covers",
             "Coupons or flyers",
-            "Sponsorships or branded materials",
-            "Other (specify)"
+            "Sponsorships or branded materials"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Confirms coverage across common marketing channels. UI/UX: Checklist keeps answers structured. Data and evaluation: Enables channel-level analysis. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Controlled values for reporting. Product manager: Makes scope visible to reviewers.",
@@ -1015,8 +1008,7 @@
             "Written policy or guidance",
             "Vendor or sponsorship contract language",
             "Pre-approval process for marketing materials",
-            "Periodic compliance review",
-            "Other (specify)"
+            "Periodic compliance review"
           ],
           "allowOther": true,
           "rationales": "Local Wellness Policy expert: Verifies operational enforcement. UI/UX: Multi-select keeps responses concise. Data and evaluation: Captures enforcement methods. Senior front-end engineer: Checkbox group is easy to implement. Senior back-end engineer: Stores as discrete values. Product manager: Ensures the requirement is actionable.",
@@ -1213,8 +1205,7 @@
             "Housing insecurity",
             "Transportation",
             "Health insurance and benefits enrollment",
-            "Family support and parenting resources",
-            "Other (specify)"
+            "Family support and parenting resources"
           ],
           "allowOther": true,
           "rationales": "Content expert: Validates breadth across health and social drivers. UI/UX: Multi-select list with an Other field keeps detail structured. Data and evaluation: Enables category-level gap analysis. Senior front-end engineer: Checkbox group is easy to implement and validate. Senior back-end engineer: Categories map to stable reference data. Product manager: Balances depth with a clear, bounded list.",
@@ -1249,8 +1240,7 @@
             "Text or communication app",
             "In-person events or meetings",
             "Student services office",
-            "Staff training or briefing",
-            "Other (specify)"
+            "Staff training or briefing"
           ],
           "allowOther": true,
           "rationales": "Content expert: Confirms dissemination beyond a static list. UI/UX: Uses familiar channels so schools can answer quickly. Data and evaluation: Supports analysis of outreach practices. Senior front-end engineer: Standard multi-select with optional text. Senior back-end engineer: Captures outreach modes without free text sprawl. Product manager: Ensures the criterion is not just documented but communicated.",
@@ -1282,8 +1272,7 @@
             "Warm handoff or referral by school staff",
             "Referral form or ticket system",
             "Direct scheduling by school staff",
-            "Resource list provided for self-navigation",
-            "Other (specify)"
+            "Resource list provided for self-navigation"
           ],
           "allowOther": true,
           "rationales": "Content expert: Distinguishes active support from passive sharing. UI/UX: Options are concrete and easy to recognize. Data and evaluation: Enables assessment of referral intensity. Senior front-end engineer: Conditional text input only when needed. Senior back-end engineer: Methods map to discrete values for scoring. Product manager: Clarifies whether matching is actually operationalized.",
@@ -1352,8 +1341,7 @@
             "Food bank or pantry",
             "Community-based nonprofit",
             "Faith-based organization",
-            "Local government social services",
-            "Other (specify)"
+            "Local government social services"
           ],
           "allowOther": true,
           "rationales": "Content expert: Confirms external partnerships for gaps the school cannot fill. UI/UX: Clear list of recognizable partner types. Data and evaluation: Provides partner mix data for equity insights. Senior front-end engineer: Multi-select pattern is consistent with other checklist questions. Senior back-end engineer: Partner types map to controlled vocabulary. Product manager: Reinforces the unmet-needs component of the criterion.",
@@ -1385,8 +1373,7 @@
             "Staff review of referral outcomes",
             "Family or student surveys",
             "Community partner feedback",
-            "School data (attendance, nurse visits, discipline, etc.)",
-            "Other (specify)"
+            "School data (attendance, nurse visits, discipline, etc.)"
           ],
           "allowOther": true,
           "rationales": "Content expert: Confirms a feedback loop, not just a one-time list. UI/UX: Lets schools select multiple signals without narrative. Data and evaluation: Distinguishes data-driven from anecdotal approaches. Senior front-end engineer: Reuses multi-select component and validation. Senior back-end engineer: Captures audit-friendly evidence sources. Product manager: Helps reviewers see how mapping informs improvement.",
@@ -1585,8 +1572,7 @@
             "Religious considerations",
             "Participation in other sports or activities",
             "Academic scheduling conflicts",
-            "Student or parent request",
-            "Other (specify)"
+            "Student or parent request"
           ],
           "allowOther": true,
           "showIf": [
@@ -1691,8 +1677,7 @@
             "Observations or evaluations of PE classes",
             "Common assessments across PE classes",
             "PE teacher collaboration meetings",
-            "We do not have a formal process",
-            "Other (specify)"
+            "We do not have a formal process"
           ],
           "allowOther": true,
           "showIf": [
@@ -1777,8 +1762,7 @@
             "Active instruction (lessons incorporating movement)",
             "Before-school activities",
             "After-school activities",
-            "Lunch-time activities",
-            "Other (specify)"
+            "Lunch-time activities"
           ],
           "allowOther": true,
           "showIf": [
@@ -1933,8 +1917,7 @@
             "Reviewed during professional development",
             "Posted in common areas",
             "Communicated via email or memo",
-            "It is not formally communicated",
-            "Other (specify)"
+            "It is not formally communicated"
           ],
           "allowOther": true,
           "showIf": [
@@ -1956,8 +1939,7 @@
             "Student or family feedback mechanisms",
             "Regular policy reviews",
             "Consequences for non-compliance",
-            "We do not have a formal process",
-            "Other (specify)"
+            "We do not have a formal process"
           ],
           "allowOther": true,
           "showIf": [
@@ -2060,8 +2042,7 @@
             "Tracks",
             "Gymnasiums",
             "Indoor multipurpose rooms",
-            "Classrooms",
-            "Other (specify)"
+            "Classrooms"
           ],
           "allowOther": true,
           "showIf": [
@@ -2123,8 +2104,7 @@
             "Newsletters or emails to families",
             "Flyers or posters",
             "Community organizations",
-            "It is not actively communicated",
-            "Other (specify)"
+            "It is not actively communicated"
           ],
           "allowOther": true,
           "showIf": [
@@ -2209,8 +2189,7 @@
             "Other after-school programs",
             "Local parks and recreation departments",
             "Sports leagues or clubs",
-            "Health or fitness organizations",
-            "Other (specify)"
+            "Health or fitness organizations"
           ],
           "allowOther": true,
           "showIf": [
@@ -2272,8 +2251,7 @@
             "Special events (fun runs, sports days, etc.)",
             "Access to community facilities",
             "Coaching or instruction from community partners",
-            "Equipment or resource sharing",
-            "Other (specify)"
+            "Equipment or resource sharing"
           ],
           "allowOther": true,
           "showIf": [
@@ -2346,8 +2324,7 @@
             "Involvement of parent/family groups",
             "Student leadership opportunities",
             "Staff participation and modeling",
-            "We do not actively engage the community",
-            "Other (specify)"
+            "We do not actively engage the community"
           ],
           "allowOther": true,
           "showIf": [
@@ -2369,8 +2346,7 @@
             "Create walking school bus or bike trains for safety",
             "Offer alternatives for students who can't walk/bike",
             "Gather feedback from diverse family groups",
-            "We have not specifically addressed equity and inclusion",
-            "Other (specify)"
+            "We have not specifically addressed equity and inclusion"
           ],
           "allowOther": true,
           "showIf": [
@@ -2409,8 +2385,7 @@
             "Walking school buses",
             "Bike trains",
             "Regular walk/bike challenges or incentive programs",
-            "None",
-            "Other (specify)"
+            "None"
           ],
           "allowOther": true,
           "showIf": [
@@ -2432,8 +2407,7 @@
             "Distribution of safety materials (maps, guides)",
             "Bike rodeos or skills courses",
             "Classroom lessons on traffic safety",
-            "We do not provide safety education",
-            "Other (specify)"
+            "We do not provide safety education"
           ],
           "allowOther": true,
           "showIf": [
@@ -2455,8 +2429,7 @@
             "Monitor safety incidents",
             "Assess community engagement",
             "Review and adjust strategies based on data",
-            "We do not formally evaluate",
-            "Other (specify)"
+            "We do not formally evaluate"
           ],
           "allowOther": true,
           "showIf": [
