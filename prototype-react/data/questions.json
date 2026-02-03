@@ -1522,8 +1522,13 @@
           "id": "Q046",
           "text": "Does your school provide physical education classes?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Confirms foundational PE program exists. UI/UX: Simple gate reduces cognitive load. Data and evaluation: Establishes clear baseline for analysis. Senior front-end engineer: Enables conditional branching. Senior back-end engineer: Boolean storage for scoring logic. Product manager: Efficient screening for non-qualifying schools.",
+          "citations": "None provided."
         },
         {
           "id": "Q047",
@@ -1544,14 +1549,31 @@
             "11th grade",
             "12th grade"
           ],
-          "showIf": [{"id": "Q046", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q046",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Verifies comprehensive grade-level coverage. UI/UX: Multi-select allows precise reporting. Data and evaluation: Supports grade-level gap analysis. Senior front-end engineer: Standard checkbox implementation. Senior back-end engineer: Array storage enables filtering. Product manager: Demonstrates program breadth to reviewers.",
+          "citations": "None provided."
         },
         {
           "id": "Q048",
           "text": "Can students waive, be exempted from, or substitute other activities for physical education class time or credit?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": [{"id": "Q046", "equals": "Yes"}]
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q046",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Identifies inappropriate waiver practices. UI/UX: Binary choice simplifies decision-making. Data and evaluation: Flags policy compliance issues. Senior front-end engineer: Straightforward boolean input. Senior back-end engineer: Triggers conditional logic for Q049. Product manager: Surfaces potential disqualifiers early.",
+          "citations": "None provided."
         },
         {
           "id": "Q049",
@@ -1567,7 +1589,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q048", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q048",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Distinguishes acceptable from unacceptable waivers. UI/UX: Clear options prevent ambiguity. Data and evaluation: Captures waiver reason distribution. Senior front-end engineer: Multi-select with conditional display. Senior back-end engineer: Validates against approved categories. Product manager: Ensures policy alignment with federal standards.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
@@ -1623,8 +1652,13 @@
           "id": "Q050",
           "text": "Do physical education teachers at your school use a defined curriculum?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Establishes curriculum foundation. UI/UX: Gate question minimizes unnecessary questions. Data and evaluation: Baseline for curriculum quality assessment. Senior front-end engineer: Simple boolean control flow. Senior back-end engineer: Boolean for scoring requirements. Product manager: Fast path for schools without defined curriculum.",
+          "citations": "None provided."
         },
         {
           "id": "Q051",
@@ -1637,14 +1671,31 @@
             "Consistent with national or state standards for physical education",
             "None of the above"
           ],
-          "showIf": [{"id": "Q050", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q050",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Measures curriculum quality dimensions. UI/UX: Self-explanatory options with descriptions. Data and evaluation: Assesses alignment with best practices. Senior front-end engineer: Multi-select for multiple characteristics. Senior back-end engineer: Array comparison for requirements. Product manager: Makes quality standards transparent.",
+          "citations": "None provided."
         },
         {
           "id": "Q052",
           "text": "Are all physical education teachers required to use this curriculum?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": [{"id": "Q050", "equals": "Yes"}]
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q050",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Verifies consistent implementation. UI/UX: Direct yes/no reduces friction. Data and evaluation: Identifies implementation gaps. Senior front-end engineer: Boolean input for consistency check. Senior back-end engineer: Required flag for eligibility. Product manager: Ensures curriculum isn't optional.",
+          "citations": "None provided."
         },
         {
           "id": "Q053",
@@ -1660,7 +1711,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q052", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q052",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Reveals implementation support mechanisms. UI/UX: Concrete examples aid recognition. Data and evaluation: Identifies professional development patterns. Senior front-end engineer: Multi-select with negative option. Senior back-end engineer: Validates against hard fail condition. Product manager: Distinguishes documentation from practice.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
@@ -1716,8 +1774,13 @@
           "id": "Q054",
           "text": "Do students at your school have opportunities for physical activity during the school day outside of physical education classes?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Confirms non-PE activity opportunities. UI/UX: Clear gate question. Data and evaluation: Establishes activity program existence. Senior front-end engineer: Boolean for conditional display. Senior back-end engineer: Hard fail trigger. Product manager: Quick screen for ineligible schools.",
+          "citations": "None provided."
         },
         {
           "id": "Q055",
@@ -1733,7 +1796,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q054", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q054",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Catalogs activity opportunity types. UI/UX: Familiar activity categories. Data and evaluation: Supports activity type analysis. Senior front-end engineer: Standard multi-select pattern. Senior back-end engineer: Array storage for reporting. Product manager: Shows program variety to reviewers.",
+          "citations": "None provided."
         },
         {
           "id": "Q056",
@@ -1747,14 +1817,31 @@
             "45-59 minutes",
             "60 minutes or more"
           ],
-          "showIf": [{"id": "Q054", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q054",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Measures time against 30-minute standard. UI/UX: Ranges reduce estimation burden. Data and evaluation: Quantifies compliance levels. Senior front-end engineer: Single-select radio input. Senior back-end engineer: Range comparison for requirements. Product manager: Aligns with national recommendations.",
+          "citations": "None provided."
         },
         {
           "id": "Q057",
           "text": "Are these physical activity opportunities available to all students?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": [{"id": "Q054", "equals": "Yes"}]
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q054",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Ensures equitable access. UI/UX: Simple yes/no for equity check. Data and evaluation: Flags access disparities. Senior front-end engineer: Boolean input. Senior back-end engineer: Required condition check. Product manager: Reinforces equity expectations.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
@@ -1776,7 +1863,9 @@
           {
             "questionId": "Q056",
             "operator": "anyEquals",
-            "questionIds": ["Q056"],
+            "questionIds": [
+              "Q056"
+            ],
             "value": "30-44 minutes",
             "description": "Q056 is \"30-44 minutes\", \"45-59 minutes\", or \"60 minutes or more.\""
           },
@@ -1799,8 +1888,13 @@
           "id": "Q058",
           "text": "Does your school have a policy or practice regarding the use of physical activity in disciplinary situations?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Confirms policy existence. UI/UX: Gate reduces questions for schools without policy. Data and evaluation: Baseline for disciplinary practice assessment. Senior front-end engineer: Boolean for branching. Senior back-end engineer: Hard fail trigger. Product manager: Efficient screening mechanism.",
+          "citations": "None provided."
         },
         {
           "id": "Q059",
@@ -1814,7 +1908,14 @@
             "Staff may use physical activity as punishment in some situations",
             "Staff may withhold physical activity as punishment in some situations"
           ],
-          "showIf": [{"id": "Q058", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Identifies specific prohibited practices. UI/UX: Explicit prohibitions prevent misinterpretation. Data and evaluation: Assesses policy comprehensiveness. Senior front-end engineer: Multi-select for multiple prohibitions. Senior back-end engineer: Validates minimum required selections. Product manager: Makes prohibitions explicit and verifiable.",
+          "citations": "None provided."
         },
         {
           "id": "Q060",
@@ -1830,7 +1931,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q058", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Verifies policy dissemination. UI/UX: Common communication channels. Data and evaluation: Measures implementation support. Senior front-end engineer: Multi-select with negative option. Senior back-end engineer: Hard fail for no communication. Product manager: Ensures policy isn't just on paper.",
+          "citations": "None provided."
         },
         {
           "id": "Q061",
@@ -1846,7 +1954,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q058", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Confirms enforcement mechanisms. UI/UX: Concrete compliance strategies. Data and evaluation: Identifies accountability gaps. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Hard fail validation. Product manager: Distinguishes policy from practice.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
@@ -1902,8 +2017,13 @@
           "id": "Q062",
           "text": "Are your school's facilities available for use outside of regular school hours?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Establishes community access. UI/UX: Clear gate question. Data and evaluation: Baseline for facility access assessment. Senior front-end engineer: Boolean for conditional display. Senior back-end engineer: Hard fail trigger. Product manager: Efficient screening for ineligible schools.",
+          "citations": "None provided."
         },
         {
           "id": "Q063",
@@ -1919,7 +2039,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q062", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Identifies accessible facility types. UI/UX: Recognizable facility categories. Data and evaluation: Catalogs community resources. Senior front-end engineer: Multi-select implementation. Senior back-end engineer: Array storage. Product manager: Demonstrates resource sharing.",
+          "citations": "None provided."
         },
         {
           "id": "Q064",
@@ -1932,7 +2059,14 @@
             "General community members",
             "Organized groups or programs only"
           ],
-          "showIf": [{"id": "Q062", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Verifies community member access. UI/UX: Clear access level categories. Data and evaluation: Measures access equity. Senior front-end engineer: Multi-select for access types. Senior back-end engineer: Validates general community access. Product manager: Ensures broad community benefit.",
+          "citations": "None provided."
         },
         {
           "id": "Q065",
@@ -1945,7 +2079,14 @@
             "School breaks and holidays",
             "Summer"
           ],
-          "showIf": [{"id": "Q062", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Confirms access timing. UI/UX: Standard time period options. Data and evaluation: Assesses availability patterns. Senior front-end engineer: Multi-select for times. Senior back-end engineer: Array validation. Product manager: Shows accessibility scope.",
+          "citations": "None provided."
         },
         {
           "id": "Q066",
@@ -1961,7 +2102,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q062", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Measures outreach effectiveness. UI/UX: Common communication methods. Data and evaluation: Identifies communication gaps. Senior front-end engineer: Multi-select with negative option. Senior back-end engineer: Hard fail validation. Product manager: Ensures information accessibility.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
@@ -2017,8 +2165,13 @@
           "id": "Q067",
           "text": "Does your school collaborate with community organizations to support physical activity for students?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Establishes partnership foundation. UI/UX: Gate minimizes questions. Data and evaluation: Baseline for collaboration assessment. Senior front-end engineer: Boolean branching. Senior back-end engineer: Hard fail trigger. Product manager: Efficient screening mechanism.",
+          "citations": "None provided."
         },
         {
           "id": "Q068",
@@ -2034,7 +2187,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q067", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Identifies partner types. UI/UX: Recognizable organization categories. Data and evaluation: Maps partnership landscape. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Array storage. Product manager: Demonstrates community connections.",
+          "citations": "None provided."
         },
         {
           "id": "Q069",
@@ -2047,7 +2207,14 @@
             "Evaluation plans (we assess the effectiveness of the collaboration)",
             "None of the above"
           ],
-          "showIf": [{"id": "Q067", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Assesses collaboration quality. UI/UX: Self-explanatory elements. Data and evaluation: Measures partnership maturity. Senior front-end engineer: Multi-select for elements. Senior back-end engineer: Validates all four elements. Product manager: Distinguishes formal from informal partnerships.",
+          "citations": "None provided."
         },
         {
           "id": "Q070",
@@ -2060,7 +2227,14 @@
             "Once per year",
             "As needed/not on a regular schedule"
           ],
-          "showIf": [{"id": "Q067", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Measures communication frequency. UI/UX: Standard frequency options. Data and evaluation: Quantifies engagement levels. Senior front-end engineer: Single-select radio. Senior back-end engineer: Enum storage. Product manager: Provides context for partnership strength.",
+          "citations": "None provided."
         },
         {
           "id": "Q071",
@@ -2076,7 +2250,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q067", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Catalogs partnership outcomes. UI/UX: Concrete opportunity types. Data and evaluation: Measures partnership impact. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Array validation. Product manager: Shows tangible benefits.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
@@ -2120,8 +2301,13 @@
           "id": "Q072",
           "text": "Does your school support active transportation initiatives (e.g., walk to school, bike to school programs)?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": []
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [],
+          "rationales": "Physical Education expert: Establishes active transportation program. UI/UX: Clear gate question. Data and evaluation: Baseline for transportation assessment. Senior front-end engineer: Boolean branching. Senior back-end engineer: Hard fail trigger. Product manager: Efficient screening mechanism.",
+          "citations": "None provided."
         },
         {
           "id": "Q073",
@@ -2137,7 +2323,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q072", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Measures community engagement. UI/UX: Recognizable engagement methods. Data and evaluation: Assesses stakeholder involvement. Senior front-end engineer: Multi-select with negative. Senior back-end engineer: Hard fail validation. Product manager: Ensures community buy-in.",
+          "citations": "None provided."
         },
         {
           "id": "Q074",
@@ -2153,14 +2346,31 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q072", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Verifies equity considerations. UI/UX: Explicit equity strategies. Data and evaluation: Identifies equity gaps. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Hard fail for no equity focus. Product manager: Reinforces inclusive practices.",
+          "citations": "None provided."
         },
         {
           "id": "Q075",
           "text": "Has your school designated safe routes or preferred routes for students walking or biking?",
           "type": "boolean",
-          "options": ["Yes", "No"],
-          "showIf": [{"id": "Q072", "equals": "Yes"}]
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Confirms safety infrastructure. UI/UX: Simple yes/no for route designation. Data and evaluation: Flags safety planning. Senior front-end engineer: Boolean input. Senior back-end engineer: Required condition. Product manager: Ensures basic safety measures.",
+          "citations": "None provided."
         },
         {
           "id": "Q076",
@@ -2176,7 +2386,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q072", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Catalogs program activities. UI/UX: Familiar event types. Data and evaluation: Measures program variety. Senior front-end engineer: Multi-select with none option. Senior back-end engineer: Hard fail validation. Product manager: Demonstrates active programming.",
+          "citations": "None provided."
         },
         {
           "id": "Q077",
@@ -2192,7 +2409,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q072", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Verifies safety education. UI/UX: Concrete education methods. Data and evaluation: Assesses safety preparation. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Hard fail for no education. Product manager: Ensures student readiness.",
+          "citations": "None provided."
         },
         {
           "id": "Q078",
@@ -2208,7 +2432,14 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "showIf": [{"id": "Q072", "equals": "Yes"}]
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Confirms evaluation practices. UI/UX: Standard evaluation methods. Data and evaluation: Identifies continuous improvement. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Hard fail validation. Product manager: Ensures data-driven improvements.",
+          "citations": "None provided."
         }
       ],
       "scoring": {
