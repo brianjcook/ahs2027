@@ -1670,6 +1670,12 @@
             "operator": "equals",
             "value": "No",
             "description": "Q050 is \"No.\""
+          },
+          {
+            "questionId": "Q053",
+            "operator": "includes",
+            "value": "We do not have a formal process",
+            "description": "Q053 includes \"We do not have a formal process.\""
           }
         ],
         "required": [
@@ -1844,6 +1850,18 @@
             "operator": "equals",
             "value": "No",
             "description": "Q058 is \"No.\""
+          },
+          {
+            "questionId": "Q060",
+            "operator": "includes",
+            "value": "It is not formally communicated",
+            "description": "Q060 includes \"It is not formally communicated.\""
+          },
+          {
+            "questionId": "Q061",
+            "operator": "includes",
+            "value": "We do not have a formal process",
+            "description": "Q061 includes \"We do not have a formal process.\""
           }
         ],
         "required": [
@@ -1947,6 +1965,12 @@
             "operator": "equals",
             "value": "No",
             "description": "Q062 is \"No.\""
+          },
+          {
+            "questionId": "Q066",
+            "operator": "includes",
+            "value": "It is not actively communicated",
+            "description": "Q066 includes \"It is not actively communicated.\""
           }
         ],
         "required": [
@@ -2188,6 +2212,36 @@
             "operator": "equals",
             "value": "No",
             "description": "Q072 is \"No.\""
+          },
+          {
+            "questionId": "Q073",
+            "operator": "includes",
+            "value": "We do not actively engage the community",
+            "description": "Q073 includes \"We do not actively engage the community.\""
+          },
+          {
+            "questionId": "Q074",
+            "operator": "includes",
+            "value": "We have not specifically addressed equity and inclusion",
+            "description": "Q074 includes \"We have not specifically addressed equity and inclusion.\""
+          },
+          {
+            "questionId": "Q076",
+            "operator": "includes",
+            "value": "None",
+            "description": "Q076 includes \"None.\""
+          },
+          {
+            "questionId": "Q077",
+            "operator": "includes",
+            "value": "We do not provide safety education",
+            "description": "Q077 includes \"We do not provide safety education.\""
+          },
+          {
+            "questionId": "Q078",
+            "operator": "includes",
+            "value": "We do not formally evaluate",
+            "description": "Q078 includes \"We do not formally evaluate.\""
           }
         ],
         "required": [
