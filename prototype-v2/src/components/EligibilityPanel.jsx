@@ -4,7 +4,7 @@
  * Right-side panel showing eligibility status and rules
  */
 
-import { getHiddenReason } from '../utils/conditionalLogic';
+import { getHiddenReason, getVisibilityRule } from '../utils/conditionalLogic';
 import { formatRule } from '../utils/ruleFormatter';
 
 export default function EligibilityPanel({ criterion, answers, eligibilityResult, allQuestions, visibleQuestions }) {
@@ -62,13 +62,12 @@ export default function EligibilityPanel({ criterion, answers, eligibilityResult
               } else {
                 // Show base question
                 const visible = visibleQuestions.some(vq => vq.id === question.id);
-                const reason = getHiddenReason(question, answers);
-                const conditionText = reason ? `— ${reason}` : '— always shown';
+                const rule = getVisibilityRule(question);
 
                 return (
                   <li key={question.id} className={`visibility-item ${visible ? 'visible' : 'hidden'}`}>
                     <span className="vis-mark">{visible ? '✔' : '✘'}</span>
-                    <span>{question.id} {conditionText}</span>
+                    <span>{question.id} — {rule}</span>
                   </li>
                 );
               }

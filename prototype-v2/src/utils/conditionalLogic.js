@@ -268,6 +268,40 @@ export function getHiddenReason(question, answers) {
 }
 
 /**
+ * Gets a human-readable explanation of a question's visibility rule
+ *
+ * @param {Object} question - Question object with showIf rules
+ * @returns {string} - Explanation text
+ *
+ * @example
+ * const question = {
+ *   id: "Q2",
+ *   showIf: [{ id: "Q1", equals: "Yes" }]
+ * };
+ * getVisibilityRule(question); // Returns "Q1 = 'Yes'"
+ */
+export function getVisibilityRule(question) {
+  if (!question.showIf || question.showIf.length === 0) {
+    return 'always shown';
+  }
+
+  const conditions = question.showIf.map((rule) => {
+    if (rule.equals !== undefined) {
+      return `${rule.id} = '${rule.equals}'`;
+    }
+    if (rule.includes !== undefined) {
+      return `${rule.id} includes '${rule.includes}'`;
+    }
+    if (rule.operator === 'notIncludes' && rule.value !== undefined) {
+      return `${rule.id} does not include '${rule.value}'`;
+    }
+    return `${rule.id} (unknown condition)`;
+  });
+
+  return conditions.join(' and ');
+}
+
+/**
  * Clears answers for questions that are no longer visible
  *
  * When a conditional question becomes hidden, its answer should be cleared
