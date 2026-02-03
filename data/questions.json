@@ -1871,6 +1871,12 @@
             "operator": "equals",
             "value": "20-29 minutes",
             "description": "Q056 is \"20-29 minutes.\""
+          },
+          {
+            "questionId": "Q057",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q057 is \"No.\""
           }
         ],
         "required": [
@@ -1884,12 +1890,6 @@
             "questionId": "Q056",
             "operator": "isAnswered",
             "description": "Q056 is answered (30+ minutes required, enforced by hard fails)."
-          },
-          {
-            "questionId": "Q057",
-            "operator": "equals",
-            "value": "Yes",
-            "description": "Q057 is \"Yes.\""
           }
         ]
       },
