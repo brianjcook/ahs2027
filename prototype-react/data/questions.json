@@ -862,13 +862,7 @@
         }
       ],
       "scoring": {
-        "hardFail": [
-          {
-            "operator": "text",
-            "rule": "None.",
-            "description": "None."
-          }
-        ],
+        "hardFail": [],
         "required": [
           {
             "questionId": "Q026",
