@@ -822,8 +822,8 @@
           "multiline": true
         },
         {
-          "id": "Q028",
-          "text": "How does your school ensure compliance with Smart Snacks standards for {situation}?",
+          "id": "Q028a",
+          "text": "How does your school ensure compliance with Smart Snacks standards for classroom rewards or incentives?",
           "type": "multi",
           "options": [
             "Written policy or guidance",
@@ -833,20 +833,102 @@
             "Other (specify)"
           ],
           "allowOther": true,
-          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Repeated question set based on Q1 selections. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
+          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
           "citations": "None provided.",
           "showIf": [
             {
               "id": "Q026",
-              "operator": "notIncludes",
-              "value": "We don't provide foods or beverages at our school"
+              "includes": "Classroom rewards or incentives"
             }
+          ]
+        },
+        {
+          "id": "Q028b",
+          "text": "How does your school ensure compliance with Smart Snacks standards for classroom parties?",
+          "type": "multi",
+          "options": [
+            "Written policy or guidance",
+            "Staff training or briefings",
+            "Approved foods list",
+            "Pre-approval or review process",
+            "Other (specify)"
           ],
-          "repeatedFor": "Q026"
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q026",
+              "includes": "Classroom parties"
+            }
+          ]
+        },
+        {
+          "id": "Q028c",
+          "text": "How does your school ensure compliance with Smart Snacks standards for school-wide celebrations?",
+          "type": "multi",
+          "options": [
+            "Written policy or guidance",
+            "Staff training or briefings",
+            "Approved foods list",
+            "Pre-approval or review process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q026",
+              "includes": "School-wide celebrations"
+            }
+          ]
+        },
+        {
+          "id": "Q028d",
+          "text": "How does your school ensure compliance with Smart Snacks standards for classroom snacks?",
+          "type": "multi",
+          "options": [
+            "Written policy or guidance",
+            "Staff training or briefings",
+            "Approved foods list",
+            "Pre-approval or review process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q026",
+              "includes": "Classroom snacks"
+            }
+          ]
+        },
+        {
+          "id": "Q028e",
+          "text": "How does your school ensure compliance with Smart Snacks standards for after-school or enrichment programs during the school day?",
+          "type": "multi",
+          "options": [
+            "Written policy or guidance",
+            "Staff training or briefings",
+            "Approved foods list",
+            "Pre-approval or review process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Local Wellness Policy expert: Verifies situation-specific compliance mechanisms. UI/UX: Asked once per selected situation for specificity. Data and evaluation: Captures implementation methods per context. Senior front-end engineer: Standard multi-select component. Senior back-end engineer: Stores per-situation compliance data. Product manager: Ensures compliance is documented for each context.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q026",
+              "includes": "After-school or enrichment programs during the school day"
+            }
+          ]
         },
         {
           "id": "Q029",
-          "text": "Evidence (choose one)",
+          "text": "Upload evidence (choose one)",
           "type": "evidence",
           "options": [
             "Policy or guidance document",
@@ -867,11 +949,6 @@
             "operator": "includesMinimum",
             "minimumCount": 1,
             "description": "Q026 includes at least 1 situation."
-          },
-          {
-            "operator": "text",
-            "rule": "For each situation selected in Q026 (except \"We don't provide\"), Q028 includes at least 1 compliance method for that situation.",
-            "description": "For each situation selected in Q026 (except \"We don't provide\"), Q028 includes at least 1 compliance method for that situation."
           },
           {
             "questionId": "Q029",
