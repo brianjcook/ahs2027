@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap");
 
 :root {
+  background-color: #f6f2ea;
   --bg: #f6f2ea;
   --paper: #fffaf2;
   --ink: #2a2a2a;
