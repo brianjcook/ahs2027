@@ -10,6 +10,7 @@ import SingleQuestion from './questions/SingleQuestion';
 import MultiQuestion from './questions/MultiQuestion';
 import TextQuestion from './questions/TextQuestion';
 import EvidenceQuestion from './questions/EvidenceQuestion';
+import URLQuestion from './questions/URLQuestion';
 
 export default function Criterion({ criterion, answers, onAnswerChange }) {
   // Get questions that should be visible based on current answers
@@ -35,6 +36,8 @@ export default function Criterion({ criterion, answers, onAnswerChange }) {
         return <TextQuestion key={question.id} {...props} />;
       case 'evidence':
         return <EvidenceQuestion key={question.id} {...props} />;
+      case 'url':
+        return <URLQuestion key={question.id} {...props} />;
       default:
         console.warn('Unknown question type:', question.type);
         return null;

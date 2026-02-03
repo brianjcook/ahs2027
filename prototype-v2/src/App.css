@@ -938,3 +938,60 @@ textarea.text-input {
     padding: 20px;
   }
 }
+
+/* URL Question Styles */
+.url-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.url-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.url-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(197, 90, 43, 0.1);
+}
+
+.url-input.error {
+  border-color: #d32f2f;
+}
+
+.url-input.error:focus {
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.url-preview {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--accent-soft);
+  border-radius: 8px;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.url-preview a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.url-preview a:hover {
+  text-decoration: underline;
+}

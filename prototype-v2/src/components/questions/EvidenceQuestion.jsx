@@ -10,9 +10,8 @@ import Modal from '../Modal';
 export default function EvidenceQuestion({ question, answer, onChange }) {
   const [showRationale, setShowRationale] = useState(false);
 
-  // If only one option and it's a file upload, auto-select it
-  const isSingleFileUpload = question.options.length === 1 &&
-                             question.options[0].toLowerCase().includes('upload');
+  // Evidence questions now only handle file uploads
+  const isSingleFileUpload = question.options.length === 1;
 
   const selectedType = answer?.type || (isSingleFileUpload ? question.options[0] : null);
 
@@ -28,13 +27,6 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
         value: file.name // In production, this would upload the file
       });
     }
-  };
-
-  const handleLinkChange = (e) => {
-    onChange(question.id, {
-      type: selectedType,
-      value: e.target.value
-    });
   };
 
   return (
@@ -66,7 +58,7 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
             />
           </div>
         ) : (
-          // Multiple options - show radio buttons
+          // Multiple file upload options - show radio buttons
           <div className="options">
             {question.options.map((option) => (
               <div key={option} className="evidence-option">
@@ -83,20 +75,11 @@ export default function EvidenceQuestion({ question, answer, onChange }) {
 
                 {selectedType === option && (
                   <div className="evidence-input">
-                    {option.toLowerCase().includes('upload') ? (
-                      <input
-                        type="file"
-                        onChange={handleFileChange}
-                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                      />
-                    ) : (
-                      <input
-                        type="url"
-                        placeholder="Enter URL..."
-                        value={answer?.value || ''}
-                        onChange={handleLinkChange}
-                      />
-                    )}
+                    <input
+                      type="file"
+                      onChange={handleFileChange}
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                    />
                   </div>
                 )}
               </div>
