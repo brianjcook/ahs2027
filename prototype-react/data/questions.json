@@ -1989,6 +1989,12 @@
             "operator": "includes",
             "value": "We do not have a formal process",
             "description": "Q061 includes \"We do not have a formal process.\""
+          },
+          {
+            "questionId": "Q059",
+            "operator": "equals",
+            "value": "Staff may use physical activity as punishment in some situations",
+            "description": "Q059 is \"Staff may use physical activity as punishment in some situations\""
           }
         ],
         "required": [
