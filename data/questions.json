@@ -1975,7 +1975,7 @@
           ],
           "rationales": "Physical Education expert: Verifies policy dissemination. UI/UX: Common communication channels. Data and evaluation: Measures implementation support. Senior front-end engineer: Multi-select with negative option. Senior back-end engineer: Hard fail for no communication. Product manager: Ensures policy isn't just on paper.",
           "citations": "None provided."
-        },
+        }
       ],
       "scoring": {
         "hardFail": [
