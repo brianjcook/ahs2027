@@ -1887,16 +1887,12 @@
           "citations": "None provided."
         },
         {
-          "id": "Q059",
-          "text": "Which of the following reflects your school's policy or practice related to physical activity and punishment?",
-          "type": "multi",
+          "id": "Q059a",
+          "text": "What is your school's policy regarding assigning physical activity as punishment (e.g., making students walk laps or do pushups)?",
+          "type": "single",
           "options": [
-            "Staff may use physical activity as punishment in some situations",
-            "Staff are prohibited from using physical activity as punishment (e.g., making students walk laps or do pushups)",
-            "Staff may withhold physical activity as punishment in some situations",
-            "Staff are prohibited from withholding recess as punishment",
-            "Staff are prohibited from withholding physical activity breaks as punishment",
-            "Staff are prohibited from withholding physical education class as punishment"
+            "Staff are prohibited from assigning physical activity as punishment",
+            "Staff may assign physical activity as punishment in some situations"
           ],
           "showIf": [
             {
@@ -1904,7 +1900,58 @@
               "equals": "Yes"
             }
           ],
-          "rationales": "Physical Education expert: Identifies specific prohibited practices. UI/UX: Explicit prohibitions prevent misinterpretation. Data and evaluation: Assesses policy comprehensiveness. Senior front-end engineer: Multi-select for multiple prohibitions. Senior back-end engineer: Validates minimum required selections. Product manager: Makes prohibitions explicit and verifiable.",
+          "rationales": "Physical Education expert: Identifies prohibition of PA as punishment. UI/UX: Binary choice clarifies policy stance. Data and evaluation: Assesses specific policy component. Senior front-end engineer: Radio buttons for mutually exclusive options. Senior back-end engineer: Hard fail for permissive stance. Product manager: Makes policy explicit and verifiable.",
+          "citations": "None provided."
+        },
+        {
+          "id": "Q059b",
+          "text": "What is your school's policy regarding withholding recess as punishment?",
+          "type": "single",
+          "options": [
+            "Staff are prohibited from withholding recess as punishment",
+            "Staff may withhold recess as punishment in some situations"
+          ],
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Ensures recess protection. UI/UX: Clear binary choice. Data and evaluation: Measures recess protection policy. Senior front-end engineer: Radio pattern for policy stance. Senior back-end engineer: Hard fail validation. Product manager: Critical for student activity time.",
+          "citations": "None provided."
+        },
+        {
+          "id": "Q059c",
+          "text": "What is your school's policy regarding withholding physical activity breaks as punishment?",
+          "type": "single",
+          "options": [
+            "Staff are prohibited from withholding physical activity breaks as punishment",
+            "Staff may withhold physical activity breaks as punishment in some situations"
+          ],
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Protects classroom movement opportunities. UI/UX: Consistent radio pattern. Data and evaluation: Assesses break time protection. Senior front-end engineer: Standard single-select. Senior back-end engineer: Validates prohibition. Product manager: Supports active classroom environment.",
+          "citations": "None provided."
+        },
+        {
+          "id": "Q059d",
+          "text": "What is your school's policy regarding withholding physical education class as punishment?",
+          "type": "single",
+          "options": [
+            "Staff are prohibited from withholding physical education class as punishment",
+            "Staff may withhold physical education class as punishment in some situations"
+          ],
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ],
+          "rationales": "Physical Education expert: Protects PE participation rights. UI/UX: Final policy component. Data and evaluation: Completes policy assessment. Senior front-end engineer: Consistent interaction pattern. Senior back-end engineer: Required for full eligibility. Product manager: Ensures PE access regardless of behavior.",
           "citations": "None provided."
         },
         {
@@ -1929,28 +1976,6 @@
           "rationales": "Physical Education expert: Verifies policy dissemination. UI/UX: Common communication channels. Data and evaluation: Measures implementation support. Senior front-end engineer: Multi-select with negative option. Senior back-end engineer: Hard fail for no communication. Product manager: Ensures policy isn't just on paper.",
           "citations": "None provided."
         },
-        {
-          "id": "Q061",
-          "text": "How does your school ensure compliance with this policy?",
-          "type": "multi",
-          "options": [
-            "Administrator observations",
-            "Staff self-reporting",
-            "Student or family feedback mechanisms",
-            "Regular policy reviews",
-            "Consequences for non-compliance",
-            "We do not have a formal process"
-          ],
-          "allowOther": true,
-          "showIf": [
-            {
-              "id": "Q058",
-              "equals": "Yes"
-            }
-          ],
-          "rationales": "Physical Education expert: Confirms enforcement mechanisms. UI/UX: Concrete compliance strategies. Data and evaluation: Identifies accountability gaps. Senior front-end engineer: Multi-select pattern. Senior back-end engineer: Hard fail validation. Product manager: Distinguishes policy from practice.",
-          "citations": "None provided."
-        }
       ],
       "scoring": {
         "hardFail": [
@@ -1961,54 +1986,60 @@
             "description": "Q058 is \"No.\""
           },
           {
-            "questionId": "Q059",
-            "operator": "includes",
-            "value": "Staff may use physical activity as punishment in some situations",
-            "description": "Q059 includes \"Staff may use physical activity as punishment in some situations.\""
-          },
-          {
-            "questionId": "Q059",
-            "operator": "includes",
-            "value": "Staff may withhold physical activity as punishment in some situations",
-            "description": "Q059 includes \"Staff may withhold physical activity as punishment in some situations.\""
-          },
-          {
-            "questionId": "Q060",
-            "operator": "includes",
-            "value": "It is not formally communicated",
-            "description": "Q060 includes \"It is not formally communicated.\""
-          },
-          {
-            "questionId": "Q061",
-            "operator": "includes",
-            "value": "We do not have a formal process",
-            "description": "Q061 includes \"We do not have a formal process.\""
-          },
-          {
-            "questionId": "Q059",
+            "questionId": "Q059a",
             "operator": "equals",
-            "value": "Staff may use physical activity as punishment in some situations",
-            "description": "Q059 is \"Staff may use physical activity as punishment in some situations\""
+            "value": "Staff may assign physical activity as punishment in some situations",
+            "description": "Q059a allows assigning PA as punishment."
+          },
+          {
+            "questionId": "Q059b",
+            "operator": "equals",
+            "value": "Staff may withhold recess as punishment in some situations",
+            "description": "Q059b allows withholding recess as punishment."
+          },
+          {
+            "questionId": "Q059c",
+            "operator": "equals",
+            "value": "Staff may withhold physical activity breaks as punishment in some situations",
+            "description": "Q059c allows withholding PA breaks as punishment."
+          },
+          {
+            "questionId": "Q059d",
+            "operator": "equals",
+            "value": "Staff may withhold physical education class as punishment in some situations",
+            "description": "Q059d allows withholding PE class as punishment."
           }
         ],
         "required": [
           {
-            "questionId": "Q059",
-            "operator": "includesMinimum",
-            "minimumCount": 4,
-            "description": "Q059 includes all four prohibitions (assigning PA as punishment, withholding recess, withholding PA breaks, withholding PE class)."
+            "questionId": "Q059a",
+            "operator": "equals",
+            "value": "Staff are prohibited from assigning physical activity as punishment",
+            "description": "Q059a prohibits assigning PA as punishment."
+          },
+          {
+            "questionId": "Q059b",
+            "operator": "equals",
+            "value": "Staff are prohibited from withholding recess as punishment",
+            "description": "Q059b prohibits withholding recess as punishment."
+          },
+          {
+            "questionId": "Q059c",
+            "operator": "equals",
+            "value": "Staff are prohibited from withholding physical activity breaks as punishment",
+            "description": "Q059c prohibits withholding PA breaks as punishment."
+          },
+          {
+            "questionId": "Q059d",
+            "operator": "equals",
+            "value": "Staff are prohibited from withholding PE class as punishment",
+            "description": "Q059d prohibits withholding PE class as punishment."
           },
           {
             "questionId": "Q060",
             "operator": "includesMinimum",
             "minimumCount": 1,
-            "description": "Q060 includes at least 1 communication method (not 'It is not formally communicated')."
-          },
-          {
-            "questionId": "Q061",
-            "operator": "includesMinimum",
-            "minimumCount": 1,
-            "description": "Q061 includes at least 1 compliance mechanism (not 'We do not have a formal process')."
+            "description": "Q060 includes at least 1 communication method."
           }
         ]
       },
