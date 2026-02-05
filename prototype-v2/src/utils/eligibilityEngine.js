@@ -195,6 +195,16 @@ function evaluateStructuredCondition(condition, answers) {
     case 'lessThan':
       return Number(answers[questionId]) < Number(value);
 
+    case 'totalLessThan':
+      // For minuteTable questions, sum all values in the answer object
+      const answer = answers[questionId];
+      if (!answer || typeof answer !== 'object') return false;
+      const total = Object.values(answer).reduce((sum, val) => {
+        const num = parseInt(val) || 0;
+        return sum + num;
+      }, 0);
+      return total < Number(value);
+
     case 'text':
     case 'complex':
       // Fallback to text parsing for complex rules

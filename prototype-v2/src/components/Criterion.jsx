@@ -12,6 +12,7 @@ import MultiQuestion from './questions/MultiQuestion';
 import TextQuestion from './questions/TextQuestion';
 import EvidenceQuestion from './questions/EvidenceQuestion';
 import URLQuestion from './questions/URLQuestion';
+import MinuteTableQuestion from './questions/MinuteTableQuestion';
 import CriterionInfoModal from './CriterionInfoModal';
 
 export default function Criterion({ criterion, answers, onAnswerChange }) {
@@ -42,6 +43,8 @@ export default function Criterion({ criterion, answers, onAnswerChange }) {
         return <EvidenceQuestion key={question.id} {...props} />;
       case 'url':
         return <URLQuestion key={question.id} {...props} />;
+      case 'minuteTable':
+        return <MinuteTableQuestion key={question.id} {...props} />;
       default:
         console.warn('Unknown question type:', question.type);
         return null;
