@@ -397,6 +397,27 @@ function build() {
     };
   });
 
+  // Sort criteria: first by topicId, then by numeric suffix (e.g., S5 before S11)
+  criteriaWithTopics.sort((a, b) => {
+    // First sort by topic
+    if (a.topicId !== b.topicId) {
+      return a.topicId.localeCompare(b.topicId);
+    }
+
+    // Within same topic, sort by numeric suffix
+    const aMatch = a.id?.match(/S(\d+)$/);
+    const bMatch = b.id?.match(/S(\d+)$/);
+
+    if (aMatch && bMatch) {
+      const aNum = parseInt(aMatch[1], 10);
+      const bNum = parseInt(bMatch[1], 10);
+      return aNum - bNum;
+    }
+
+    // Fallback to alphabetical
+    return (a.id || '').localeCompare(b.id || '');
+  });
+
   // Generate topics array from criteria
   const topicsSet = new Set(criteriaWithTopics.map(c => c.topicId).filter(Boolean));
   const topics = Array.from(topicsSet)
