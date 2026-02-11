@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-11T22:32:02.554Z",
+  "generatedAt": "2026-02-11T22:36:43.207Z",
   "topics": [
     {
       "id": "FCE",
@@ -14,12 +14,12 @@
       "title": "Nutrition & Food Access"
     },
     {
-      "id": "SHS",
-      "title": "School Health Services"
+      "id": "PEA",
+      "title": "Physical Education & Activity"
     },
     {
-      "id": "SEH",
-      "title": "Social-Emotional Health"
+      "id": "SHS",
+      "title": "School Health Services"
     },
     {
       "id": "SWB",
@@ -1171,6 +1171,416 @@
       "topicId": "FCE"
     },
     {
+      "id": "SEH-S9",
+      "title": "SEH-S9: Gathering Input from Families and Caregivers on Social-Emotional Health",
+      "criterionText": "Our school does all the following:\n- Gathers input from all families and caregivers at least once per year\n- Uses at least three inclusive and culturally responsive methods to gather input, including mechanisms to provide anonymous input\n- Communicates results of input in languages that reflect the diversity of all families and caregivers at least once per year\n- Analyzes demographics of input to ensure responses are representative of all families and caregivers\n\nNote: This criterion focuses on gathering input on policies and practices regarding social-emotional health.",
+      "questions": [
+        {
+          "id": "Q1",
+          "text": "Does your school gather input from families and caregivers on policies and practices regarding social-emotional health?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Confirms the school actively seeks family voice on SEH matters. UI/UX: Simple gate question avoids unnecessary follow-ups. Data and evaluation: Establishes clear eligibility anchor. Senior front-end engineer: Enables branching logic. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Reduces burden for schools without family input processes.",
+          "citations": "None provided.",
+          "showIf": []
+        },
+        {
+          "id": "Q2",
+          "text": "Does your school gather input from all families and caregivers at least once per year?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Ensures input gathering is systematic and inclusive, not limited to select groups. UI/UX: Direct question keeps decision fast. Data and evaluation: Captures frequency and universality. Senior front-end engineer: Standard boolean input. Senior back-end engineer: Supports deterministic scoring. Product manager: Aligns with equity principles and annual planning cycles.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "How many different methods does your school use to gather input from families and caregivers?",
+          "type": "single",
+          "options": [
+            "1 method",
+            "2 methods",
+            "3 or more methods"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Multiple methods ensure accessibility for diverse communication preferences. UI/UX: Clear quantity options avoid confusion. Data and evaluation: Supports threshold validation (at least 3 required). Senior front-end engineer: Radio button input. Senior back-end engineer: Stored as integer for comparison logic. Product manager: Balances rigor with realistic implementation.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "Which methods does your school use to gather input from families and caregivers on social-emotional health?",
+          "type": "multi",
+          "options": [
+            "Surveys (paper or digital)",
+            "Focus groups or listening sessions",
+            "One-on-one conversations or interviews",
+            "Community forums or town halls",
+            "Anonymous suggestion boxes or forms",
+            "Advisory committees with family representation",
+            "Text message or phone-based feedback",
+            "Home visits",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Validates variety of engagement approaches that respect different comfort levels. UI/UX: Multi-select list with Other field keeps detail structured. Data and evaluation: Enables method-type analysis and verification of minimum 3. Senior front-end engineer: Standard checkbox group. Senior back-end engineer: Methods map to stable reference data. Product manager: Captures method diversity without overwhelming detail.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q5",
+          "text": "Are the methods used to gather input inclusive and culturally responsive?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Confirms methods are designed to reach families from all backgrounds and cultures. UI/UX: Single decision point maintains flow. Data and evaluation: Captures intentionality of approach. Senior front-end engineer: Clean boolean input. Senior back-end engineer: Simple scoring logic. Product manager: Ensures equity is considered in engagement design.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q6",
+          "text": "Do the methods include mechanisms for families and caregivers to provide anonymous input?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Anonymous options encourage honest feedback, especially on sensitive SEH topics. UI/UX: Direct question with clear intent. Data and evaluation: Validates safety component of input process. Senior front-end engineer: Standard boolean. Senior back-end engineer: Boolean for scoring threshold. Product manager: Ensures families feel safe sharing concerns.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q7",
+          "text": "Does your school communicate results of input back to families and caregivers at least once per year?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Closing the loop demonstrates transparency and respect for family voice. UI/UX: Simple yes/no keeps cognitive load low. Data and evaluation: Captures bidirectional communication. Senior front-end engineer: Straightforward validation. Senior back-end engineer: Boolean flag for eligibility. Product manager: Aligns with best practice for meaningful engagement.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q8",
+          "text": "Are results communicated in languages that reflect the diversity of all families and caregivers?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Language accessibility is essential for equitable communication with multilingual communities. UI/UX: Final gate question for communication practices. Data and evaluation: Validates linguistic equity. Senior front-end engineer: Standard boolean. Senior back-end engineer: Boolean for scoring threshold. Product manager: Ensures translation is not an afterthought.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q7",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q9",
+          "text": "What languages are used to communicate results to families and caregivers?",
+          "type": "multi",
+          "options": [
+            "English",
+            "Spanish",
+            "Mandarin",
+            "Cantonese",
+            "Vietnamese",
+            "Arabic",
+            "Haitian Creole",
+            "Portuguese",
+            "French",
+            "Korean",
+            "Russian",
+            "Tagalog",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Identifies specific languages served, demonstrating commitment to linguistic diversity. UI/UX: Multi-select list reflects common school languages. Data and evaluation: Supports language access analysis. Senior front-end engineer: Standard checkbox group with Other. Senior back-end engineer: Languages map to reference data. Product manager: Captures language diversity without excessive burden.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q7",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q8",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q10",
+          "text": "Does your school analyze the demographics of input to ensure responses are representative of all families and caregivers?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Demographic analysis identifies gaps in whose voices are being heard. UI/UX: Clear question about evaluation practice. Data and evaluation: Validates continuous improvement mindset. Senior front-end engineer: Clean boolean input. Senior back-end engineer: Simple scoring logic. Product manager: Ensures equity is monitored, not assumed.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q7",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q8",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q11",
+          "text": "Which demographic factors does your school analyze when reviewing input from families and caregivers?",
+          "type": "multi",
+          "options": [
+            "Race",
+            "ethnicity",
+            "Primary language spoken at home",
+            "Grade level of students",
+            "Socioeconomic status",
+            "Students with disabilities",
+            "Students receiving special education services",
+            "English Learner status",
+            "LGBTQ+ families",
+            "Foster care status",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "rationales": "Content expert: Multiple demographic lenses reveal equity gaps in family engagement. UI/UX: Familiar categories make selection straightforward. Data and evaluation: Supports analysis of representativeness practices. Senior front-end engineer: Multi-select with optional text. Senior back-end engineer: Categories map to discrete values. Product manager: Ensures analysis is comprehensive and equity-focused.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q7",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q8",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q10",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q12",
+          "text": "Evidence (choose one)",
+          "type": "evidence",
+          "options": [
+            "Family input survey or instrument with response data",
+            "Meeting notes or documentation from family engagement sessions",
+            "Communication to families showing results (e.g., newsletter, letter, website post)",
+            "Demographic analysis report or summary"
+          ],
+          "allowOther": false,
+          "rationales": "Content expert: Provides tangible proof of systematic family input process. UI/UX: Single evidence requirement is efficient. Data and evaluation: Supports verification and QA. Senior front-end engineer: One-of-four input is straightforward. Senior back-end engineer: Stores single artifact per submission. Product manager: Balances verification with applicant effort.",
+          "citations": "None provided.",
+          "showIf": [
+            {
+              "id": "Q1",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q2",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q5",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q6",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q7",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q8",
+              "equals": "Yes"
+            },
+            {
+              "id": "Q10",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          "Q1 is \"No.\"",
+          "Q2 is \"No.\"",
+          "Q3 is \"1 method\" or \"2 methods\" (must be \"3 or more methods\").",
+          "Q5 is \"No.\"",
+          "Q6 is \"No.\"",
+          "Q7 is \"No.\"",
+          "Q8 is \"No.\"",
+          "Q10 is \"No.\""
+        ],
+        "required": [
+          "Q4 includes at least 3 input methods.",
+          "Q4 includes at least one method that allows anonymous input (e.g., \"Anonymous suggestion boxes or forms\" or \"Surveys (paper or digital)\").",
+          "Q9 includes at least 1 language.",
+          "Q11 includes at least 3 demographic factors.",
+          "Q12 has one evidence item provided."
+        ],
+        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+      },
+      "rules": [],
+      "source": {
+        "type": "md",
+        "filename": "seh_s9_questions.md"
+      },
+      "topicId": "FCE"
+    },
+    {
       "id": "FCE-S10",
       "title": "FCE-S10: Resources for Families to Support Student Success",
       "criterionText": "Our school provides all the following:\n- Tools to facilitate ongoing, two-way communication between school staff and families and caregivers\n- Technology options to link families and caregivers to the classroom\n- Supplementary educational resources to support learning at home\n- Opportunities for families and caregivers to network with each other\n\nNote: Two-way communication enables families to both receive information and share input, questions, or concerns. Technology options may include learning management systems, classroom apps, or virtual meeting platforms. Supplementary resources help families support their children's learning outside of school hours.",
@@ -2235,7 +2645,7 @@
           "showIf": []
         },
         {
-          "id": "Qhdb3",
+          "id": "Qvha8",
           "text": "**Q1a. (Conditional) If \"We don't provide foods or beverages at our school\" is selected:** Please explain your school's approach.",
           "type": "single",
           "options": [
@@ -3849,383 +4259,78 @@
       "topicId": "NFA"
     },
     {
-      "id": "SEH-S9",
-      "title": "SEH-S9: Gathering Input from Families and Caregivers on Social-Emotional Health",
-      "criterionText": "Our school does all the following:\n- Gathers input from all families and caregivers at least once per year\n- Uses at least three inclusive and culturally responsive methods to gather input, including mechanisms to provide anonymous input\n- Communicates results of input in languages that reflect the diversity of all families and caregivers at least once per year\n- Analyzes demographics of input to ensure responses are representative of all families and caregivers\n\nNote: This criterion focuses on gathering input on policies and practices regarding social-emotional health.",
+      "id": "PEA-S8",
+      "title": "PEA-S8: Provide Physical Education",
+      "criterionText": "Our school provides physical education in all grades, and prohibits waivers, exemptions, and substitutions for physical education class time or credit (except for accommodations made for students with medical, cultural, or religious considerations).",
       "questions": [
         {
-          "id": "Q1",
-          "text": "Does your school gather input from families and caregivers on policies and practices regarding social-emotional health?",
+          "id": "Q046",
+          "text": "Does your school provide physical education classes?",
           "type": "boolean",
           "options": [
             "Yes",
             "No"
           ],
-          "allowOther": false,
-          "rationales": "Content expert: Confirms the school actively seeks family voice on SEH matters. UI/UX: Simple gate question avoids unnecessary follow-ups. Data and evaluation: Establishes clear eligibility anchor. Senior front-end engineer: Enables branching logic. Senior back-end engineer: Boolean for rules-based scoring. Product manager: Reduces burden for schools without family input processes.",
-          "citations": "None provided.",
           "showIf": []
         },
         {
-          "id": "Q2",
-          "text": "Does your school gather input from all families and caregivers at least once per year?",
+          "id": "Q047",
+          "text": "Which grade levels receive physical education at your school?",
+          "type": "multi",
+          "options": [
+            "Kindergarten",
+            "1st grade",
+            "2nd grade",
+            "3rd grade",
+            "4th grade",
+            "5th grade",
+            "6th grade",
+            "7th grade",
+            "8th grade",
+            "9th grade",
+            "10th grade",
+            "11th grade",
+            "12th grade"
+          ],
+          "showIf": [
+            {
+              "id": "Q046",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q048",
+          "text": "Can students waive, be exempted from, or substitute other activities for physical education class time or credit?",
           "type": "boolean",
           "options": [
             "Yes",
             "No"
           ],
-          "allowOther": false,
-          "rationales": "Content expert: Ensures input gathering is systematic and inclusive, not limited to select groups. UI/UX: Direct question keeps decision fast. Data and evaluation: Captures frequency and universality. Senior front-end engineer: Standard boolean input. Senior back-end engineer: Supports deterministic scoring. Product manager: Aligns with equity principles and annual planning cycles.",
-          "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q1",
+              "id": "Q046",
               "equals": "Yes"
             }
           ]
         },
         {
-          "id": "Q3",
-          "text": "How many different methods does your school use to gather input from families and caregivers?",
-          "type": "single",
-          "options": [
-            "1 method",
-            "2 methods",
-            "3 or more methods"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Multiple methods ensure accessibility for diverse communication preferences. UI/UX: Clear quantity options avoid confusion. Data and evaluation: Supports threshold validation (at least 3 required). Senior front-end engineer: Radio button input. Senior back-end engineer: Stored as integer for comparison logic. Product manager: Balances rigor with realistic implementation.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q4",
-          "text": "Which methods does your school use to gather input from families and caregivers on social-emotional health?",
+          "id": "Q049",
+          "text": "Under what circumstances can students waive, be exempted from, or substitute for physical education?",
           "type": "multi",
           "options": [
-            "Surveys (paper or digital)",
-            "Focus groups or listening sessions",
-            "One-on-one conversations or interviews",
-            "Community forums or town halls",
-            "Anonymous suggestion boxes or forms",
-            "Advisory committees with family representation",
-            "Text message or phone-based feedback",
-            "Home visits",
+            "Medical considerations (with documentation)",
+            "Cultural considerations",
+            "Religious considerations",
+            "Participation in other sports or activities",
+            "Academic scheduling conflicts",
+            "Student or parent request",
             "Other (specify)"
           ],
           "allowOther": true,
-          "rationales": "Content expert: Validates variety of engagement approaches that respect different comfort levels. UI/UX: Multi-select list with Other field keeps detail structured. Data and evaluation: Enables method-type analysis and verification of minimum 3. Senior front-end engineer: Standard checkbox group. Senior back-end engineer: Methods map to stable reference data. Product manager: Captures method diversity without overwhelming detail.",
-          "citations": "None provided.",
           "showIf": [
             {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q5",
-          "text": "Are the methods used to gather input inclusive and culturally responsive?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Confirms methods are designed to reach families from all backgrounds and cultures. UI/UX: Single decision point maintains flow. Data and evaluation: Captures intentionality of approach. Senior front-end engineer: Clean boolean input. Senior back-end engineer: Simple scoring logic. Product manager: Ensures equity is considered in engagement design.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q6",
-          "text": "Do the methods include mechanisms for families and caregivers to provide anonymous input?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Anonymous options encourage honest feedback, especially on sensitive SEH topics. UI/UX: Direct question with clear intent. Data and evaluation: Validates safety component of input process. Senior front-end engineer: Standard boolean. Senior back-end engineer: Boolean for scoring threshold. Product manager: Ensures families feel safe sharing concerns.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q7",
-          "text": "Does your school communicate results of input back to families and caregivers at least once per year?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Closing the loop demonstrates transparency and respect for family voice. UI/UX: Simple yes/no keeps cognitive load low. Data and evaluation: Captures bidirectional communication. Senior front-end engineer: Straightforward validation. Senior back-end engineer: Boolean flag for eligibility. Product manager: Aligns with best practice for meaningful engagement.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q6",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q8",
-          "text": "Are results communicated in languages that reflect the diversity of all families and caregivers?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Language accessibility is essential for equitable communication with multilingual communities. UI/UX: Final gate question for communication practices. Data and evaluation: Validates linguistic equity. Senior front-end engineer: Standard boolean. Senior back-end engineer: Boolean for scoring threshold. Product manager: Ensures translation is not an afterthought.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q6",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q7",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q9",
-          "text": "What languages are used to communicate results to families and caregivers?",
-          "type": "multi",
-          "options": [
-            "English",
-            "Spanish",
-            "Mandarin",
-            "Cantonese",
-            "Vietnamese",
-            "Arabic",
-            "Haitian Creole",
-            "Portuguese",
-            "French",
-            "Korean",
-            "Russian",
-            "Tagalog",
-            "Other (specify)"
-          ],
-          "allowOther": true,
-          "rationales": "Content expert: Identifies specific languages served, demonstrating commitment to linguistic diversity. UI/UX: Multi-select list reflects common school languages. Data and evaluation: Supports language access analysis. Senior front-end engineer: Standard checkbox group with Other. Senior back-end engineer: Languages map to reference data. Product manager: Captures language diversity without excessive burden.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q6",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q7",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q8",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q10",
-          "text": "Does your school analyze the demographics of input to ensure responses are representative of all families and caregivers?",
-          "type": "boolean",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Demographic analysis identifies gaps in whose voices are being heard. UI/UX: Clear question about evaluation practice. Data and evaluation: Validates continuous improvement mindset. Senior front-end engineer: Clean boolean input. Senior back-end engineer: Simple scoring logic. Product manager: Ensures equity is monitored, not assumed.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q6",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q7",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q8",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q11",
-          "text": "Which demographic factors does your school analyze when reviewing input from families and caregivers?",
-          "type": "multi",
-          "options": [
-            "Race",
-            "ethnicity",
-            "Primary language spoken at home",
-            "Grade level of students",
-            "Socioeconomic status",
-            "Students with disabilities",
-            "Students receiving special education services",
-            "English Learner status",
-            "LGBTQ+ families",
-            "Foster care status",
-            "Other (specify)"
-          ],
-          "allowOther": true,
-          "rationales": "Content expert: Multiple demographic lenses reveal equity gaps in family engagement. UI/UX: Familiar categories make selection straightforward. Data and evaluation: Supports analysis of representativeness practices. Senior front-end engineer: Multi-select with optional text. Senior back-end engineer: Categories map to discrete values. Product manager: Ensures analysis is comprehensive and equity-focused.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q6",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q7",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q8",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q10",
-              "equals": "Yes"
-            }
-          ]
-        },
-        {
-          "id": "Q12",
-          "text": "Evidence (choose one)",
-          "type": "evidence",
-          "options": [
-            "Family input survey or instrument with response data",
-            "Meeting notes or documentation from family engagement sessions",
-            "Communication to families showing results (e.g., newsletter, letter, website post)",
-            "Demographic analysis report or summary"
-          ],
-          "allowOther": false,
-          "rationales": "Content expert: Provides tangible proof of systematic family input process. UI/UX: Single evidence requirement is efficient. Data and evaluation: Supports verification and QA. Senior front-end engineer: One-of-four input is straightforward. Senior back-end engineer: Stores single artifact per submission. Product manager: Balances verification with applicant effort.",
-          "citations": "None provided.",
-          "showIf": [
-            {
-              "id": "Q1",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q2",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q5",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q6",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q7",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q8",
-              "equals": "Yes"
-            },
-            {
-              "id": "Q10",
+              "id": "Q048",
               "equals": "Yes"
             }
           ]
@@ -4233,30 +4338,790 @@
       ],
       "scoring": {
         "hardFail": [
-          "Q1 is \"No.\"",
-          "Q2 is \"No.\"",
-          "Q3 is \"1 method\" or \"2 methods\" (must be \"3 or more methods\").",
-          "Q5 is \"No.\"",
-          "Q6 is \"No.\"",
-          "Q7 is \"No.\"",
-          "Q8 is \"No.\"",
-          "Q10 is \"No.\""
+          {
+            "questionId": "Q046",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q046 is \"No.\""
+          }
         ],
         "required": [
-          "Q4 includes at least 3 input methods.",
-          "Q4 includes at least one method that allows anonymous input (e.g., \"Anonymous suggestion boxes or forms\" or \"Surveys (paper or digital)\").",
-          "Q9 includes at least 1 language.",
-          "Q11 includes at least 3 demographic factors.",
-          "Q12 has one evidence item provided."
+          {
+            "questionId": "Q047",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q047 includes all grade levels present at the school."
+          },
+          {
+            "questionId": "Q048",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q048 is \"No\" OR Q049 only includes medical, cultural, or religious considerations."
+          }
+        ]
+      },
+      "topicId": "PEA"
+    },
+    {
+      "id": "PEA-S9",
+      "title": "PEA-S9: Physical Education Curriculum",
+      "criterionText": "Our school requires all physical education teachers to use a curriculum that is developmentally appropriate, culturally responsive, sequential, and consistent with national or state standards for physical education.",
+      "questions": [
+        {
+          "id": "Q050",
+          "text": "Do physical education teachers at your school use a defined curriculum?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": []
+        },
+        {
+          "id": "Q051",
+          "text": "Which of the following characteristics describe your school's physical education curriculum?",
+          "type": "multi",
+          "options": [
+            "Developmentally appropriate (designed to meet the needs of students at different developmental stages)",
+            "Culturally responsive (reflects and respects diverse cultural backgrounds)",
+            "Sequential (builds skills progressively across grade levels)",
+            "Consistent with national or state standards for physical education",
+            "None of the above"
+          ],
+          "showIf": [
+            {
+              "id": "Q050",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q052",
+          "text": "Are all physical education teachers required to use this curriculum?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q050",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q053",
+          "text": "How does your school ensure the curriculum is implemented consistently?",
+          "type": "multi",
+          "options": [
+            "Regular professional development for PE teachers",
+            "Curriculum guides or lesson plans provided",
+            "Observations or evaluations of PE classes",
+            "Common assessments across PE classes",
+            "PE teacher collaboration meetings",
+            "We do not have a formal process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q052",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q050",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q050 is \"No.\""
+          }
         ],
-        "eligibility": "- Eligible if all required combinations are true and no hard-fail conditions are met. - Not eligible otherwise."
+        "required": [
+          {
+            "questionId": "Q051",
+            "operator": "includesMinimum",
+            "minimumCount": 4,
+            "description": "Q051 includes all four characteristics (developmentally appropriate, culturally responsive, sequential, and consistent with standards)."
+          },
+          {
+            "questionId": "Q052",
+            "operator": "equals",
+            "value": "Yes",
+            "description": "Q052 is \"Yes.\""
+          },
+          {
+            "questionId": "Q053",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q053 includes at least 1 method (not 'We do not have a formal process')."
+          }
+        ]
       },
-      "rules": [],
-      "source": {
-        "type": "md",
-        "filename": "seh_s9_questions.md"
+      "topicId": "PEA"
+    },
+    {
+      "id": "PEA-S11",
+      "title": "PEA-S11: Physical Activity During the School Day",
+      "criterionText": "All students are provided opportunities to engage in at least 30 cumulative minutes of physical activity during each school day (e.g., recess, physical activity breaks, active instruction). Note: Physical activity minutes do not include physical education or class transitions.",
+      "questions": [
+        {
+          "id": "Q054",
+          "text": "Do students at your school have opportunities for physical activity during the school day outside of physical education classes?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": []
+        },
+        {
+          "id": "Q055",
+          "text": "What types of physical activity opportunities are provided during the school day?",
+          "type": "multi",
+          "options": [
+            "Recess",
+            "Physical activity breaks in classrooms",
+            "Active instruction (lessons incorporating movement)",
+            "Before-school activities",
+            "After-school activities",
+            "Lunch-time activities",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q054",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q056",
+          "text": "Approximately how many cumulative minutes of physical activity (outside of PE class) do students typically get during each school day?",
+          "type": "single",
+          "options": [
+            "Less than 10 minutes",
+            "10-19 minutes",
+            "20-29 minutes",
+            "30-44 minutes",
+            "45-59 minutes",
+            "60 minutes or more"
+          ],
+          "showIf": [
+            {
+              "id": "Q054",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q057",
+          "text": "Are these physical activity opportunities available to all students?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q054",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q054",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q054 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q055",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q055 includes at least 1 type of physical activity."
+          },
+          {
+            "questionId": "Q056",
+            "operator": "anyEquals",
+            "questionIds": [
+              "Q056"
+            ],
+            "value": "30-44 minutes",
+            "description": "Q056 is \"30-44 minutes\", \"45-59 minutes\", or \"60 minutes or more.\""
+          },
+          {
+            "questionId": "Q057",
+            "operator": "equals",
+            "value": "Yes",
+            "description": "Q057 is \"Yes.\""
+          }
+        ]
       },
-      "topicId": "SEH"
+      "topicId": "PEA"
+    },
+    {
+      "id": "PEA-S13",
+      "title": "PEA-S13: Physical Activity and Disciplinary Practices",
+      "criterionText": "Our school prohibits staff from assigning physical activity as punishment (e.g., walking laps or doing pushups) and prohibits staff from withholding physical activity as punishment (e.g., withholding recess, physical activity breaks, or physical education class).",
+      "questions": [
+        {
+          "id": "Q058",
+          "text": "Does your school have a policy or practice regarding the use of physical activity in disciplinary situations?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": []
+        },
+        {
+          "id": "Q059",
+          "text": "Which of the following statements describe your school's policy or practice?",
+          "type": "multi",
+          "options": [
+            "Staff are prohibited from assigning physical activity as punishment (e.g., making students walk laps or do pushups)",
+            "Staff are prohibited from withholding recess as punishment",
+            "Staff are prohibited from withholding physical activity breaks as punishment",
+            "Staff are prohibited from withholding physical education class as punishment",
+            "Staff may use physical activity as punishment in some situations",
+            "Staff may withhold physical activity as punishment in some situations"
+          ],
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q060",
+          "text": "How is this policy communicated to staff?",
+          "type": "multi",
+          "options": [
+            "Included in staff handbook or policy manual",
+            "Discussed during staff orientation or onboarding",
+            "Reviewed during professional development",
+            "Posted in common areas",
+            "Communicated via email or memo",
+            "It is not formally communicated",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q061",
+          "text": "How does your school ensure compliance with this policy?",
+          "type": "multi",
+          "options": [
+            "Administrator observations",
+            "Staff self-reporting",
+            "Student or family feedback mechanisms",
+            "Regular policy reviews",
+            "Consequences for non-compliance",
+            "We do not have a formal process",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q058",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q058",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q058 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q059",
+            "operator": "includesMinimum",
+            "minimumCount": 4,
+            "description": "Q059 includes all four prohibitions (assigning PA as punishment, withholding recess, withholding PA breaks, withholding PE class)."
+          },
+          {
+            "questionId": "Q060",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q060 includes at least 1 communication method (not 'It is not formally communicated')."
+          },
+          {
+            "questionId": "Q061",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q061 includes at least 1 compliance mechanism (not 'We do not have a formal process')."
+          }
+        ]
+      },
+      "topicId": "PEA"
+    },
+    {
+      "id": "PEA-S14",
+      "title": "PEA-S14: School Facilities Open to Community",
+      "criterionText": "Our school's indoor and outdoor facilities (e.g., tracks, playgrounds, athletic fields, gymnasiums, classrooms) are open to students, families, caregivers, and community members outside of school hours.",
+      "questions": [
+        {
+          "id": "Q062",
+          "text": "Are your school's facilities available for use outside of regular school hours?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": []
+        },
+        {
+          "id": "Q063",
+          "text": "Which facilities are available for community use outside of school hours?",
+          "type": "multi",
+          "options": [
+            "Outdoor playgrounds",
+            "Athletic fields",
+            "Tracks",
+            "Gymnasiums",
+            "Indoor multipurpose rooms",
+            "Classrooms",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q064",
+          "text": "Who can access these facilities outside of school hours?",
+          "type": "multi",
+          "options": [
+            "Current students",
+            "Families of current students",
+            "School staff",
+            "General community members",
+            "Organized groups or programs only"
+          ],
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q065",
+          "text": "When are facilities available for community use?",
+          "type": "multi",
+          "options": [
+            "Weekday evenings",
+            "Weekday early mornings",
+            "Weekends",
+            "School breaks and holidays",
+            "Summer"
+          ],
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q066",
+          "text": "How is information about facility availability communicated to the community?",
+          "type": "multi",
+          "options": [
+            "School website",
+            "Social media",
+            "Newsletters or emails to families",
+            "Flyers or posters",
+            "Community organizations",
+            "It is not actively communicated",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q062",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q062",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q062 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q063",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q063 includes at least 1 facility type."
+          },
+          {
+            "questionId": "Q064",
+            "operator": "includes",
+            "value": "General community members",
+            "description": "Q064 includes 'General community members' (open to broader community, not just school families)."
+          },
+          {
+            "questionId": "Q065",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q065 includes at least 1 time period."
+          },
+          {
+            "questionId": "Q066",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q066 includes at least 1 communication method (not 'It is not actively communicated')."
+          }
+        ]
+      },
+      "topicId": "PEA"
+    },
+    {
+      "id": "PEA-S15",
+      "title": "PEA-S15: Collaborate with Community to Support Physical Activity",
+      "criterionText": "Our school's process for collaborating with community organizations includes implementing shared goals, defined roles and responsibilities, ongoing communication, and evaluation plans.",
+      "questions": [
+        {
+          "id": "Q067",
+          "text": "Does your school collaborate with community organizations to support physical activity for students?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": []
+        },
+        {
+          "id": "Q068",
+          "text": "Which types of community organizations does your school collaborate with for physical activity?",
+          "type": "multi",
+          "options": [
+            "YMCA or similar community centers",
+            "Boys and Girls Clubs",
+            "Other after-school programs",
+            "Local parks and recreation departments",
+            "Sports leagues or clubs",
+            "Health or fitness organizations",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q069",
+          "text": "Which of the following elements are part of your collaboration process with community organizations?",
+          "type": "multi",
+          "options": [
+            "Shared goals (we've identified common objectives together)",
+            "Defined roles and responsibilities (we're clear about who does what)",
+            "Ongoing communication (we have regular check-ins or updates)",
+            "Evaluation plans (we assess the effectiveness of the collaboration)",
+            "None of the above"
+          ],
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q070",
+          "text": "How often does your school communicate with community partners about physical activity collaborations?",
+          "type": "single",
+          "options": [
+            "Weekly or more often",
+            "Monthly",
+            "A few times per year",
+            "Once per year",
+            "As needed/not on a regular schedule"
+          ],
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q071",
+          "text": "What types of physical activity opportunities result from these collaborations?",
+          "type": "multi",
+          "options": [
+            "After-school sports or activities",
+            "Community sports leagues",
+            "Special events (fun runs, sports days, etc.)",
+            "Access to community facilities",
+            "Coaching or instruction from community partners",
+            "Equipment or resource sharing",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q067",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q067",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q067 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q068",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q068 includes at least 1 type of community organization."
+          },
+          {
+            "questionId": "Q069",
+            "operator": "includesMinimum",
+            "minimumCount": 4,
+            "description": "Q069 includes all four elements (shared goals, defined roles, ongoing communication, evaluation plans)."
+          },
+          {
+            "questionId": "Q071",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q071 includes at least 1 type of physical activity opportunity."
+          }
+        ]
+      },
+      "topicId": "PEA"
+    },
+    {
+      "id": "PEA-S16",
+      "title": "PEA-S16: Active Transportation Initiatives",
+      "criterionText": "Our school supports active transportation initiatives through engaging the school community, ensuring equitable and inclusive opportunities to participate, designating safe routes or preferred routes, providing events/activities/programs, educating students to walk and bicycle safely, and evaluating the initiatives.",
+      "questions": [
+        {
+          "id": "Q072",
+          "text": "Does your school support active transportation initiatives (e.g., walk to school, bike to school programs)?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": []
+        },
+        {
+          "id": "Q073",
+          "text": "How does your school engage the school community in active transportation initiatives?",
+          "type": "multi",
+          "options": [
+            "Surveys or input sessions with families and students",
+            "Communications promoting walking/biking to school",
+            "Involvement of parent/family groups",
+            "Student leadership opportunities",
+            "Staff participation and modeling",
+            "We do not actively engage the community",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q074",
+          "text": "How does your school ensure equitable and inclusive opportunities for students to participate in active transportation?",
+          "type": "multi",
+          "options": [
+            "Consider barriers different families may face",
+            "Provide resources or support (e.g., bikes, helmets)",
+            "Create walking school bus or bike trains for safety",
+            "Offer alternatives for students who can't walk/bike",
+            "Gather feedback from diverse family groups",
+            "We have not specifically addressed equity and inclusion",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q075",
+          "text": "Has your school designated safe routes or preferred routes for students walking or biking?",
+          "type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q076",
+          "text": "What events, activities, or programs does your school provide related to active transportation?",
+          "type": "multi",
+          "options": [
+            "Walk to School Day",
+            "Bike to School Day",
+            "Walking school buses",
+            "Bike trains",
+            "Regular walk/bike challenges or incentive programs",
+            "None",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q077",
+          "text": "How does your school educate students about walking and bicycling safely?",
+          "type": "multi",
+          "options": [
+            "Pedestrian safety instruction",
+            "Bicycle safety instruction",
+            "Distribution of safety materials (maps, guides)",
+            "Bike rodeos or skills courses",
+            "Classroom lessons on traffic safety",
+            "We do not provide safety education",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Q078",
+          "text": "How does your school evaluate your active transportation initiatives?",
+          "type": "multi",
+          "options": [
+            "Track participation rates",
+            "Conduct surveys or gather feedback",
+            "Monitor safety incidents",
+            "Assess community engagement",
+            "Review and adjust strategies based on data",
+            "We do not formally evaluate",
+            "Other (specify)"
+          ],
+          "allowOther": true,
+          "showIf": [
+            {
+              "id": "Q072",
+              "equals": "Yes"
+            }
+          ]
+        }
+      ],
+      "scoring": {
+        "hardFail": [
+          {
+            "questionId": "Q072",
+            "operator": "equals",
+            "value": "No",
+            "description": "Q072 is \"No.\""
+          }
+        ],
+        "required": [
+          {
+            "questionId": "Q073",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q073 includes at least 1 engagement method (not 'We do not actively engage the community')."
+          },
+          {
+            "questionId": "Q074",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q074 includes at least 1 equity/inclusion strategy (not 'We have not specifically addressed equity and inclusion')."
+          },
+          {
+            "questionId": "Q075",
+            "operator": "equals",
+            "value": "Yes",
+            "description": "Q075 is \"Yes.\""
+          },
+          {
+            "questionId": "Q076",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q076 includes at least 1 event/activity/program (not 'None')."
+          },
+          {
+            "questionId": "Q077",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q077 includes at least 1 safety education method (not 'We do not provide safety education')."
+          },
+          {
+            "questionId": "Q078",
+            "operator": "includesMinimum",
+            "minimumCount": 1,
+            "description": "Q078 includes at least 1 evaluation method (not 'We do not formally evaluate')."
+          }
+        ]
+      },
+      "topicId": "PEA"
     },
     {
       "id": "SHS-S5",
