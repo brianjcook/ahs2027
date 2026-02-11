@@ -376,9 +376,37 @@ function build() {
   const admin = readAdminContent();
   const merged = mergeCriteria(criteria, admin ? admin.data : null);
 
+  // Define topic metadata
+  const topicDefinitions = {
+    'LWP': { id: 'LWP', title: 'Local Wellness Policy' },
+    'SHS': { id: 'SHS', title: 'School Health Services' },
+    'NFA': { id: 'NFA', title: 'Nutrition & Food Access' },
+    'PEA': { id: 'PEA', title: 'Physical Education & Activity' },
+    'SWB': { id: 'SWB', title: 'Staff Well-Being' },
+    'FCE': { id: 'FCE', title: 'Family & Community Engagement' },
+    'SEH': { id: 'SEH', title: 'Social-Emotional Health' },
+  };
+
+  // Add topicId to each criterion based on its ID prefix
+  const criteriaWithTopics = merged.map((criterion) => {
+    const match = criterion.id?.match(/^([A-Z]+)-/);
+    const topicId = match ? match[1] : 'unassigned';
+    return {
+      ...criterion,
+      topicId,
+    };
+  });
+
+  // Generate topics array from criteria
+  const topicsSet = new Set(criteriaWithTopics.map(c => c.topicId).filter(Boolean));
+  const topics = Array.from(topicsSet)
+    .map(topicId => topicDefinitions[topicId] || { id: topicId, title: topicId })
+    .sort((a, b) => a.title.localeCompare(b.title));
+
   const output = {
     generatedAt: new Date().toISOString(),
-    criteria: merged,
+    topics,
+    criteria: criteriaWithTopics,
   };
 
   const outPath = path.join(DATA_DIR, "questions.json");

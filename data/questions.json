@@ -1,5 +1,31 @@
 {
-  "generatedAt": "2026-02-11T21:46:10.293Z",
+  "generatedAt": "2026-02-11T22:05:03.110Z",
+  "topics": [
+    {
+      "id": "FCE",
+      "title": "Family & Community Engagement"
+    },
+    {
+      "id": "LWP",
+      "title": "Local Wellness Policy"
+    },
+    {
+      "id": "NFA",
+      "title": "Nutrition & Food Access"
+    },
+    {
+      "id": "SHS",
+      "title": "School Health Services"
+    },
+    {
+      "id": "SEH",
+      "title": "Social-Emotional Health"
+    },
+    {
+      "id": "SWB",
+      "title": "Staff Well-Being"
+    }
+  ],
   "criteria": [
     {
       "id": "FCE-S10",
@@ -344,7 +370,8 @@
       "source": {
         "type": "md",
         "filename": "fce_s10_questions.md"
-      }
+      },
+      "topicId": "FCE"
     },
     {
       "id": "FCE-S6",
@@ -558,7 +585,8 @@
       "source": {
         "type": "md",
         "filename": "fce_s6_questions.md"
-      }
+      },
+      "topicId": "FCE"
     },
     {
       "id": "FCE-S7",
@@ -889,7 +917,8 @@
       "source": {
         "type": "md",
         "filename": "fce_s7_questions.md"
-      }
+      },
+      "topicId": "FCE"
     },
     {
       "id": "FCE-S8",
@@ -1249,7 +1278,8 @@
       "source": {
         "type": "md",
         "filename": "fce_s8_questions.md"
-      }
+      },
+      "topicId": "FCE"
     },
     {
       "id": "FCE-S9",
@@ -1483,7 +1513,8 @@
       "source": {
         "type": "md",
         "filename": "fce_s9_questions.md"
-      }
+      },
+      "topicId": "FCE"
     },
     {
       "id": "LWP-S1",
@@ -1676,7 +1707,8 @@
       "source": {
         "type": "md",
         "filename": "lwp_s1_questions.md"
-      }
+      },
+      "topicId": "LWP"
     },
     {
       "id": "LWP-S2",
@@ -1795,7 +1827,8 @@
       "source": {
         "type": "md",
         "filename": "lwp_s2_questions.md"
-      }
+      },
+      "topicId": "LWP"
     },
     {
       "id": "LWP-S3",
@@ -2040,7 +2073,8 @@
       "source": {
         "type": "md",
         "filename": "lwp_s3_questions.md"
-      }
+      },
+      "topicId": "LWP"
     },
     {
       "id": "LWP-S4",
@@ -2175,7 +2209,8 @@
       "source": {
         "type": "md",
         "filename": "lwp_s4_questions.md"
-      }
+      },
+      "topicId": "LWP"
     },
     {
       "id": "LWP-S5",
@@ -2200,7 +2235,7 @@
           "showIf": []
         },
         {
-          "id": "Qfo9k",
+          "id": "Qklbb",
           "text": "**Q1a. (Conditional) If \"We don't provide foods or beverages at our school\" is selected:** Please explain your school's approach.",
           "type": "single",
           "options": [
@@ -2257,7 +2292,8 @@
       "source": {
         "type": "md",
         "filename": "lwp_s5_questions.md"
-      }
+      },
+      "topicId": "LWP"
     },
     {
       "id": "LWP-S6",
@@ -2357,7 +2393,8 @@
       "source": {
         "type": "md",
         "filename": "lwp_s6_questions.md"
-      }
+      },
+      "topicId": "LWP"
     },
     {
       "id": "NFA-S11",
@@ -2555,7 +2592,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s11_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "NFA-S15",
@@ -2791,7 +2829,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s15_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "NFA-S16",
@@ -2991,7 +3030,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s16_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "NFA-S5",
@@ -3280,7 +3320,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s5_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "NFA-S7",
@@ -3432,7 +3473,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s7_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "NFA-S8",
@@ -3621,7 +3663,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s8_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "NFA-S9",
@@ -3802,7 +3845,8 @@
       "source": {
         "type": "md",
         "filename": "nfa_s9_questions.md"
-      }
+      },
+      "topicId": "NFA"
     },
     {
       "id": "SEH-S9",
@@ -4211,7 +4255,8 @@
       "source": {
         "type": "md",
         "filename": "seh_s9_questions.md"
-      }
+      },
+      "topicId": "SEH"
     },
     {
       "id": "SHS-S10",
@@ -4594,7 +4639,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s10_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S11",
@@ -4971,7 +5017,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s11_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S13",
@@ -5588,7 +5635,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s13_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S14",
@@ -6052,7 +6100,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s14_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S16",
@@ -6633,7 +6682,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s16_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S5",
@@ -7012,7 +7062,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s5_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S6",
@@ -7299,7 +7350,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s6_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SHS-S9",
@@ -7579,7 +7631,8 @@
       "source": {
         "type": "md",
         "filename": "shs_s9_questions.md"
-      }
+      },
+      "topicId": "SHS"
     },
     {
       "id": "SWB-S10",
@@ -8052,7 +8105,8 @@
       "source": {
         "type": "md",
         "filename": "swb_s10_questions.md"
-      }
+      },
+      "topicId": "SWB"
     },
     {
       "id": "SWB-S11",
@@ -8501,7 +8555,8 @@
       "source": {
         "type": "md",
         "filename": "swb_s11_questions.md"
-      }
+      },
+      "topicId": "SWB"
     },
     {
       "id": "SWB-S4",
@@ -8888,7 +8943,8 @@
       "source": {
         "type": "md",
         "filename": "swb_s4_questions.md"
-      }
+      },
+      "topicId": "SWB"
     },
     {
       "id": "SWB-S6",
@@ -9465,7 +9521,8 @@
       "source": {
         "type": "md",
         "filename": "swb_s6_questions.md"
-      }
+      },
+      "topicId": "SWB"
     },
     {
       "id": "SWB-S8",
@@ -9896,7 +9953,8 @@
       "source": {
         "type": "md",
         "filename": "swb_s8_questions.md"
-      }
+      },
+      "topicId": "SWB"
     },
     {
       "id": "SWB-S9",
@@ -10455,7 +10513,8 @@
       "source": {
         "type": "md",
         "filename": "swb_s9_questions.md"
-      }
+      },
+      "topicId": "SWB"
     }
   ]
 }
