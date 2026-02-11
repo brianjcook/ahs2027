@@ -299,6 +299,19 @@ function readAdminContent() {
   }
 }
 
+function readPEACriteria() {
+  const filePath = path.join(ROOT, "pea_criteria_draft.json");
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    const raw = fs.readFileSync(filePath, "utf8");
+    const data = JSON.parse(raw);
+    return data.criteria || [];
+  } catch (err) {
+    console.warn(`WARN: failed to read PEA criteria: ${err.message}`);
+    return [];
+  }
+}
+
 function mergeCriteria(parsed, admin) {
   if (!admin) return parsed;
   const byId = new Map(parsed.map((c) => [c.id, c]));
@@ -374,7 +387,15 @@ function build() {
   }
 
   const admin = readAdminContent();
-  const merged = mergeCriteria(criteria, admin ? admin.data : null);
+  const peaCriteria = readPEACriteria();
+
+  // Merge markdown criteria with admin overrides
+  let merged = mergeCriteria(criteria, admin ? admin.data : null);
+
+  // Add PEA criteria
+  const peaIds = new Set(peaCriteria.map(c => c.id));
+  const nonPeaCriteria = merged.filter(c => !peaIds.has(c.id));
+  merged = [...nonPeaCriteria, ...peaCriteria];
 
   // Define topic metadata
   const topicDefinitions = {
@@ -390,7 +411,13 @@ function build() {
   // Add topicId to each criterion based on its ID prefix
   const criteriaWithTopics = merged.map((criterion) => {
     const match = criterion.id?.match(/^([A-Z]+)-/);
-    const topicId = match ? match[1] : 'unassigned';
+    let topicId = match ? match[1] : 'unassigned';
+
+    // SEH-S9 is a cross-topic gathering input question listed under FCE
+    if (criterion.id === 'SEH-S9') {
+      topicId = 'FCE';
+    }
+
     return {
       ...criterion,
       topicId,
