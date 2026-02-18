@@ -1,9 +1,5 @@
 .review-panel {
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-left: 1px solid #dee2e6;
-  height: 100%;
-  overflow-y: auto;
+  background: var(--paper);
 }
 
 .review-panel h3 {
@@ -27,10 +23,11 @@
 .review-status-select {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--line);
   border-radius: 4px;
   font-size: 0.875rem;
   background: white;
+  color: var(--ink);
   cursor: pointer;
 }
 

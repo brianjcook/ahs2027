@@ -7,8 +7,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Criterion from './components/Criterion';
-import EligibilityPanel from './components/EligibilityPanel';
-import ReviewPanel from './components/ReviewPanel';
+import RightPanels from './components/RightPanels';
 import { evaluateEligibility } from './utils/eligibilityEngine';
 import { clearHiddenAnswers, getVisibleQuestions } from './utils/conditionalLogic';
 import './App.css';
@@ -233,16 +232,12 @@ export default function App() {
           </div>
         </section>
 
-        <div className="right-panels">
-          <EligibilityPanel
-            criterion={currentCriterion}
-            answers={currentAnswers}
-            eligibilityResult={eligibilityResult}
-            allQuestions={currentCriterion?.questions || []}
-            visibleQuestions={visibleQuestions}
-          />
-          <ReviewPanel criterion={currentCriterion} />
-        </div>
+        <RightPanels
+          criterion={currentCriterion}
+          answers={currentAnswers}
+          eligibilityResult={eligibilityResult}
+          visibleQuestions={visibleQuestions}
+        />
       </main>
     </>
   );
