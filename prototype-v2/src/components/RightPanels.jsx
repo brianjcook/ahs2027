@@ -25,7 +25,7 @@ export default function RightPanels({ criterion, answers, eligibilityResult, vis
   return (
     <div className="right-panels-container">
       {/* Review Panel */}
-      <div className="panel-section">
+      <div className={`panel-section ${openPanels.review ? 'panel-section-open' : ''}`}>
         <button
           className="panel-header"
           onClick={() => togglePanel('review')}
@@ -41,7 +41,7 @@ export default function RightPanels({ criterion, answers, eligibilityResult, vis
       </div>
 
       {/* Eligibility Panel */}
-      <div className="panel-section">
+      <div className={`panel-section ${openPanels.eligibility ? 'panel-section-open' : ''}`}>
         <button
           className="panel-header"
           onClick={() => togglePanel('eligibility')}
