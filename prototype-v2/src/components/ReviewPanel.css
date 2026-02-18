@@ -221,13 +221,13 @@
 }
 
 .comment-count {
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
-  background: #007bff;
-  color: white;
-  border-radius: 12px;
+  background: #e9ecef;
+  color: #495057;
+  border-radius: 3px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   min-width: 1.5rem;
   text-align: center;
 }

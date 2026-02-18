@@ -10,12 +10,13 @@
   border-bottom: 1px solid var(--line);
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .panel-section:last-child {
   border-bottom: none;
-  flex: 1;
-  min-height: 0;
 }
 
 .panel-header {
