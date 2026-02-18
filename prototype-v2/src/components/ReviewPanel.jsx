@@ -113,30 +113,36 @@ export default function ReviewPanel({ criterion }) {
     }
   }
 
+  function getUniqueQuestionId(questionId) {
+    return `${criterion.id}-${questionId}`;
+  }
+
   function handleQuestionStatusChange(questionId, status) {
+    const uniqueId = getUniqueQuestionId(questionId);
     const updated = { ...reviews };
     if (!updated[criterion.id]) {
       updated[criterion.id] = { status: criterionStatus, comments: [], questions: {} };
     }
-    if (!updated[criterion.id].questions[questionId]) {
-      updated[criterion.id].questions[questionId] = { comments: [] };
+    if (!updated[criterion.id].questions[uniqueId]) {
+      updated[criterion.id].questions[uniqueId] = { comments: [] };
     }
-    updated[criterion.id].questions[questionId].status = status;
+    updated[criterion.id].questions[uniqueId].status = status;
     saveReviews(updated);
   }
 
   function handleAddQuestionComment(questionId, author, text) {
     if (!text.trim()) return;
 
+    const uniqueId = getUniqueQuestionId(questionId);
     const updated = { ...reviews };
     if (!updated[criterion.id]) {
       updated[criterion.id] = { status: criterionStatus, comments: [], questions: {} };
     }
-    if (!updated[criterion.id].questions[questionId]) {
-      updated[criterion.id].questions[questionId] = { comments: [] };
+    if (!updated[criterion.id].questions[uniqueId]) {
+      updated[criterion.id].questions[uniqueId] = { comments: [] };
     }
-    if (!updated[criterion.id].questions[questionId].comments) {
-      updated[criterion.id].questions[questionId].comments = [];
+    if (!updated[criterion.id].questions[uniqueId].comments) {
+      updated[criterion.id].questions[uniqueId].comments = [];
     }
 
     const comment = {
@@ -146,15 +152,16 @@ export default function ReviewPanel({ criterion }) {
       timestamp: new Date().toISOString(),
     };
 
-    updated[criterion.id].questions[questionId].comments.push(comment);
+    updated[criterion.id].questions[uniqueId].comments.push(comment);
     saveReviews(updated);
   }
 
   function handleDeleteQuestionComment(questionId, commentId) {
+    const uniqueId = getUniqueQuestionId(questionId);
     const updated = { ...reviews };
-    if (updated[criterion.id]?.questions[questionId]?.comments) {
-      updated[criterion.id].questions[questionId].comments =
-        updated[criterion.id].questions[questionId].comments.filter(
+    if (updated[criterion.id]?.questions[uniqueId]?.comments) {
+      updated[criterion.id].questions[uniqueId].comments =
+        updated[criterion.id].questions[uniqueId].comments.filter(
           c => c.id !== commentId
         );
       saveReviews(updated);
@@ -269,14 +276,16 @@ export default function ReviewPanel({ criterion }) {
         <label className="review-label">Question Reviews</label>
 
         {criterion.questions.map(question => {
+          const uniqueId = getUniqueQuestionId(question.id);
           const isExpanded = expandedQuestions.has(question.id);
-          const questionReview = criterionReview.questions[question.id] || { comments: [] };
+          const questionReview = criterionReview.questions[uniqueId] || { comments: [] };
           const qComments = questionReview.comments || [];
 
           return (
             <QuestionReview
               key={question.id}
               question={question}
+              uniqueId={uniqueId}
               isExpanded={isExpanded}
               onToggle={() => toggleQuestion(question.id)}
               status={questionReview.status || 'Not Reviewed'}
@@ -298,6 +307,7 @@ export default function ReviewPanel({ criterion }) {
 
 function QuestionReview({
   question,
+  uniqueId,
   isExpanded,
   onToggle,
   status,
@@ -323,7 +333,7 @@ function QuestionReview({
         onClick={onToggle}
       >
         <span className="question-toggle">{isExpanded ? '▼' : '▶'}</span>
-        <span className="question-id">{question.id}</span>
+        <span className="question-id">{uniqueId}</span>
         <span className={`question-status status-${status.toLowerCase().replace(/\s+/g, '-')}`}>
           {status}
         </span>
