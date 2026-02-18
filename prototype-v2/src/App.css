@@ -105,6 +105,13 @@ body {
   overflow: hidden;
 }
 
+.right-panels {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+
 .content {
   display: grid;
   grid-template-columns: 280px 1fr;
