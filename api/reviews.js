@@ -1,4 +1,12 @@
-import { put, list } from '@vercel/blob';
+// Use dynamic import for @vercel/blob to avoid build issues
+let blobModule;
+
+async function getBlob() {
+  if (!blobModule) {
+    blobModule = await import('@vercel/blob');
+  }
+  return blobModule;
+}
 
 // CORS headers for local development and production
 const corsHeaders = {
@@ -24,6 +32,22 @@ export default async function handler(req, res) {
   const BLOB_KEY = 'reviews.json';
 
   try {
+    // Check if Blob is configured
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      console.warn('BLOB_READ_WRITE_TOKEN not configured');
+
+      if (req.method === 'GET') {
+        return res.status(200).json({ data: {} });
+      }
+
+      return res.status(503).json({
+        error: 'Vercel Blob not configured. Please enable Blob storage in your Vercel dashboard.',
+        data: {}
+      });
+    }
+
+    const { put, list } = await getBlob();
+
     if (req.method === 'GET') {
       // Get all reviews
       try {
@@ -58,22 +82,26 @@ export default async function handler(req, res) {
       });
 
       return res.status(200).json({
-        ...corsHeaders,
         success: true,
         url: blob.url
       });
     }
 
     return res.status(405).json({
-      ...corsHeaders,
       error: 'Method not allowed'
     });
 
   } catch (error) {
     console.error('API Error:', error);
     return res.status(500).json({
-      ...corsHeaders,
       error: error.message
     });
   }
 }
+
+// Export config for Vercel
+export const config = {
+  api: {
+    bodyParser: true,
+  },
+};
