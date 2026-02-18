@@ -208,11 +208,9 @@ export default function ReviewPanel({ criterion }) {
 
   return (
     <div className="review-panel">
-      <h3>Review</h3>
-
       {/* Criterion Status */}
       <div className="review-section">
-        <label className="review-label">Criterion Status</label>
+        <label className="review-label">{criterion.id} Status</label>
         <select
           value={criterionStatus}
           onChange={(e) => handleStatusChange(e.target.value)}
@@ -227,7 +225,7 @@ export default function ReviewPanel({ criterion }) {
 
       {/* Criterion Comments */}
       <div className="review-section">
-        <label className="review-label">Criterion Comments</label>
+        <label className="review-label">{criterion.id} Comments</label>
 
         <div className="comment-list">
           {criterionComments.map(comment => (

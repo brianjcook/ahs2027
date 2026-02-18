@@ -2,14 +2,12 @@
   background: var(--paper);
 }
 
-.review-panel h3 {
-  margin: 0 0 1.5rem 0;
-  font-size: 1.25rem;
-  color: #212529;
-}
-
 .review-section {
   margin-bottom: 2rem;
+}
+
+.review-section:first-child {
+  margin-top: 0;
 }
 
 .review-label {
