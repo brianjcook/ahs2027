@@ -334,12 +334,14 @@ function QuestionReview({
       >
         <span className="question-toggle">{isExpanded ? '▼' : '▶'}</span>
         <span className="question-id">{uniqueId}</span>
-        {comments.length > 0 && (
-          <span className="comment-count">{comments.length}</span>
-        )}
-        <span className={`question-status status-${status.toLowerCase().replace(/\s+/g, '-')}`}>
-          {status}
-        </span>
+        <div className="question-badges">
+          {comments.length > 0 && (
+            <span className="comment-count">{comments.length}</span>
+          )}
+          <span className={`question-status status-${status.toLowerCase().replace(/\s+/g, '-')}`}>
+            {status}
+          </span>
+        </div>
       </button>
 
       {isExpanded && (

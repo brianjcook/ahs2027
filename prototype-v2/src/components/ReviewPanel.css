@@ -192,8 +192,14 @@
   min-width: 3rem;
 }
 
-.question-status {
+.question-badges {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.question-status {
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-size: 0.75rem;
@@ -221,7 +227,6 @@
 }
 
 .comment-count {
-  margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
   background: #e9ecef;
   color: #495057;
