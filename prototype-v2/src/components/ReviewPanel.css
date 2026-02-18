@@ -220,6 +220,18 @@
   color: #155724;
 }
 
+.comment-count {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: #007bff;
+  color: white;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
 .question-review-content {
   padding: 1rem;
   border-top: 1px solid #dee2e6;

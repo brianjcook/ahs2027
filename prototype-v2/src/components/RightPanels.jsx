@@ -24,6 +24,22 @@ export default function RightPanels({ criterion, answers, eligibilityResult, vis
 
   return (
     <div className="right-panels-container">
+      {/* Review Panel */}
+      <div className="panel-section">
+        <button
+          className="panel-header"
+          onClick={() => togglePanel('review')}
+        >
+          <span className="panel-toggle">{openPanels.review ? '▼' : '▶'}</span>
+          <span className="panel-title">Review</span>
+        </button>
+        {openPanels.review && (
+          <div className="panel-content">
+            <ReviewPanel criterion={criterion} />
+          </div>
+        )}
+      </div>
+
       {/* Eligibility Panel */}
       <div className="panel-section">
         <button
@@ -42,22 +58,6 @@ export default function RightPanels({ criterion, answers, eligibilityResult, vis
               allQuestions={criterion?.questions || []}
               visibleQuestions={visibleQuestions}
             />
-          </div>
-        )}
-      </div>
-
-      {/* Review Panel */}
-      <div className="panel-section">
-        <button
-          className="panel-header"
-          onClick={() => togglePanel('review')}
-        >
-          <span className="panel-toggle">{openPanels.review ? '▼' : '▶'}</span>
-          <span className="panel-title">Review</span>
-        </button>
-        {openPanels.review && (
-          <div className="panel-content">
-            <ReviewPanel criterion={criterion} />
           </div>
         )}
       </div>

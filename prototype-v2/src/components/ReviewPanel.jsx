@@ -337,6 +337,9 @@ function QuestionReview({
         <span className={`question-status status-${status.toLowerCase().replace(/\s+/g, '-')}`}>
           {status}
         </span>
+        {comments.length > 0 && (
+          <span className="comment-count">{comments.length}</span>
+        )}
       </button>
 
       {isExpanded && (
