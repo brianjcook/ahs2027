@@ -27,33 +27,39 @@
 .panel-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
+  gap: 0.625rem;
+  padding: 16px 20px;
   background: var(--paper);
   border: none;
   border-radius: 0px;
+  border-bottom: 2px solid var(--line-strong);
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
   text-align: left;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .panel-header:hover {
-  background: var(--accent-soft);
+  background: #faf6ee;
+  border-bottom-color: var(--ink);
 }
 
 .panel-toggle {
-  color: var(--accent);
-  font-size: 0.875rem;
-  min-width: 1rem;
+  color: var(--ink);
+  font-size: 12px;
+  min-width: 14px;
+  font-weight: 700;
   transition: transform 0.2s;
 }
 
 .panel-title {
-  font-family: "Fraunces", serif;
-  font-size: 1.125rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .panel-content {

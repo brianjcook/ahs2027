@@ -3,34 +3,54 @@
 }
 
 .review-section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .review-section:first-child {
   margin-top: 0;
 }
 
+.review-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .review-label {
   display: block;
+  font-family: var(--mono);
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #495057;
-  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 
 .review-status-select {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  font-size: 0.875rem;
+  padding: 10px 12px;
+  border: 2px solid var(--line-strong);
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
   background: white;
   color: var(--ink);
   cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: "Work Sans", sans-serif;
 }
 
 .review-status-select:hover {
-  border-color: #adb5bd;
+  border-color: var(--ink);
+}
+
+.review-status-select:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 2px var(--line);
 }
 
 .review-status-select:disabled {
@@ -48,26 +68,35 @@
 
 .comment {
   background: white;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: 2px;
+  padding: 12px 14px;
+  transition: all 0.2s ease;
+}
+
+.comment:hover {
+  border-left-color: var(--accent);
 }
 
 .comment-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.75rem;
+  margin-bottom: 0.625rem;
+  font-size: 11px;
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
 }
 
 .comment-author {
   font-weight: 600;
-  color: #495057;
+  color: var(--ink);
+  text-transform: uppercase;
 }
 
 .comment-time {
-  color: #6c757d;
+  color: var(--muted);
 }
 
 .comment-delete {
@@ -86,10 +115,11 @@
 }
 
 .comment-text {
-  color: #212529;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  color: var(--ink-light);
+  font-size: 14px;
+  line-height: 1.6;
   white-space: pre-wrap;
+  font-weight: 400;
 }
 
 /* Add Comment Form */
@@ -101,93 +131,115 @@
 }
 
 .comment-author-input {
-  padding: 0.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.875rem;
+  padding: 10px 12px;
+  border: 2px solid var(--line);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.15s ease;
 }
 
 .comment-text-input {
-  padding: 0.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  font-family: inherit;
+  padding: 10px 12px;
+  border: 2px solid var(--line);
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
   resize: vertical;
+  line-height: 1.5;
+  transition: all 0.15s ease;
 }
 
 .comment-author-input:focus,
 .comment-text-input:focus {
   outline: none;
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: var(--ink);
+  box-shadow: 0 0 0 2px var(--line);
 }
 
 .btn-add-comment,
 .btn-add-comment-sm {
-  padding: 0.5rem 1rem;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 2px;
   cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.15s ease;
 }
 
 .btn-add-comment:hover:not(:disabled),
 .btn-add-comment-sm:hover:not(:disabled) {
-  background: #0056b3;
+  background: transparent;
+  color: var(--ink);
 }
 
 .btn-add-comment:disabled,
 .btn-add-comment-sm:disabled {
-  background: #6c757d;
+  background: var(--line);
+  border-color: var(--line);
+  color: var(--muted);
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .btn-add-comment-sm {
-  padding: 0.375rem 0.75rem;
-  font-size: 0.8125rem;
+  padding: 8px 16px;
+  font-size: 12px;
 }
 
 /* Question Reviews */
 .question-review {
-  margin-bottom: 0.75rem;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
   background: white;
   overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.question-review:hover {
+  border-color: var(--line-strong);
 }
 
 .question-review-header {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem;
-  background: #f8f9fa;
+  gap: 0.625rem;
+  padding: 12px 14px;
+  background: var(--paper);
   border: none;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 13px;
   text-align: left;
+  transition: all 0.15s ease;
 }
 
 .question-review-header:hover {
-  background: #e9ecef;
+  background: #faf6ee;
 }
 
 .question-toggle {
-  color: #6c757d;
-  font-size: 0.75rem;
-  min-width: 1rem;
+  color: var(--muted);
+  font-size: 10px;
+  min-width: 12px;
+  font-weight: 700;
 }
 
 .question-id {
+  font-family: var(--mono);
   font-weight: 600;
-  color: #495057;
-  min-width: 3rem;
+  color: var(--ink);
+  min-width: fit-content;
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
 
 .question-badges {
@@ -198,41 +250,51 @@
 }
 
 .question-status {
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
 }
 
 .question-status.status-not-reviewed {
-  background: #e9ecef;
-  color: #495057;
+  background: var(--line);
+  color: var(--muted);
+  border-color: var(--line-strong);
 }
 
 .question-status.status-under-review {
-  background: #fff3cd;
-  color: #856404;
+  background: #fff8e6;
+  color: #8a6800;
+  border-color: #f2d67a;
 }
 
 .question-status.status-needs-updates {
-  background: #f8d7da;
-  color: #721c24;
+  background: #ffe6e6;
+  color: #a32020;
+  border-color: #f2a0a0;
 }
 
 .question-status.status-approved {
-  background: #d4edda;
-  color: #155724;
+  background: #e6f4e6;
+  color: #2a6a2a;
+  border-color: #9fd09f;
 }
 
 .comment-count {
-  padding: 0.25rem 0.5rem;
-  background: #e9ecef;
-  color: #495057;
-  border-radius: 3px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  min-width: 1.5rem;
+  padding: 4px 8px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--mono);
+  min-width: 24px;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .question-review-content {
