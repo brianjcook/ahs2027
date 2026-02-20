@@ -1,15 +1,17 @@
 .review-panel {
   background: var(--paper);
+  padding-top: 0.5rem;
 }
 
 .review-section {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--line);
 }
 
 .review-section:first-child {
   margin-top: 0;
+  padding-top: 0;
 }
 
 .review-section:last-child {
@@ -22,7 +24,7 @@
   display: block;
   font-family: var(--mono);
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
   color: var(--ink);
   font-size: 11px;
   text-transform: uppercase;
@@ -60,10 +62,10 @@
 
 /* Comments */
 .comment-list {
-  margin: 1rem 0;
+  margin: 0 0 16px 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 10px;
 }
 
 .comment {
@@ -124,10 +126,10 @@
 
 /* Add Comment Form */
 .add-comment {
-  margin-top: 1rem;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 10px;
 }
 
 .comment-author-input {
@@ -298,15 +300,15 @@
 }
 
 .question-review-content {
-  padding: 1rem;
-  border-top: 1px solid #dee2e6;
+  padding: 16px;
+  border-top: 1px solid var(--line);
 }
 
 .question-text {
-  margin-bottom: 1rem;
-  color: #495057;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 /* Saving indicator */

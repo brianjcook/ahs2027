@@ -11,7 +11,7 @@ import './RightPanels.css';
 
 export default function RightPanels({ criterion, answers, eligibilityResult, visibleQuestions }) {
   const [openPanels, setOpenPanels] = useState({
-    eligibility: true,
+    eligibility: false,
     review: true
   });
 

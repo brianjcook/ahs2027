@@ -71,5 +71,5 @@
 /* Remove extra padding from child components since we have it in panel-content */
 .panel-content .eligibility-panel,
 .panel-content .review-panel {
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding: 20px;
 }
