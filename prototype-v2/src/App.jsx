@@ -64,26 +64,26 @@ export default function App() {
   // Handle answer changes
   function handleAnswerChange(questionId, value) {
     setAnswers((prev) => {
+      // Scope answer key to current criterion to prevent cross-contamination
+      const scopedKey = `${currentCriterionId}-${questionId}`;
       const updated = {
         ...prev,
-        [questionId]: value
+        [scopedKey]: value
       };
 
       // Clean up hidden answers only for current criterion
       const currentCriterion = data?.criteria.find((c) => c.id === currentCriterionId);
       if (currentCriterion) {
-        // Get question IDs for current criterion
-        const currentQuestionIds = new Set(currentCriterion.questions.map(q => q.id));
-
         // Separate current criterion answers from other answers
         const currentAnswers = {};
         const otherAnswers = {};
 
         for (const [key, val] of Object.entries(updated)) {
-          // Extract base ID from repeated questions (Q028.1 -> Q028, Q028_old -> Q028)
-          const baseId = key.split(/[._]/)[0];
-          if (currentQuestionIds.has(key) || currentQuestionIds.has(baseId)) {
-            currentAnswers[key] = val;
+          // Check if this answer belongs to current criterion
+          if (key.startsWith(`${currentCriterionId}-`)) {
+            // Remove criterion prefix for cleaning logic
+            const questionId = key.replace(`${currentCriterionId}-`, '');
+            currentAnswers[questionId] = val;
           } else {
             otherAnswers[key] = val;
           }
@@ -92,8 +92,14 @@ export default function App() {
         // Clean only current criterion answers
         const cleanedCurrent = clearHiddenAnswers(currentCriterion.questions, currentAnswers);
 
+        // Re-scope the cleaned answers
+        const scopedCleaned = {};
+        for (const [qId, val] of Object.entries(cleanedCurrent)) {
+          scopedCleaned[`${currentCriterionId}-${qId}`] = val;
+        }
+
         // Merge back with other answers
-        return { ...otherAnswers, ...cleanedCurrent };
+        return { ...otherAnswers, ...scopedCleaned };
       }
 
       return updated;
@@ -108,16 +114,15 @@ export default function App() {
 
     const statusMap = {};
     for (const criterion of data.criteria) {
-      // Filter answers to only include those for this criterion's questions
-      const criterionQuestionIds = new Set(criterion.questions.map(q => q.id));
+      // Filter answers for this criterion only (using scoped keys)
       const filteredAnswers = {};
 
       for (const [key, value] of Object.entries(answers)) {
-        // Include if it's a direct question ID or a generated ID (for repeated questions)
-        // Extract base ID (Q028.1 -> Q028, Q028_old -> Q028)
-        const baseId = key.split(/[._]/)[0];
-        if (criterionQuestionIds.has(key) || criterionQuestionIds.has(baseId)) {
-          filteredAnswers[key] = value;
+        // Check if this answer belongs to current criterion
+        if (key.startsWith(`${criterion.id}-`)) {
+          // Remove criterion prefix for eligibility evaluation
+          const questionId = key.replace(`${criterion.id}-`, '');
+          filteredAnswers[questionId] = value;
         }
       }
 
@@ -168,13 +173,13 @@ export default function App() {
 
   // Filter answers for current criterion
   const currentAnswers = currentCriterion ? (() => {
-    const criterionQuestionIds = new Set(currentCriterion.questions.map(q => q.id));
     const filtered = {};
     for (const [key, value] of Object.entries(answers)) {
-      // Extract base ID (Q028.1 -> Q028, Q028_old -> Q028)
-      const baseId = key.split(/[._]/)[0];
-      if (criterionQuestionIds.has(key) || criterionQuestionIds.has(baseId)) {
-        filtered[key] = value;
+      // Check if this answer belongs to current criterion
+      if (key.startsWith(`${currentCriterion.id}-`)) {
+        // Remove criterion prefix for display
+        const questionId = key.replace(`${currentCriterion.id}-`, '');
+        filtered[questionId] = value;
       }
     }
     return filtered;
