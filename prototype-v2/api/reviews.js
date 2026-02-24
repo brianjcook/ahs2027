@@ -79,6 +79,8 @@ export default async function handler(req, res) {
       const blob = await put(BLOB_KEY, JSON.stringify(reviewData, null, 2), {
         access: 'public',
         contentType: 'application/json',
+        addRandomSuffix: false,
+        allowOverwrite: true,
       });
 
       return res.status(200).json({
