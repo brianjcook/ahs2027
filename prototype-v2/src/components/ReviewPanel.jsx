@@ -24,9 +24,14 @@ export default function ReviewPanel({ criterion }) {
   const [questionComments, setQuestionComments] = useState({});
   const [saving, setSaving] = useState(false);
 
-  // Load reviews from API
+  // Load reviews from API and poll for updates
   useEffect(() => {
     loadReviews();
+
+    // Poll every 5 seconds for updates from other users
+    const interval = setInterval(loadReviews, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   // Update local state when criterion changes
@@ -52,14 +57,37 @@ export default function ReviewPanel({ criterion }) {
   async function saveReviews(updatedReviews) {
     setSaving(true);
     try {
+      // Fetch latest state before saving to merge changes
+      const latestResponse = await fetch('/api/reviews');
+      const latestResult = await latestResponse.json();
+      const latestReviews = latestResult.data || {};
+
+      // Merge: Keep all criteria from latest, overlay our changes
+      const merged = { ...latestReviews };
+
+      // Merge each criterion we modified
+      for (const [criterionId, criterionData] of Object.entries(updatedReviews)) {
+        if (!merged[criterionId]) {
+          // New criterion, just add it
+          merged[criterionId] = criterionData;
+        } else {
+          // Merge comments and questions
+          merged[criterionId] = {
+            status: criterionData.status || merged[criterionId].status,
+            comments: mergeComments(merged[criterionId].comments || [], criterionData.comments || []),
+            questions: mergeQuestions(merged[criterionId].questions || {}, criterionData.questions || {})
+          };
+        }
+      }
+
       const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedReviews),
+        body: JSON.stringify(merged),
       });
 
       if (response.ok) {
-        setReviews(updatedReviews);
+        setReviews(merged);
       } else {
         console.error('Failed to save reviews');
       }
@@ -68,6 +96,43 @@ export default function ReviewPanel({ criterion }) {
     } finally {
       setSaving(false);
     }
+  }
+
+  // Merge comments by ID, keeping all unique comments
+  function mergeComments(existingComments, newComments) {
+    const commentMap = new Map();
+
+    // Add existing comments
+    existingComments.forEach(comment => {
+      commentMap.set(comment.id, comment);
+    });
+
+    // Add new comments (overwrites if same ID)
+    newComments.forEach(comment => {
+      commentMap.set(comment.id, comment);
+    });
+
+    return Array.from(commentMap.values()).sort((a, b) =>
+      new Date(a.timestamp) - new Date(b.timestamp)
+    );
+  }
+
+  // Merge question data, combining comments from both
+  function mergeQuestions(existingQuestions, newQuestions) {
+    const merged = { ...existingQuestions };
+
+    for (const [questionId, questionData] of Object.entries(newQuestions)) {
+      if (!merged[questionId]) {
+        merged[questionId] = questionData;
+      } else {
+        merged[questionId] = {
+          status: questionData.status || merged[questionId].status,
+          comments: mergeComments(merged[questionId].comments || [], questionData.comments || [])
+        };
+      }
+    }
+
+    return merged;
   }
 
   function handleStatusChange(status) {
