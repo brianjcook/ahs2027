@@ -59,6 +59,12 @@ export default function ReviewPanel({ criterion }) {
     try {
       // Fetch latest state before saving to merge changes
       const latestResponse = await fetch('/api/reviews');
+
+      if (!latestResponse.ok) {
+        console.error('Failed to fetch latest reviews:', latestResponse.status);
+        throw new Error(`Fetch failed: ${latestResponse.status}`);
+      }
+
       const latestResult = await latestResponse.json();
       const latestReviews = latestResult.data || {};
 
@@ -80,19 +86,25 @@ export default function ReviewPanel({ criterion }) {
         }
       }
 
+      console.log('Saving merged reviews:', merged);
+
       const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(merged),
       });
 
-      if (response.ok) {
-        setReviews(merged);
-      } else {
-        console.error('Failed to save reviews');
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Failed to save reviews. Status:', response.status, 'Error:', errorText);
+        throw new Error(`Save failed: ${response.status}`);
       }
+
+      setReviews(merged);
+      console.log('Reviews saved successfully');
     } catch (error) {
       console.error('Failed to save reviews:', error);
+      alert(`Failed to save review: ${error.message}`);
     } finally {
       setSaving(false);
     }
@@ -100,33 +112,47 @@ export default function ReviewPanel({ criterion }) {
 
   // Merge comments by ID, keeping all unique comments
   function mergeComments(existingComments, newComments) {
+    if (!Array.isArray(existingComments)) existingComments = [];
+    if (!Array.isArray(newComments)) newComments = [];
+
     const commentMap = new Map();
 
     // Add existing comments
     existingComments.forEach(comment => {
-      commentMap.set(comment.id, comment);
+      if (comment && comment.id) {
+        commentMap.set(comment.id, comment);
+      }
     });
 
     // Add new comments (overwrites if same ID)
     newComments.forEach(comment => {
-      commentMap.set(comment.id, comment);
+      if (comment && comment.id) {
+        commentMap.set(comment.id, comment);
+      }
     });
 
-    return Array.from(commentMap.values()).sort((a, b) =>
-      new Date(a.timestamp) - new Date(b.timestamp)
-    );
+    return Array.from(commentMap.values()).sort((a, b) => {
+      const aTime = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+      const bTime = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+      return aTime - bTime;
+    });
   }
 
   // Merge question data, combining comments from both
   function mergeQuestions(existingQuestions, newQuestions) {
+    if (typeof existingQuestions !== 'object') existingQuestions = {};
+    if (typeof newQuestions !== 'object') newQuestions = {};
+
     const merged = { ...existingQuestions };
 
     for (const [questionId, questionData] of Object.entries(newQuestions)) {
+      if (!questionData) continue;
+
       if (!merged[questionId]) {
         merged[questionId] = questionData;
       } else {
         merged[questionId] = {
-          status: questionData.status || merged[questionId].status,
+          status: questionData.status || merged[questionId].status || 'Not Reviewed',
           comments: mergeComments(merged[questionId].comments || [], questionData.comments || [])
         };
       }
