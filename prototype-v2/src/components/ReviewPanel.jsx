@@ -54,7 +54,7 @@ export default function ReviewPanel({ criterion }) {
     }
   }
 
-  async function saveReviews(updatedReviews) {
+  async function saveReviews(criterionId, criterionData) {
     setSaving(true);
     try {
       // Fetch latest state before saving to merge changes
@@ -68,22 +68,19 @@ export default function ReviewPanel({ criterion }) {
       const latestResult = await latestResponse.json();
       const latestReviews = latestResult.data || {};
 
-      // Merge: Keep all criteria from latest, overlay our changes
+      // Merge: Keep all criteria from latest, only update the one we're changing
       const merged = { ...latestReviews };
 
-      // Merge each criterion we modified
-      for (const [criterionId, criterionData] of Object.entries(updatedReviews)) {
-        if (!merged[criterionId]) {
-          // New criterion, just add it
-          merged[criterionId] = criterionData;
-        } else {
-          // Merge comments and questions
-          merged[criterionId] = {
-            status: criterionData.status || merged[criterionId].status,
-            comments: mergeComments(merged[criterionId].comments || [], criterionData.comments || []),
-            questions: mergeQuestions(merged[criterionId].questions || {}, criterionData.questions || {})
-          };
-        }
+      if (!merged[criterionId]) {
+        // New criterion, just add it
+        merged[criterionId] = criterionData;
+      } else {
+        // Merge only this criterion's comments and questions
+        merged[criterionId] = {
+          status: criterionData.status || merged[criterionId].status,
+          comments: mergeComments(merged[criterionId].comments || [], criterionData.comments || []),
+          questions: mergeQuestions(merged[criterionId].questions || {}, criterionData.questions || {})
+        };
       }
 
       console.log('Saving merged reviews:', merged);
@@ -162,25 +159,19 @@ export default function ReviewPanel({ criterion }) {
   }
 
   function handleStatusChange(status) {
-    const updated = { ...reviews };
-    if (!updated[criterion.id]) {
-      updated[criterion.id] = { comments: [], questions: {} };
-    }
-    updated[criterion.id].status = status;
+    const criterionData = reviews[criterion.id] || { comments: [], questions: {} };
+    const updatedData = {
+      ...criterionData,
+      status: status
+    };
     setCriterionStatus(status);
-    saveReviews(updated);
+    saveReviews(criterion.id, updatedData);
   }
 
   function handleAddComment() {
     if (!newCommentText.trim()) return;
 
-    const updated = { ...reviews };
-    if (!updated[criterion.id]) {
-      updated[criterion.id] = { status: criterionStatus, comments: [], questions: {} };
-    }
-    if (!updated[criterion.id].comments) {
-      updated[criterion.id].comments = [];
-    }
+    const criterionData = reviews[criterion.id] || { status: criterionStatus, comments: [], questions: {} };
 
     const comment = {
       id: Date.now().toString(),
@@ -189,18 +180,23 @@ export default function ReviewPanel({ criterion }) {
       timestamp: new Date().toISOString(),
     };
 
-    updated[criterion.id].comments.push(comment);
-    saveReviews(updated);
+    const updatedData = {
+      ...criterionData,
+      comments: [...(criterionData.comments || []), comment]
+    };
+
+    saveReviews(criterion.id, updatedData);
     setNewCommentText('');
   }
 
   function handleDeleteComment(commentId) {
-    const updated = { ...reviews };
-    if (updated[criterion.id]?.comments) {
-      updated[criterion.id].comments = updated[criterion.id].comments.filter(
-        c => c.id !== commentId
-      );
-      saveReviews(updated);
+    const criterionData = reviews[criterion.id];
+    if (criterionData?.comments) {
+      const updatedData = {
+        ...criterionData,
+        comments: criterionData.comments.filter(c => c.id !== commentId)
+      };
+      saveReviews(criterion.id, updatedData);
     }
   }
 
@@ -210,31 +206,29 @@ export default function ReviewPanel({ criterion }) {
 
   function handleQuestionStatusChange(questionId, status) {
     const uniqueId = getUniqueQuestionId(questionId);
-    const updated = { ...reviews };
-    if (!updated[criterion.id]) {
-      updated[criterion.id] = { status: criterionStatus, comments: [], questions: {} };
-    }
-    if (!updated[criterion.id].questions[uniqueId]) {
-      updated[criterion.id].questions[uniqueId] = { comments: [] };
-    }
-    updated[criterion.id].questions[uniqueId].status = status;
-    saveReviews(updated);
+    const criterionData = reviews[criterion.id] || { status: criterionStatus, comments: [], questions: {} };
+    const questionData = criterionData.questions?.[uniqueId] || { comments: [] };
+
+    const updatedData = {
+      ...criterionData,
+      questions: {
+        ...criterionData.questions,
+        [uniqueId]: {
+          ...questionData,
+          status: status
+        }
+      }
+    };
+
+    saveReviews(criterion.id, updatedData);
   }
 
   function handleAddQuestionComment(questionId, author, text) {
     if (!text.trim()) return;
 
     const uniqueId = getUniqueQuestionId(questionId);
-    const updated = { ...reviews };
-    if (!updated[criterion.id]) {
-      updated[criterion.id] = { status: criterionStatus, comments: [], questions: {} };
-    }
-    if (!updated[criterion.id].questions[uniqueId]) {
-      updated[criterion.id].questions[uniqueId] = { comments: [] };
-    }
-    if (!updated[criterion.id].questions[uniqueId].comments) {
-      updated[criterion.id].questions[uniqueId].comments = [];
-    }
+    const criterionData = reviews[criterion.id] || { status: criterionStatus, comments: [], questions: {} };
+    const questionData = criterionData.questions?.[uniqueId] || { comments: [] };
 
     const comment = {
       id: Date.now().toString(),
@@ -243,19 +237,37 @@ export default function ReviewPanel({ criterion }) {
       timestamp: new Date().toISOString(),
     };
 
-    updated[criterion.id].questions[uniqueId].comments.push(comment);
-    saveReviews(updated);
+    const updatedData = {
+      ...criterionData,
+      questions: {
+        ...criterionData.questions,
+        [uniqueId]: {
+          ...questionData,
+          comments: [...(questionData.comments || []), comment]
+        }
+      }
+    };
+
+    saveReviews(criterion.id, updatedData);
   }
 
   function handleDeleteQuestionComment(questionId, commentId) {
     const uniqueId = getUniqueQuestionId(questionId);
-    const updated = { ...reviews };
-    if (updated[criterion.id]?.questions[uniqueId]?.comments) {
-      updated[criterion.id].questions[uniqueId].comments =
-        updated[criterion.id].questions[uniqueId].comments.filter(
-          c => c.id !== commentId
-        );
-      saveReviews(updated);
+    const criterionData = reviews[criterion.id];
+    const questionData = criterionData?.questions?.[uniqueId];
+
+    if (questionData?.comments) {
+      const updatedData = {
+        ...criterionData,
+        questions: {
+          ...criterionData.questions,
+          [uniqueId]: {
+            ...questionData,
+            comments: questionData.comments.filter(c => c.id !== commentId)
+          }
+        }
+      };
+      saveReviews(criterion.id, updatedData);
     }
   }
 
